@@ -1,0 +1,403 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0624805F6E386DED4875C68E /* Pods_GovIsland.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D6AAA9DF2E6E122467718F /* Pods_GovIsland.framework */; };
+		110729C81C4FF48900DBDD47 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110729C71C4FF48900DBDD47 /* ThirdViewController.swift */; };
+		110729CA1C4FF49F00DBDD47 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110729C91C4FF49F00DBDD47 /* FourthViewController.swift */; };
+		110729CC1C4FF5AA00DBDD47 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 110729CB1C4FF5AA00DBDD47 /* MapKit.framework */; };
+		110729CF1C52CDCC00DBDD47 /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = 110729CE1C52CDCC00DBDD47 /* food.json */; };
+		110729D11C52CE5600DBDD47 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110729D01C52CE5600DBDD47 /* Location.swift */; };
+		11A0EE0F1C4FE30200D01A05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EE0E1C4FE30200D01A05 /* AppDelegate.swift */; };
+		11A0EE111C4FE30200D01A05 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EE101C4FE30200D01A05 /* FirstViewController.swift */; };
+		11A0EE131C4FE30200D01A05 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EE121C4FE30200D01A05 /* SecondViewController.swift */; };
+		11A0EE161C4FE30200D01A05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A0EE141C4FE30200D01A05 /* Main.storyboard */; };
+		11A0EE181C4FE30200D01A05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A0EE171C4FE30200D01A05 /* Assets.xcassets */; };
+		11A0EE1B1C4FE30200D01A05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A0EE191C4FE30200D01A05 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		110729C71C4FF48900DBDD47 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		110729C91C4FF49F00DBDD47 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
+		110729CB1C4FF5AA00DBDD47 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		110729CE1C52CDCC00DBDD47 /* food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = food.json; path = data/food.json; sourceTree = "<group>"; };
+		110729D01C52CE5600DBDD47 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		11A0EE0B1C4FE30200D01A05 /* GovIsland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GovIsland.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11A0EE0E1C4FE30200D01A05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		11A0EE101C4FE30200D01A05 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		11A0EE121C4FE30200D01A05 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		11A0EE151C4FE30200D01A05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		11A0EE171C4FE30200D01A05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11A0EE1A1C4FE30200D01A05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		11A0EE1C1C4FE30200D01A05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6501095C28580E526B0D9A1E /* Pods-GovIsland.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GovIsland.release.xcconfig"; path = "Pods/Target Support Files/Pods-GovIsland/Pods-GovIsland.release.xcconfig"; sourceTree = "<group>"; };
+		A90634F92133367D84E46BB2 /* Pods-GovIsland.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GovIsland.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GovIsland/Pods-GovIsland.debug.xcconfig"; sourceTree = "<group>"; };
+		F6D6AAA9DF2E6E122467718F /* Pods_GovIsland.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GovIsland.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11A0EE081C4FE30200D01A05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				110729CC1C4FF5AA00DBDD47 /* MapKit.framework in Frameworks */,
+				0624805F6E386DED4875C68E /* Pods_GovIsland.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		110729CD1C4FFE8A00DBDD47 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				110729CE1C52CDCC00DBDD47 /* food.json */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
+		11A0EE021C4FE30200D01A05 = {
+			isa = PBXGroup;
+			children = (
+				110729CB1C4FF5AA00DBDD47 /* MapKit.framework */,
+				11A0EE0D1C4FE30200D01A05 /* GovIsland */,
+				11A0EE0C1C4FE30200D01A05 /* Products */,
+				8753411165CB3218865AC383 /* Pods */,
+				A3B9D9EF439049102337651E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		11A0EE0C1C4FE30200D01A05 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11A0EE0B1C4FE30200D01A05 /* GovIsland.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11A0EE0D1C4FE30200D01A05 /* GovIsland */ = {
+			isa = PBXGroup;
+			children = (
+				110729CD1C4FFE8A00DBDD47 /* data */,
+				11A0EE0E1C4FE30200D01A05 /* AppDelegate.swift */,
+				11A0EE101C4FE30200D01A05 /* FirstViewController.swift */,
+				11A0EE121C4FE30200D01A05 /* SecondViewController.swift */,
+				110729C71C4FF48900DBDD47 /* ThirdViewController.swift */,
+				110729C91C4FF49F00DBDD47 /* FourthViewController.swift */,
+				110729D01C52CE5600DBDD47 /* Location.swift */,
+				11A0EE141C4FE30200D01A05 /* Main.storyboard */,
+				11A0EE171C4FE30200D01A05 /* Assets.xcassets */,
+				11A0EE191C4FE30200D01A05 /* LaunchScreen.storyboard */,
+				11A0EE1C1C4FE30200D01A05 /* Info.plist */,
+			);
+			path = GovIsland;
+			sourceTree = "<group>";
+		};
+		8753411165CB3218865AC383 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A90634F92133367D84E46BB2 /* Pods-GovIsland.debug.xcconfig */,
+				6501095C28580E526B0D9A1E /* Pods-GovIsland.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A3B9D9EF439049102337651E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6D6AAA9DF2E6E122467718F /* Pods_GovIsland.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11A0EE0A1C4FE30200D01A05 /* GovIsland */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11A0EE1F1C4FE30200D01A05 /* Build configuration list for PBXNativeTarget "GovIsland" */;
+			buildPhases = (
+				9801E2C3E8277C61CF273E27 /* Check Pods Manifest.lock */,
+				11A0EE071C4FE30200D01A05 /* Sources */,
+				11A0EE081C4FE30200D01A05 /* Frameworks */,
+				11A0EE091C4FE30200D01A05 /* Resources */,
+				C4E43999AF453499A9642549 /* Embed Pods Frameworks */,
+				846DE70D6181D996591B19C5 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GovIsland;
+			productName = GovIsland;
+			productReference = 11A0EE0B1C4FE30200D01A05 /* GovIsland.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11A0EE031C4FE30200D01A05 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Janice;
+				TargetAttributes = {
+					11A0EE0A1C4FE30200D01A05 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 11A0EE061C4FE30200D01A05 /* Build configuration list for PBXProject "GovIsland" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 11A0EE021C4FE30200D01A05;
+			productRefGroup = 11A0EE0C1C4FE30200D01A05 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11A0EE0A1C4FE30200D01A05 /* GovIsland */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11A0EE091C4FE30200D01A05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11A0EE1B1C4FE30200D01A05 /* LaunchScreen.storyboard in Resources */,
+				110729CF1C52CDCC00DBDD47 /* food.json in Resources */,
+				11A0EE181C4FE30200D01A05 /* Assets.xcassets in Resources */,
+				11A0EE161C4FE30200D01A05 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		846DE70D6181D996591B19C5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GovIsland/Pods-GovIsland-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9801E2C3E8277C61CF273E27 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C4E43999AF453499A9642549 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GovIsland/Pods-GovIsland-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11A0EE071C4FE30200D01A05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11A0EE131C4FE30200D01A05 /* SecondViewController.swift in Sources */,
+				11A0EE0F1C4FE30200D01A05 /* AppDelegate.swift in Sources */,
+				110729C81C4FF48900DBDD47 /* ThirdViewController.swift in Sources */,
+				11A0EE111C4FE30200D01A05 /* FirstViewController.swift in Sources */,
+				110729D11C52CE5600DBDD47 /* Location.swift in Sources */,
+				110729CA1C4FF49F00DBDD47 /* FourthViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		11A0EE141C4FE30200D01A05 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11A0EE151C4FE30200D01A05 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		11A0EE191C4FE30200D01A05 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11A0EE1A1C4FE30200D01A05 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		11A0EE1D1C4FE30200D01A05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		11A0EE1E1C4FE30200D01A05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		11A0EE201C4FE30200D01A05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A90634F92133367D84E46BB2 /* Pods-GovIsland.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GovIsland/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.meladori.GovIsland;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		11A0EE211C4FE30200D01A05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6501095C28580E526B0D9A1E /* Pods-GovIsland.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GovIsland/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.meladori.GovIsland;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11A0EE061C4FE30200D01A05 /* Build configuration list for PBXProject "GovIsland" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11A0EE1D1C4FE30200D01A05 /* Debug */,
+				11A0EE1E1C4FE30200D01A05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11A0EE1F1C4FE30200D01A05 /* Build configuration list for PBXNativeTarget "GovIsland" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11A0EE201C4FE30200D01A05 /* Debug */,
+				11A0EE211C4FE30200D01A05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 11A0EE031C4FE30200D01A05 /* Project object */;
+}
