@@ -40,7 +40,7 @@ class FirstViewController: UIViewController {
             
         }
         
-        // loadJson("food")
+        loadJson("food")
         
     }
 
@@ -105,10 +105,6 @@ class FirstViewController: UIViewController {
         
     }
     
-    
-    func plotPoint(latitude: Float, longtitude: Float) {
-        
-    }
 
 
 }

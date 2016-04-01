@@ -6,5 +6,6 @@ use_frameworks!
 target 'GovIsland' do
 	pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 	pod 'Haneke', '~> 1.0'
+	pod 'Alamofire', '~> 3.0'
 end
 
