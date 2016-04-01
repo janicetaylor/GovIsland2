@@ -16,7 +16,8 @@ class FirstViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         // center on fort jay
@@ -27,11 +28,27 @@ class FirstViewController: UIViewController {
         
         let urlString :String = "http://www.meladori.com/work/govisland/food.json"
         updateMapWithFeed(urlString)
+
+        self.navigationItem.title = "Food"
+        
+        let selectBarButton = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action:#selector(FirstViewController.selectFeed))
+        self.navigationItem.rightBarButtonItem = selectBarButton
+    }
+    
+    
+    func selectFeed()
+    {
+        
+        print("selectFeed")
+        
+        let selectTableViewController = SelectTableViewController()
+        self.navigationController?.pushViewController(selectTableViewController, animated: true)
         
     }
     
 
-    func updateMapWithFeed(feedUrlString: String) {
+    func updateMapWithFeed(feedUrlString: String)
+    {
         
         Alamofire.request(.GET, feedUrlString).responseJSON { response in
             
@@ -71,7 +88,8 @@ class FirstViewController: UIViewController {
         
     }
     
-    func centerMapOnLocation(location: CLLocation) {
+    func centerMapOnLocation(location: CLLocation)
+    {
         let regionRadius: CLLocationDistance = 1000
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
             regionRadius * 2.0, regionRadius * 2.0)
