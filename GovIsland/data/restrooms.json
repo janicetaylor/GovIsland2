@@ -1,0 +1,26 @@
+{
+  "locations": {
+    "annotationType": "RestroomLocation",
+    "title": "Restrooms",
+    "location": [
+      {
+        "name": "North Island Restrooms",
+        "latitude": "40.692737",
+        "longitude": "-74.016647",
+        "url": "northIslandRestrooms"
+      },
+      {
+        "name": "South Island Restrooms",
+        "latitude": "40.685306",
+        "longitude": "-74.025461",
+        "url": "southIslandRestrooms"
+      },
+      {
+        "name": "WT Beach Restrooms",
+        "latitude": "40.693181",
+        "longitude": "-74.017153",
+        "url": "WTBeachRestrooms"
+      }
+    ]
+  }
+}

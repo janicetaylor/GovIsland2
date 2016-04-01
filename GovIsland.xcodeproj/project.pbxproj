@@ -11,7 +11,6 @@
 		110729C81C4FF48900DBDD47 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110729C71C4FF48900DBDD47 /* ThirdViewController.swift */; };
 		110729CA1C4FF49F00DBDD47 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110729C91C4FF49F00DBDD47 /* FourthViewController.swift */; };
 		110729CC1C4FF5AA00DBDD47 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 110729CB1C4FF5AA00DBDD47 /* MapKit.framework */; };
-		110729CF1C52CDCC00DBDD47 /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = 110729CE1C52CDCC00DBDD47 /* food.json */; };
 		110729D11C52CE5600DBDD47 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110729D01C52CE5600DBDD47 /* Location.swift */; };
 		11A0EE0F1C4FE30200D01A05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EE0E1C4FE30200D01A05 /* AppDelegate.swift */; };
 		11A0EE111C4FE30200D01A05 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EE101C4FE30200D01A05 /* FirstViewController.swift */; };
@@ -25,7 +24,6 @@
 		110729C71C4FF48900DBDD47 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		110729C91C4FF49F00DBDD47 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		110729CB1C4FF5AA00DBDD47 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		110729CE1C52CDCC00DBDD47 /* food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = food.json; path = data/food.json; sourceTree = "<group>"; };
 		110729D01C52CE5600DBDD47 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		11A0EE0B1C4FE30200D01A05 /* GovIsland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GovIsland.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11A0EE0E1C4FE30200D01A05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +54,6 @@
 		110729CD1C4FFE8A00DBDD47 /* data */ = {
 			isa = PBXGroup;
 			children = (
-				110729CE1C52CDCC00DBDD47 /* food.json */,
 			);
 			name = data;
 			sourceTree = "<group>";
@@ -177,7 +174,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				11A0EE1B1C4FE30200D01A05 /* LaunchScreen.storyboard in Resources */,
-				110729CF1C52CDCC00DBDD47 /* food.json in Resources */,
 				11A0EE181C4FE30200D01A05 /* Assets.xcassets in Resources */,
 				11A0EE161C4FE30200D01A05 /* Main.storyboard in Resources */,
 			);

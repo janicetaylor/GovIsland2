@@ -1,0 +1,44 @@
+{
+  "locations": {
+    "annotationType": "PointsOfInterestLocation",
+    "title": "Points of Interest",
+    "location": [
+      {
+        "name": "New York Harbor School",
+        "latitude": "40.69081",
+        "longitude": "-74.020381",
+        "url": "newYorkHarborSchool"
+      },
+      {
+        "name": "Earth Matter Compost",
+        "latitude": "40.68565",
+        "longitude": "-74.024743",
+        "url": "earthMatterCompost"
+      },
+      {
+        "name": "Jewish Synagogue",
+        "latitude": "40.688991",
+        "longitude": "-74.013214",
+        "url": "jewishSynagogue"
+      },
+      {
+        "name": "St. Cornelius the Centurion",
+        "latitude": "40.688321",
+        "longitude": "-74.014695",
+        "url": "stCornelius"
+      },
+      {
+        "name": "Our Lady Star of the Sea",
+        "latitude": "40.688039",
+        "longitude": "-74.016392",
+        "url": "ourLady"
+      },
+      {
+        "name": "Public School 26",
+        "latitude": "40.687693",
+        "longitude": "-74.01565",
+        "url": "ps26"
+      }
+    ]
+  }
+}

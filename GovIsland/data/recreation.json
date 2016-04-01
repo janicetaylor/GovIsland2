@@ -1,0 +1,26 @@
+{
+  "locations": {
+    "annotationType": "RecreationLocation",
+    "title": "Recreation",
+    "location": [
+      {
+        "name": "Bicycle Rentals",
+        "latitude": "40.691995",
+        "longitude": "-74.018819",
+        "url": "bicycleRentals"
+      },
+      {
+        "name": "Pier 101",
+        "latitude": "40.69135",
+        "longitude": "-74.012621",
+        "url": "pier101"
+      },
+      {
+        "name": "Water Taxi Beach",
+        "latitude": "40.693156",
+        "longitude": "-74.016556",
+        "url": "waterTaxiBeach"
+      }
+    ]
+  }
+}
