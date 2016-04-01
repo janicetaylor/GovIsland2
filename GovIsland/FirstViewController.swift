@@ -26,9 +26,12 @@ class FirstViewController: UIViewController {
         let initialLocation = CLLocation(latitude: 40.6889918, longitude: -74.0190287)
         centerMapOnLocation(initialLocation)
         
-        let urlString :String = "http://www.meladori.com/work/govisland/food.json"
-        updateMapWithFeed(urlString)
+        let foodUrl :String = "http://www.meladori.com/work/govisland/food.json"
+        let restroomUrl :String = "http://www.meladori.com/work/govisland/restrooms.json"
 
+        updateMapWithFeed(foodUrl)
+        updateMapWithFeed(restroomUrl)
+        
         self.navigationItem.title = "Food"
         
         let selectBarButton = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action:#selector(FirstViewController.selectFeed))
@@ -38,9 +41,6 @@ class FirstViewController: UIViewController {
     
     func selectFeed()
     {
-        
-        print("selectFeed")
-        
         let selectTableViewController = SelectTableViewController()
         self.navigationController?.pushViewController(selectTableViewController, animated: true)
         
