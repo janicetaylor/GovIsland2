@@ -54,8 +54,22 @@ class SelectTableViewController: UITableViewController {
         ]
         
        selectCell.titleLabel.text = selectArray[indexPath.row]
+       selectCell.titleSwitch.setOn(false, animated: true)
+       selectCell.titleSwitch.tag = indexPath.row
+  
+       return selectCell
+    }
+    
+    func configureSwitches()
+    {
         
-        return selectCell
+       // have a dictionary lookup for this, that gets passed from the view before it
+
+       // something like this but this is crashing
+        
+//        let selectedCell :SelectTableViewCell
+//        let selectedSwitch = selectedCell.contentView.viewWithTag(2) as! UISwitch
+//        selectedSwitch.setOn(true, animated: false)
     }
     
     
