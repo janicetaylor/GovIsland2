@@ -22,12 +22,6 @@ class MapViewController: UIViewController {
         
         configureMap()
         
-        let foodUrl :String = "http://www.meladori.com/work/govisland/food.json"
-        // let restroomUrl :String = "http://www.meladori.com/work/govisland/restrooms.json"
-
-        updateMapWithFeed(foodUrl)
-        // updateMapWithFeed(restroomUrl)
-        
         self.navigationItem.title = "Map"
         
         let selectBarButton = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action:#selector(MapViewController.selectFeed))
@@ -44,6 +38,16 @@ class MapViewController: UIViewController {
         // center on fort jay
         let initialLocation = CLLocation(latitude: 40.6889918, longitude: -74.0190287)
         centerMapOnLocation(initialLocation)
+        
+        // go through saved preferences and load switch settings 
+        // if first time, load in the first one?
+        
+        let foodUrl :String = "http://www.meladori.com/work/govisland/food.json"
+        // let restroomUrl :String = "http://www.meladori.com/work/govisland/restrooms.json"
+        
+        updateMapWithFeed(foodUrl)
+        // updateMapWithFeed(restroomUrl)
+        
     }
     
     
