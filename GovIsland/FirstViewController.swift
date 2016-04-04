@@ -27,10 +27,10 @@ class FirstViewController: UIViewController {
         centerMapOnLocation(initialLocation)
         
         let foodUrl :String = "http://www.meladori.com/work/govisland/food.json"
-        let restroomUrl :String = "http://www.meladori.com/work/govisland/restrooms.json"
+        // let restroomUrl :String = "http://www.meladori.com/work/govisland/restrooms.json"
 
         updateMapWithFeed(foodUrl)
-        updateMapWithFeed(restroomUrl)
+        // updateMapWithFeed(restroomUrl)
         
         self.navigationItem.title = "Food"
         

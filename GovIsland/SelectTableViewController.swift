@@ -10,7 +10,7 @@ import UIKit
 
 class SelectTableViewController: UITableViewController {
     
-    
+    var selectArray :[String] = []
     
     override func viewDidLoad()
     {
@@ -19,7 +19,17 @@ class SelectTableViewController: UITableViewController {
         let selectNib = UINib(nibName: "SelectTableViewCell", bundle: nil)
         tableView.registerNib(selectNib, forCellReuseIdentifier:"SelectCell")
         
-       
+        self.selectArray = [
+            "Army Buildings",
+            "Army Homes",
+            "Food",
+            "Restrooms",
+            "Landmarks",
+            "Open Spaces",
+            "Points of Interest",
+            "Recreation"
+        ]
+        
         
         configureTableView()
     }
@@ -33,43 +43,26 @@ class SelectTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 8
+        return selectArray.count
     }
 
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
 
         let selectCell: SelectTableViewCell = tableView.dequeueReusableCellWithIdentifier("SelectCell", forIndexPath: indexPath) as! SelectTableViewCell
         
-        let selectArray :Array = [
-            "Army Buildings",
-            "Army Homes",
-            "Food",
-            "Restrooms",
-            "Landmarks",
-            "Open Spaces",
-            "Points of Interest",
-            "Recreation"
-        ]
-        
        selectCell.titleLabel.text = selectArray[indexPath.row]
        selectCell.titleSwitch.setOn(false, animated: true)
        selectCell.titleSwitch.tag = indexPath.row
-  
+       selectCell.titleSwitch.addTarget(self, action: #selector(SelectTableViewController.switchChanged(_:)), forControlEvents: .TouchUpInside)
+        
        return selectCell
     }
     
-    func configureSwitches()
+    
+    func switchChanged(selectedswitch :UISwitch)
     {
-        
-       // have a dictionary lookup for this, that gets passed from the view before it
-
-       // something like this but this is crashing
-        
-//        let selectedCell :SelectTableViewCell
-//        let selectedSwitch = selectedCell.contentView.viewWithTag(2) as! UISwitch
-//        selectedSwitch.setOn(true, animated: false)
+        print("switchSelected : \(selectedswitch.tag)")
     }
     
     
