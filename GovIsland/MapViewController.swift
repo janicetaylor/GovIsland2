@@ -12,7 +12,7 @@ import SwiftyJSON
 import Alamofire
 import Haneke
 
-class FirstViewController: UIViewController {
+class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -34,7 +34,7 @@ class FirstViewController: UIViewController {
         
         self.navigationItem.title = "Food"
         
-        let selectBarButton = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action:#selector(FirstViewController.selectFeed))
+        let selectBarButton = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action:#selector(MapViewController.selectFeed))
         self.navigationItem.rightBarButtonItem = selectBarButton
     }
     
