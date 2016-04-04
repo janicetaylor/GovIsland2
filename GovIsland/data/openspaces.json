@@ -7,36 +7,42 @@
         "name": "Brick Row Park",
         "latitude": "40.690683",
         "longitude": "-74.018933",
+        "title": "Brick Row Park",
         "url": "brickRowPark"
       },
       {
         "name": "Liggett Terrace",
         "latitude": "40.689765",
         "longitude": "-74.019544",
+        "title": "Liggett Terrace",
         "url": "liggettTerrace"
       },
       {
         "name": "Nolan Park",
         "latitude": "40.69052",
         "longitude": "-74.013799",
+        "title": "Nolan Park",
         "url": "nolanPark"
       },
       {
         "name": "Parade Ground",
         "latitude": "40.689894",
         "longitude": "-74.016106",
+        "title": "Parade Ground",
         "url": "paradeGround"
       },
       {
         "name": "Picnic Point",
         "latitude": "40.686221",
         "longitude": "-74.02573",
+        "title": "Picnic Point",
         "url": "picnicPoint"
       },
       {
         "name": "South Island Field",
         "latitude": "40.687811",
         "longitude": "-74.021347",
+        "title": "South Island Field",
         "url": "southIslandField"
       }
     ]

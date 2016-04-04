@@ -7,114 +7,134 @@
         "name": "Castle Williams",
         "latitude": "40.692867",
         "longitude": "-74.019432",
+		"title": "Castle Williams", 
         "-url": "castleWilliams"
+		
       },
       {
         "name": "Fort Jay Gatehouse",
         "latitude": "40.691313",
         "longitude": "-74.015457",
+		"title": "Fort Jay Gatehouse", 
         "-url": "fortJayGatehouse"
       },
       {
         "name": "Fort Jay",
         "latitude": "40.691329",
         "longitude": "-74.016004",
+		"title": "Fort Jay", 
         "-url": "fortJay"
       },
       {
         "name": "Fort Jay Interior",
         "latitude": "40.691199",
         "longitude": "-74.016322",
+		"title": "Fort Jay Interior", 
         "-url": "fortJayInterior"
       },
       {
         "name": "South Battery",
         "latitude": "40.687998",
         "longitude": "-74.015244",
+		"title": "South Battery", 
         "-url": "southBattery"
       },
       {
         "name": "National Park Service",
         "latitude": "40.692864",
         "longitude": "-74.015299",
+		"title": "National Park Service", 
         "-url": "nationalParkService"
       },
       {
         "name": "Soissons Dock",
         "latitude": "40.693237",
         "longitude": "-74.015327",
+		"title": "Soissons Dock", 
         "-url": "soissonsDock"
       },
       {
         "name": "LMCC Arts Center",
         "latitude": "40.692757",
         "longitude": "-74.016361",
+		"title": "LMCC Arts Center", 
         "-url": "building110"
       },
       {
         "name": "The Block House",
         "latitude": "40.688931",
         "longitude": "-74.013917",
+		"title": "The Block House", 
         "-url": "blockHouse"
       },
       {
         "name": "Arsenal CO's House",
         "latitude": "40.692139",
         "longitude": "-74.014153",
+		"title": "Arsenal CO's House", 
         "-url": "arsenalCOhouse"
       },
       {
         "name": "Arsenal Armory Office",
         "latitude": "40.691414",
         "longitude": "-74.014252",
+		"title": "Arsenal Armory Office", 
         "-url": "building105"
       },
       {
         "name": "Gun Storehouse",
         "latitude": "40.691821",
         "longitude": "-74.014467",
+		"title": "Gun Storehouse", 
         "-url": "building107"
       },
       {
         "name": "Clock Tower Bldg",
         "latitude": "40.691323",
         "longitude": "-74.013753",
+		"title": "Clock Tower Bldg", 
         "-url": "clockTower"
       },
       {
-        "name": "Ordnance Storehouse",
+        "name": "Ordinance Storehouse",
         "latitude": "40.691056",
         "longitude": "-74.013852",
+		"title": "Ordinance Storehouse", 
         "-url": "building25"
       },
       {
         "name": "Pershing Hall",
         "latitude": "40.691553",
         "longitude": "-74.01375",
+		"title": "Pershing Hall", 
         "-url": "pershingHall"
       },
       {
         "name": "Marshall Hall",
         "latitude": "40.692329",
         "longitude": "-74.01466",
+		"title": "Marshall Hall",
         "-url": "marshallHall"
       },
       {
         "name": "Tampa Memorial Library",
         "latitude": "40.692533",
         "longitude": "-74.018093",
+		"title": "Tampa Memorial Library",
         "-url": "tampaLibrary"
       },
       {
         "name": "Post Hospital",
         "latitude": "40.691701",
         "longitude": "-74.019861",
+		"title": "Post Hospital",
         "-url": "postHospital"
       },
       {
         "name": "Post Theater",
         "latitude": "40.687523",
         "longitude": "-74.017389",
+		"title": "Post Theater",
         "-url": "postTheater"
       }
     ]

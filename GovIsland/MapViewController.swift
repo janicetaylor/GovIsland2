@@ -20,11 +20,7 @@ class MapViewController: UIViewController {
     {
         super.viewDidLoad()
         
-        // center on fort jay
-        // http://www.meladori.com/work/govisland/food.json
-        
-        let initialLocation = CLLocation(latitude: 40.6889918, longitude: -74.0190287)
-        centerMapOnLocation(initialLocation)
+        configureMap()
         
         let foodUrl :String = "http://www.meladori.com/work/govisland/food.json"
         // let restroomUrl :String = "http://www.meladori.com/work/govisland/restrooms.json"
@@ -32,10 +28,22 @@ class MapViewController: UIViewController {
         updateMapWithFeed(foodUrl)
         // updateMapWithFeed(restroomUrl)
         
-        self.navigationItem.title = "Food"
+        self.navigationItem.title = "Map"
         
         let selectBarButton = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action:#selector(MapViewController.selectFeed))
         self.navigationItem.rightBarButtonItem = selectBarButton
+    }
+    
+    
+    func configureMap()
+    {
+        mapView.scrollEnabled = true
+        mapView.zoomEnabled = true
+        mapView.showsUserLocation = true
+        
+        // center on fort jay
+        let initialLocation = CLLocation(latitude: 40.6889918, longitude: -74.0190287)
+        centerMapOnLocation(initialLocation)
     }
     
     
@@ -43,7 +51,6 @@ class MapViewController: UIViewController {
     {
         let selectTableViewController = SelectTableViewController()
         self.navigationController?.pushViewController(selectTableViewController, animated: true)
-        
     }
     
 

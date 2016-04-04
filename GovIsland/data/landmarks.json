@@ -6,66 +6,77 @@
         "name": "Last British Cannon",
         "latitude": "40.692522",
         "longitude": "-74.015546",
+        "title": "Last British Cannon",
         "url": "lastBritishCannon"
       },
       {
         "name": "War Souvenirs",
         "latitude": "40.690389",
         "longitude": "-74.013375",
+        "title": "War Souvenirs",
         "url": "spanishWarSouvenirs"
       },
       {
         "name": "Early Birds Monument",
         "latitude": "40.68915",
-        "longitude": "-74.019348",
+        "longitude": "-74.019348"
+        "title": "Early Birds Monument",
         "url": "earlyBirds"
       },
       {
         "name": "Andes Men Gravesite",
         "latitude": "40.692842",
         "longitude": "-74.018624",
+        "title": "Andes Men Gravesite",
         "url": "andesMen"
       },
       {
         "name": "Andes Road",
         "latitude": "40.692539",
         "longitude": "-74.015974",
+        "title": "Andes Road",
         "url": "andesRoad"
       },
       {
         "name": "Carder Road",
         "latitude": "40.692388",
         "longitude": "-74.014131",
+        "title": "Carder Road",
         "url": "carderRoad"
       },
       {
         "name": "Clayton Road",
         "latitude": "40.690847",
         "longitude": "-74.019555",
+        "title": "Clayton Road",
         "url": "claytonRoad"
       },
       {
         "name": "Craig Road",
         "latitude": "40.684177",
         "longitude": "-74.024012",
+        "title": "Craig Road",
         "url": "craigRoad"
       },
       {
         "name": "Enright Road",
         "latitude": "40.688172",
         "longitude": "-74.018551",
+        "title": "Enright Road",
         "url": "enrightRoad"
       },
       {
         "name": "Gresham Road",
         "latitude": "40.689909",
         "longitude": "-74.02052",
+        "title": "Gresham Road",
         "url": "greshamRoad"
       },
       {
         "name": "Hay Road",
         "latitude": "40.691293",
         "longitude": "-74.018724",
+        "title": "Hay Road",
         "url": "hayRoad"
       }
     ]

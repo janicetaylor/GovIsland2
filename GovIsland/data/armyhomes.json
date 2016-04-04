@@ -7,180 +7,210 @@
         "name": "Commanding Officer's Quarters",
         "latitude": "40.690359",
         "longitude": "-74.013203",
+		"title" : "Commanding Officer's Quarters", 
         "url": "commandingOfficersQuarters"
       },
       {
         "name": "Governor's House",
         "latitude": "40.690936",
         "longitude": "-74.013123",
+        "title": "Governor's House",
         "url": "governorsHouse"
       },
       {
         "name": "Dutch House",
         "latitude": "40.690648",
         "longitude": "-74.013144",
+        "title": "Dutch House",
         "url": "dutchHouse"
       },
       {
         "name": "1934 Quarters (111)",
         "latitude": "40.692725",
         "longitude": "-74.017468",
+        "title": "1934 Quarters (111)",
         "url": "bldg111"
       },
       {
         "name": "1934 Quarters (112)",
         "latitude": "40.692765",
         "longitude": "-74.017967",
+        "title": "1934 Quarters (112)",
         "url": "bldg112"
       },
       {
         "name": "Nurses' Quarters",
         "latitude": "40.692973",
         "longitude": "-74.018429",
+        "title": "Nurses' Quarters",
         "url": "bldg114"
       },
       {
         "name": "1931 Housing (12)",
         "latitude": "40.688531",
         "longitude": "-74.013767",
+        "title": "1931 Housing (12)",
         "url": "bldg12"
       },
       {
         "name": "Liggett Hall",
         "latitude": "40.689662",
         "longitude": "-74.018697",
+        "title": "Liggett Hall",
         "url": "liggettHall"
       },
       {
         "name": "1855 House (4)",
         "latitude": "40.690109",
         "longitude": "-74.013227",
+        "title": "1855 House (4)",
         "url": "bldg4"
       },
       {
         "name": "1855 House (5)",
         "latitude": "40.689852",
         "longitude": "-74.013294",
+        "title": "1855 House (5)",
         "url": "bldg5"
       },
       {
         "name": "1878 House (6)",
         "latitude": "40.689592",
         "longitude": "-74.013402",
+        "title": "1878 House (6)",
         "url": "bldg6"
       },
       {
         "name": "1878 House (7)",
         "latitude": "40.68936",
         "longitude": "-74.013544",
+        "title": "1878 House (7)",
         "url": "bldg7"
       },
       {
         "name": "1878 House (8)",
         "latitude": "40.689151",
         "longitude": "-74.013716",
+        "title": "1878 House (8)",
         "url": "bldg8"
       },
       {
         "name": "1878 House (10)",
         "latitude": "40.688807",
         "longitude": "-74.014193",
+        "title": "1878 House (10)",
         "url": "bldg10"
       },
       {
         "name": "1878 NCO House (11)",
         "latitude": "40.688599",
         "longitude": "-74.014327",
+        "title": "1878 NCO House (11)",
         "url": "bldg11"
       },
       {
         "name": "1879 House (14)",
         "latitude": "40.688591",
         "longitude": "-74.014735",
+        "title": "1879 House (14)",
         "url": "bldg14"
       },
       {
         "name": "1879 House (15)",
         "latitude": "40.68887",
         "longitude": "-74.014748",
+        "title": "1879 House (15)",
         "url": "bldg15"
       },
       {
         "name": "1879 House (16)",
         "latitude": "40.689134",
         "longitude": "-74.014727",
+        "title": "1879 House (16)",
         "url": "bldg16"
       },
       {
         "name": "1879 House (17)",
         "latitude": "40.689403",
         "longitude": "-74.014737",
+        "title": "1879 House (17)",
         "url": "bldg17"
       },
       {
         "name": "1879 House (18)",
         "latitude": "40.689641",
         "longitude": "-74.014697",
+        "title": "1879 House (18)",
         "url": "bldg18"
       },
       {
         "name": "1891 House (19)",
         "latitude": "40.689907",
         "longitude": "-74.014657",
+        "title": "1891 House (19)",
         "url": "bldg19"
       },
       {
         "name": "1902 House (20)",
         "latitude": "40.69019",
         "longitude": "-74.01466",
+        "title": "1902 House (20)",
         "url": "bldg20"
       },
       {
         "name": "1904 House (403)",
         "latitude": "40.689171",
         "longitude": "-74.017146",
+        "title": "1904 House (403)",
         "url": "bldg403"
       },
       {
         "name": "1902 House (404)",
         "latitude": "40.689511",
         "longitude": "-74.017307",
+        "title": "1902 House (404)",
         "url": "bldg404"
       },
       {
         "name": "1893 House (405)",
         "latitude": "40.689783",
         "longitude": "-74.017497",
+        "title": "1893 House (405)",
         "url": "bldg405"
       },
       {
         "name": "1893 House (406)",
         "latitude": "40.690094",
         "longitude": "-74.017672",
+        "title": "1893 House (406)",
         "url": "bldg406"
       },
       {
         "name": "1894 House (407)",
         "latitude": "40.690399",
         "longitude": "-74.017835",
+        "title": "1894 House (407)",
         "url": "bldg407"
       },
       {
         "name": "1895 House (408)",
         "latitude": "40.690688",
         "longitude": "-74.017983",
+        "title": "1895 House (408)",
         "url": "bldg408"
       },
       {
         "name": "1910 BOQ (409)",
         "latitude": "40.690985",
         "longitude": "-74.018187",
+        "title": "1910 BOQ (409)",
         "url": "bldg409"
       },
       {
         "name": "1917 House (410)",
         "latitude": "40.691331",
         "longitude": "-74.018342",
+        "title": "1917 House (410)",
         "url": "bldg410"
       }
     ]
