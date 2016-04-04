@@ -16,6 +16,8 @@ class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
+    var urlArray :[String] = []
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -41,6 +43,24 @@ class MapViewController: UIViewController {
         
         // go through saved preferences and load switch settings 
         // if first time, load in the first one?
+        
+//        0 - army buildings
+//        1 - army houses
+//        2 - food
+//        3 - restroooms
+//        4 - landmarks
+//        5 - open spaces
+//        6 - points of interest
+//        7 - recreation
+        
+        urlArray = ["http://www.meladori.com/work/govisland/armybuildings.json",
+                    "http://www.meladori.com/work/govisland/armyhouses.json",
+                    "http://www.meladori.com/work/govisland/food.json",
+                    "http://www.meladori.com/work/govisland/restrooms.json",
+                    "http://www.meladori.com/work/govisland/landmarks.json",
+                    "http://www.meladori.com/work/govisland/openspaces.json",
+                    "http://www.meladori.com/work/govisland/pointsofinterest.json",
+                    "http://www.meladori.com/work/govisland/recreation.json"]
         
         let foodUrl :String = "http://www.meladori.com/work/govisland/food.json"
         // let restroomUrl :String = "http://www.meladori.com/work/govisland/restrooms.json"
