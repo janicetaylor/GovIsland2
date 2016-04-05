@@ -82,6 +82,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                     "http://www.meladori.com/work/govisland/pointsofinterest.json",
                     "http://www.meladori.com/work/govisland/recreation.json"]
         
+        let settingsArray :[Bool] = [false, false, true, false, false, false, false, false]
+        
+        for(index, item) in settingsArray.enumerate() {
+            print("Value at index = \(index) is \(item)")
+
+        }
+        
         let foodUrl :String = urlArray[2]
         // let restroomUrl :String = "http://www.meladori.com/work/govisland/restrooms.json"
         
@@ -105,26 +112,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             
             let swiftyJsonVar = JSON(response.result.value!)
             
-            for (key,subJson):(String, JSON) in swiftyJsonVar {
+            for (_,subJson):(String, JSON) in swiftyJsonVar {
                 
-                print("key: \(key)")
-                print("subJson: \(subJson)")
-                
-                for (secondkey,secondaryJson):(String, JSON) in subJson {
-                    print("secondkey: \(secondkey)")
-                    print("secondaryJson: \(secondaryJson)")
+                for (_,secondaryJson):(String, JSON) in subJson {
                     
-                    for(thirdkey, tertiaryJson):(String, JSON) in secondaryJson {
-                        print("thirdkey: \(thirdkey)")
-                        print("tertiaryJson: \(tertiaryJson)")
+                    for(_, tertiaryJson):(String, JSON) in secondaryJson {
                         
                         let mylatitude = tertiaryJson["latitude"].doubleValue
                         let mylongitude = tertiaryJson["longitude"].doubleValue
                         let title = tertiaryJson["name"].stringValue
                         
-                        print("mylat : \(mylatitude)")
-                        print("mylong : \(mylongitude)")
-                        print("title : \(title)")
+//                        print("mylat : \(mylatitude)")
+//                        print("mylong : \(mylongitude)")
+//                        print("title : \(title)")
                         
                         let mycoordinate = CLLocationCoordinate2D(latitude:mylatitude, longitude:mylongitude)
                         let location = Location(coordinate: mycoordinate, title: title, subtitle: "")
