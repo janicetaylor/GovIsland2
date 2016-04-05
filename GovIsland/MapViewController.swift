@@ -12,10 +12,10 @@ import SwiftyJSON
 import Alamofire
 import Haneke
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
-    
+    var locationManager: CLLocationManager?
     var urlArray :[String] = []
     
     override func viewDidLoad()
@@ -33,6 +33,26 @@ class MapViewController: UIViewController {
     
     func configureMap()
     {
+        let locationManager = CLLocationManager()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = 10
+        locationManager.delegate = self
+        locationManager.pausesLocationUpdatesAutomatically = true
+        
+        if CLLocationManager.locationServicesEnabled() {
+            
+            let status: CLAuthorizationStatus = CLLocationManager.authorizationStatus()
+            if status == CLAuthorizationStatus.NotDetermined {
+                locationManager.requestWhenInUseAuthorization()
+            }
+            
+            locationManager.startUpdatingLocation()
+            self.locationManager = locationManager
+            
+        } else {
+            print("locationServices not enabled")
+        }
+        
         mapView.scrollEnabled = true
         mapView.zoomEnabled = true
         mapView.showsUserLocation = true
@@ -62,7 +82,7 @@ class MapViewController: UIViewController {
                     "http://www.meladori.com/work/govisland/pointsofinterest.json",
                     "http://www.meladori.com/work/govisland/recreation.json"]
         
-        let foodUrl :String = "http://www.meladori.com/work/govisland/food.json"
+        let foodUrl :String = urlArray[2]
         // let restroomUrl :String = "http://www.meladori.com/work/govisland/restrooms.json"
         
         updateMapWithFeed(foodUrl)
