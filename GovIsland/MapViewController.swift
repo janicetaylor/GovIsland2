@@ -17,6 +17,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var mapView: MKMapView!
     var locationManager: CLLocationManager?
     var urlArray :[String] = []
+    var settingsArray :[Bool] = []
     
     override func viewDidLoad()
     {
@@ -82,8 +83,27 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                     "http://www.meladori.com/work/govisland/pointsofinterest.json",
                     "http://www.meladori.com/work/govisland/recreation.json"]
         
-        let settingsArray :[Bool] = [false, false, true, false, false, false, false, false]
+        // check for first time array 
+        // put this in an object to encapsulate...
         
+        let userdefaults = NSUserDefaults.standardUserDefaults()
+        let isFirstTime = userdefaults.boolForKey("isFirstTime")
+        print("isFirstTime : \(isFirstTime)")
+        
+        if(isFirstTime == false) {
+            settingsArray = [false, false, true, false, false, false, false, false]
+            userdefaults.setObject(settingsArray, forKey: "locationsToLoad")
+            print("settingsArray : \(settingsArray)")
+
+        }
+        
+        else {
+            settingsArray = userdefaults.objectForKey("locationsToLoad") as! Array
+            print("settingsArray : \(settingsArray)")
+        }
+        
+        
+
         for(index, item) in settingsArray.enumerate() {
             
             if(item == true) {
