@@ -88,11 +88,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                     "http://www.meladori.com/work/govisland/openspaces.json",
                     "http://www.meladori.com/work/govisland/pointsofinterest.json",
                     "http://www.meladori.com/work/govisland/recreation.json"]
-        
-        // check for first time array 
-        // put this in an object to encapsulate...
-        
-        
     }
     
     
