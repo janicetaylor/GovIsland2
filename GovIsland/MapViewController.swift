@@ -12,7 +12,7 @@ import SwiftyJSON
 import Alamofire
 import Haneke
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     var locationManager: CLLocationManager?
@@ -71,14 +71,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         // go through saved preferences and load switch settings 
         // if first time, load in the first one?
         
-//        0 - army buildings
-//        1 - army houses
-//        2 - food
-//        3 - restroooms
-//        4 - landmarks
-//        5 - open spaces
-//        6 - points of interest
-//        7 - recreation
+        // category ids
+//        1 - army buildings
+//        2 - army houses
+//        3 - food
+//        4 - restroooms
+//        5 - landmarks
+//        6 - open spaces
+//        7 - points of interest
+//        8 - recreation
         
         urlArray = ["http://www.meladori.com/work/govisland/armybuildings.json",
                     "http://www.meladori.com/work/govisland/armyhouses.json",
@@ -111,7 +112,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             if(item == true) {
                 let urlToLoad = urlArray[index]
                 print(urlToLoad)
-                updateMapWithFeed(urlToLoad)
+                updateMapWithFeed(urlToLoad, categoryId: index)
             }
         }
 
@@ -132,7 +133,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
 
-    func updateMapWithFeed(feedUrlString: String)
+    func updateMapWithFeed(feedUrlString: String, categoryId: Int)
     {
         
         Alamofire.request(.GET, feedUrlString).responseJSON { response in
@@ -151,10 +152,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                         
 //                        print("mylat : \(mylatitude)")
 //                        print("mylong : \(mylongitude)")
-//                        print("title : \(title)")
+                        print("title : \(title) categoryId : \(categoryId)")
+
                         
                         let mycoordinate = CLLocationCoordinate2D(latitude:mylatitude, longitude:mylongitude)
-                        let location = Location(coordinate: mycoordinate, title: title, subtitle: "")
+                        let location = Location(coordinate: mycoordinate, title: title, subtitle: "", categoryId: categoryId)
+                        
+                        
                         self.mapView.addAnnotation(location)
                         
                     }
@@ -166,6 +170,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    
+    func mapView(mapView: MKMapView!,
+                 viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView!
+    {
+        
+        let annotationView = MKAnnotationView()
+        
+        annotationView.image = UIImage(named: "first")
+        
+        return annotationView
+    }
+    
+    
     func centerMapOnLocation(location: CLLocation)
     {
         let regionRadius: CLLocationDistance = 1000
@@ -173,6 +190,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
     }
+
 
 
 }
