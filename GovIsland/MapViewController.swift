@@ -32,6 +32,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        updateMap()
+    }
+    
     func configureMap()
     {
         let locationManager = CLLocationManager()
@@ -86,35 +92,41 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         // check for first time array 
         // put this in an object to encapsulate...
         
+        
+    }
+    
+    
+    func updateMap()
+    {
         let userdefaults = NSUserDefaults.standardUserDefaults()
         let isFirstTime = userdefaults.boolForKey("isFirstTime")
-        print("isFirstTime : \(isFirstTime)")
         
         if(isFirstTime == false) {
             settingsArray = [false, false, true, false, false, false, false, false]
             userdefaults.setObject(settingsArray, forKey: "locationsToLoad")
-            print("settingsArray : \(settingsArray)")
-
         }
-        
+            
         else {
             settingsArray = userdefaults.objectForKey("locationsToLoad") as! Array
-            print("settingsArray : \(settingsArray)")
         }
         
+        removeAllAnnotations()
         
-
         for(index, item) in settingsArray.enumerate() {
-            
             if(item == true) {
                 let urlToLoad = urlArray[index]
                 print(urlToLoad)
                 updateMapWithFeed(urlToLoad)
-
             }
-
         }
-        
+
+    }
+    
+    
+    func removeAllAnnotations()
+    {
+        mapView.removeAnnotations(mapView.annotations)
+        mapView.showsUserLocation = true
     }
     
     

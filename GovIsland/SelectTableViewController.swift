@@ -11,10 +11,20 @@ import UIKit
 class SelectTableViewController: UITableViewController {
     
     var selectArray :[String] = []
+    var settingsArray :[Bool] = []
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        // put this in an object to encapsulate...
+        let userdefaults = NSUserDefaults.standardUserDefaults()
+        let isFirstTime = true
+        userdefaults.setBool(isFirstTime, forKey: "isFirstTime")
+        print("isFirstTime : \(isFirstTime)")
+        
+        settingsArray = userdefaults.objectForKey("locationsToLoad") as! Array
+        print("settingsArray : \(settingsArray)")
         
         let selectNib = UINib(nibName: "SelectTableViewCell", bundle: nil)
         tableView.registerNib(selectNib, forCellReuseIdentifier:"SelectCell")
@@ -29,7 +39,6 @@ class SelectTableViewController: UITableViewController {
             "Points of Interest",
             "Recreation"
         ]
-        
         
         configureTableView()
     }
@@ -52,7 +61,10 @@ class SelectTableViewController: UITableViewController {
         let selectCell: SelectTableViewCell = tableView.dequeueReusableCellWithIdentifier("SelectCell", forIndexPath: indexPath) as! SelectTableViewCell
         
        selectCell.titleLabel.text = selectArray[indexPath.row]
-       selectCell.titleSwitch.setOn(false, animated: true)
+        
+       let settingsValue = settingsArray[indexPath.row]
+       selectCell.titleSwitch.setOn(settingsValue, animated: false)
+        
        selectCell.titleSwitch.tag = indexPath.row
        selectCell.titleSwitch.addTarget(self, action: #selector(SelectTableViewController.switchChanged(_:)), forControlEvents: .TouchUpInside)
         
@@ -62,7 +74,15 @@ class SelectTableViewController: UITableViewController {
     
     func switchChanged(selectedswitch :UISwitch)
     {
-        print("switchSelected : \(selectedswitch.tag)")
+        print("switchSelected : \(selectedswitch.tag) is on : \(selectedswitch.on)")
+        
+        settingsArray[selectedswitch.tag] = selectedswitch.on
+        
+        print("switched changed : settingsArray : \(settingsArray)")
+        
+        let userdefaults = NSUserDefaults.standardUserDefaults()
+        userdefaults.setObject(settingsArray, forKey: "locationsToLoad")
+        
     }
     
     
