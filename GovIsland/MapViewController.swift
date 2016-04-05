@@ -85,15 +85,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         let settingsArray :[Bool] = [false, false, true, false, false, false, false, false]
         
         for(index, item) in settingsArray.enumerate() {
-            print("Value at index = \(index) is \(item)")
+            
+            if(item == true) {
+                let urlToLoad = urlArray[index]
+                print(urlToLoad)
+                updateMapWithFeed(urlToLoad)
+
+            }
 
         }
-        
-        let foodUrl :String = urlArray[2]
-        // let restroomUrl :String = "http://www.meladori.com/work/govisland/restrooms.json"
-        
-        updateMapWithFeed(foodUrl)
-        // updateMapWithFeed(restroomUrl)
         
     }
     
