@@ -115,7 +115,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         for(index, item) in settingsArray.enumerate() {
             if(item == true) {
                 let urlToLoad = urlArray[index]
-                print(urlToLoad)
                 updateMapWithFeed(urlToLoad, categoryId: index)
             }
         }
