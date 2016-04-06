@@ -200,14 +200,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         
-        let pinView:MKPinAnnotationView = MKPinAnnotationView()
-        pinView.annotation = annotation
-        pinView.pinTintColor = UIColor.greenColor()
-        pinView.animatesDrop = true
-        pinView.canShowCallout = true
-        
-        return pinView
-        
+        let annotationView :MKAnnotationView = MKAnnotationView()
+        annotationView.annotation = annotation
+        annotationView.image = UIImage(named: "first")
+        annotationView.canShowCallout = true
+        return annotationView
         
     }
     
