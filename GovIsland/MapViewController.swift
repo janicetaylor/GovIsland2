@@ -18,6 +18,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var locationManager: CLLocationManager?
     var urlArray :[String] = []
     var settingsArray :[Bool] = []
+    var imageIconArray :[String] = []
+
     
     override func viewDidLoad()
     {
@@ -197,25 +199,54 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 //    }
     
     
-    
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        
-        let annotationView :MKAnnotationView = MKAnnotationView()
-        annotationView.annotation = annotation
-        annotationView.image = UIImage(named: "first")
-        annotationView.canShowCallout = true
-        return annotationView
-        
-    }
-    
-    
     func centerMapOnLocation(location: CLLocation)
     {
         let regionRadius: CLLocationDistance = 1000
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
-            regionRadius * 2.0, regionRadius * 2.0)
+                                                                  regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
     }
+    
+    
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+
+        if let annotation = annotation as? Location {
+            
+            let identifier = "pin"
+            var pinAnnotationView: MKAnnotationView
+            
+            if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as? MKPinAnnotationView {
+                dequeuedView.annotation = annotation
+                pinAnnotationView = dequeuedView
+                dequeuedView.image = UIImage(named: "first")
+            } else {
+                
+                // TODO: move this to a plist?
+                
+                imageIconArray = ["annotation-armybuildings",
+                            "annotation-armyhouses",
+                            "annotation-food",
+                            "annotation-restrooms",
+                            "annotation-landmarks",
+                            "annotation-openspaces",
+                            "annotation-pointsofinterest",
+                            "annotation-recreation"]
+                
+                pinAnnotationView = MKAnnotationView()
+                pinAnnotationView.annotation = annotation
+                pinAnnotationView.image = UIImage(named: imageIconArray[annotation.categoryId!])
+                pinAnnotationView.canShowCallout = true
+                return pinAnnotationView
+                
+            }
+            return pinAnnotationView
+        }
+        return nil
+        
+    }
+    
+    
 
 
 
