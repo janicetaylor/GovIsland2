@@ -23,6 +23,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     {
         super.viewDidLoad()
         
+        mapView.delegate = self
+        
         configureMap()
         
         self.navigationItem.title = "Map"
@@ -171,15 +173,42 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     
-    func mapView(mapView: MKMapView!,
-                 viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView!
-    {
+    
+//    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+//        let identifier = "annotation"
+//        
+//        if let annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as MKAnnotationView {
+//            // configureAnnotationView(annotationView)
+//            
+//            
+//            annotationView.image = UIImage(named: "first")
+//
+//            
+//            return annotationView
+//        } else {
+//            let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+//            // configureAnnotationView(annotationView)
+//            
+//            annotationView.image = UIImage(named: "second")
+//
+//            
+//            return annotationView
+//        }
+//    }
+    
+    
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         
-        let annotationView = MKAnnotationView()
+        let pinView:MKPinAnnotationView = MKPinAnnotationView()
+        pinView.annotation = annotation
+        pinView.pinTintColor = UIColor.greenColor()
+        pinView.animatesDrop = true
+        pinView.canShowCallout = true
         
-        annotationView.image = UIImage(named: "first")
+        return pinView
         
-        return annotationView
+        
     }
     
     
