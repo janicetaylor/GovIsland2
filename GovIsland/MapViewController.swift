@@ -156,7 +156,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                         
 //                        print("mylat : \(mylatitude)")
 //                        print("mylong : \(mylongitude)")
-                        print("title : \(title) categoryId : \(categoryId)")
+//                        print("title : \(title) categoryId : \(categoryId)")
 
                         
                         let mycoordinate = CLLocationCoordinate2D(latitude:mylatitude, longitude:mylongitude)
@@ -174,30 +174,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
     }
     
-    
-    
-//    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-//        let identifier = "annotation"
-//        
-//        if let annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as MKAnnotationView {
-//            // configureAnnotationView(annotationView)
-//            
-//            
-//            annotationView.image = UIImage(named: "first")
-//
-//            
-//            return annotationView
-//        } else {
-//            let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-//            // configureAnnotationView(annotationView)
-//            
-//            annotationView.image = UIImage(named: "second")
-//
-//            
-//            return annotationView
-//        }
-//    }
-    
+
     
     func centerMapOnLocation(location: CLLocation)
     {
@@ -208,9 +185,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     
+    // MARK: - MKMapViewDelegate methods
+
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
 
+        imageIconArray = ["annotation-armybuildings",
+                          "annotation-armyhouses",
+                          "annotation-food",
+                          "annotation-restrooms",
+                          "annotation-landmarks",
+                          "annotation-openspaces",
+                          "annotation-pointsofinterest",
+                          "annotation-recreation"]
+
+        
         if let annotation = annotation as? Location {
             
             let identifier = "pin"
@@ -219,19 +208,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as? MKPinAnnotationView {
                 dequeuedView.annotation = annotation
                 pinAnnotationView = dequeuedView
-                dequeuedView.image = UIImage(named: "first")
+                dequeuedView.image = UIImage(named: imageIconArray[annotation.categoryId!])
+                
             } else {
                 
                 // TODO: move this to a plist?
-                
-                imageIconArray = ["annotation-armybuildings",
-                            "annotation-armyhouses",
-                            "annotation-food",
-                            "annotation-restrooms",
-                            "annotation-landmarks",
-                            "annotation-openspaces",
-                            "annotation-pointsofinterest",
-                            "annotation-recreation"]
                 
                 pinAnnotationView = MKAnnotationView()
                 pinAnnotationView.annotation = annotation

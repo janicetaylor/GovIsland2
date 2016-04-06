@@ -17,7 +17,8 @@ class SelectTableViewController: UITableViewController {
     {
         super.viewDidLoad()
         
-        // put this in an object to encapsulate...
+        // TODO: put this in an object to encapsulate?
+        
         let userdefaults = NSUserDefaults.standardUserDefaults()
         let isFirstTime = true
         userdefaults.setBool(isFirstTime, forKey: "isFirstTime")
@@ -26,6 +27,8 @@ class SelectTableViewController: UITableViewController {
         
         let selectNib = UINib(nibName: "SelectTableViewCell", bundle: nil)
         tableView.registerNib(selectNib, forCellReuseIdentifier:"SelectCell")
+        
+        // TODO: put this in a plist?
         
         self.selectArray = [
             "Army Buildings",
