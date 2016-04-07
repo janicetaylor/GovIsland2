@@ -198,7 +198,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                           "annotation-pointsofinterest",
                           "annotation-recreation"]
 
-        
         if let annotation = annotation as? Location {
             
             let identifier = "pin"
@@ -207,7 +206,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as? MKPinAnnotationView {
                 dequeuedView.annotation = annotation
                 pinAnnotationView = dequeuedView
+                
                 dequeuedView.image = UIImage(named: imageIconArray[annotation.categoryId!])
+                let detailButton = UIButton(type: UIButtonType.DetailDisclosure) as UIButton
+                dequeuedView.rightCalloutAccessoryView = detailButton
                 
             } else {
                 
@@ -217,6 +219,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 pinAnnotationView.annotation = annotation
                 pinAnnotationView.image = UIImage(named: imageIconArray[annotation.categoryId!])
                 pinAnnotationView.canShowCallout = true
+                
+                let detailButton = UIButton(type: UIButtonType.DetailDisclosure) as UIButton
+                pinAnnotationView.rightCalloutAccessoryView = detailButton
+                
                 return pinAnnotationView
                 
             }
