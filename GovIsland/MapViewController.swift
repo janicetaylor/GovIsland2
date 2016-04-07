@@ -209,6 +209,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 
                 dequeuedView.image = UIImage(named: imageIconArray[annotation.categoryId!])
                 let detailButton = UIButton(type: UIButtonType.DetailDisclosure) as UIButton
+                detailButton.addTarget(self, action: #selector(MapViewController.detailButtonSelected), forControlEvents: .TouchUpInside)
                 dequeuedView.rightCalloutAccessoryView = detailButton
                 
             } else {
@@ -216,11 +217,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 // TODO: move this to a plist?
                 
                 pinAnnotationView = MKAnnotationView()
-                pinAnnotationView.annotation = annotation
+                pinAnnotationView.annotation = annotation as Location
                 pinAnnotationView.image = UIImage(named: imageIconArray[annotation.categoryId!])
                 pinAnnotationView.canShowCallout = true
                 
                 let detailButton = UIButton(type: UIButtonType.DetailDisclosure) as UIButton
+                detailButton.addTarget(self, action: #selector(MapViewController.detailButtonSelected(_:)), forControlEvents: .TouchUpInside)
+                detailButton.tag = annotation.categoryId!
+                
                 pinAnnotationView.rightCalloutAccessoryView = detailButton
                 
                 return pinAnnotationView
@@ -233,8 +237,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     
-
-
+    func detailButtonSelected(selectedButton :UIButton)
+    {
+        print("detailButtonSelected : \(selectedButton.tag)")
+        
+        
+    }
 
 }
 
