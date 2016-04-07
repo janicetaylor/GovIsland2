@@ -241,6 +241,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     {
         print("detailButtonSelected : \(selectedButton.tag)")
         
+        tabBarController?.selectedIndex = 1
+        
         
     }
 
