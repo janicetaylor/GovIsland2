@@ -38,7 +38,7 @@ class ExploreViewController : UITableViewController
     {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 80.0
-        tableView.allowsSelection = false
+        tableView.allowsSelection = true
         tableView.separatorStyle = .None
     }
     
