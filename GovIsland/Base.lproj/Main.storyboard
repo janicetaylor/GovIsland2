@@ -80,18 +80,27 @@
         <!--Explore-->
         <scene sceneID="wCA-Pt-6Qh">
             <objects>
-                <tableViewController id="anz-cA-hje" sceneMemberID="viewController">
+                <tableViewController id="anz-cA-hje" customClass="ExploreViewController" customModule="GovIsland" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fNI-nX-ubk">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="exploreTableCell" id="CDS-MX-EYd">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="exploreTableCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="exploreTableCell" textLabel="fe9-YI-LUz" style="IBUITableViewCellStyleDefault" id="CDS-MX-EYd">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CDS-MX-EYd" id="5vo-qM-DsT">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fe9-YI-LUz">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -101,6 +110,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Explore" image="second" id="IIl-oW-3GB"/>
+                    <connections>
+                        <outlet property="tableView" destination="fNI-nX-ubk" id="mc0-ye-JEi"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ksg-iS-IDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
