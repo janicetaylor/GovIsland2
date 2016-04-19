@@ -18,6 +18,7 @@
 		11A0EE161C4FE30200D01A05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A0EE141C4FE30200D01A05 /* Main.storyboard */; };
 		11A0EE181C4FE30200D01A05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A0EE171C4FE30200D01A05 /* Assets.xcassets */; };
 		11A0EE1B1C4FE30200D01A05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A0EE191C4FE30200D01A05 /* LaunchScreen.storyboard */; };
+		11E27F9C1CC683F500A10847 /* ExploreDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E27F9B1CC683F500A10847 /* ExploreDetailTableViewController.swift */; };
 		11F37C3A1CAF26CE00CFA9C6 /* SelectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F37C381CAF26CE00CFA9C6 /* SelectTableViewController.swift */; };
 		11F37C3B1CAF26CE00CFA9C6 /* SelectTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F37C391CAF26CE00CFA9C6 /* SelectTableViewController.xib */; };
 		11F37C3E1CAF288A00CFA9C6 /* SelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F37C3C1CAF288A00CFA9C6 /* SelectTableViewCell.swift */; };
@@ -37,6 +38,7 @@
 		11A0EE171C4FE30200D01A05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11A0EE1A1C4FE30200D01A05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11A0EE1C1C4FE30200D01A05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11E27F9B1CC683F500A10847 /* ExploreDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreDetailTableViewController.swift; sourceTree = "<group>"; };
 		11F37C381CAF26CE00CFA9C6 /* SelectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTableViewController.swift; sourceTree = "<group>"; };
 		11F37C391CAF26CE00CFA9C6 /* SelectTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectTableViewController.xib; sourceTree = "<group>"; };
 		11F37C3C1CAF288A00CFA9C6 /* SelectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTableViewCell.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				11A0EE0E1C4FE30200D01A05 /* AppDelegate.swift */,
 				11A0EE101C4FE30200D01A05 /* MapViewController.swift */,
 				11A0EE121C4FE30200D01A05 /* ExploreViewController.swift */,
+				11E27F9B1CC683F500A10847 /* ExploreDetailTableViewController.swift */,
 				110729C71C4FF48900DBDD47 /* ThirdViewController.swift */,
 				110729C91C4FF49F00DBDD47 /* FourthViewController.swift */,
 				110729D01C52CE5600DBDD47 /* Location.swift */,
@@ -247,6 +250,7 @@
 				110729D11C52CE5600DBDD47 /* Location.swift in Sources */,
 				11F37C3A1CAF26CE00CFA9C6 /* SelectTableViewController.swift in Sources */,
 				110729CA1C4FF49F00DBDD47 /* FourthViewController.swift in Sources */,
+				11E27F9C1CC683F500A10847 /* ExploreDetailTableViewController.swift in Sources */,
 				11F37C3E1CAF288A00CFA9C6 /* SelectTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

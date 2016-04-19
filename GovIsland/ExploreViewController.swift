@@ -40,6 +40,7 @@ class ExploreViewController : UITableViewController
         tableView.estimatedRowHeight = 80.0
         tableView.allowsSelection = true
         tableView.separatorStyle = .None
+        tableView.separatorInset = UIEdgeInsetsZero
     }
     
     // MARK: - Table view data source
