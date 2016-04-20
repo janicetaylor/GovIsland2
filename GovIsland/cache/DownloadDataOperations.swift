@@ -42,32 +42,32 @@ class PendingOperations
 }
 
 
-class JSONDownloader: NSOperation
-{
-    let jsonInfo: JSONInfo
-    
-    init(jsonData: JSONInfo) {
-        self.jsonInfo = jsonInfo
-    }
-    
-    override func main() {
-        
-        // check for cancellation before starting
-        if self.cancelled {
-            return
-        }
-        
-        // start to download json 
-        
-        
-        // check for cancellation
-        
-        // if there is an object, change the state
-        
-        
-        
-    }
-    
-}
+//class JSONDownloader: NSOperation
+//{
+//    let jsonInfo: JSONInfo
+//    
+//    init(jsonData: JSONInfo) {
+//        // self.jsonInfo = jsonInfo
+//    }
+//    
+//    override func main() {
+//        
+//        // check for cancellation before starting
+//        if self.cancelled {
+//            return
+//        }
+//        
+//        // start to download json 
+//        
+//        
+//        // check for cancellation
+//        
+//        // if there is an object, change the state
+//        
+//        
+//        
+//    }
+//    
+//}
 
 

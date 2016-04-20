@@ -10,7 +10,6 @@ import UIKit
 import MapKit
 import SwiftyJSON
 import Alamofire
-import Haneke
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
@@ -71,6 +70,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         // go through saved preferences and load switch settings 
         // if first time, load in the first one?
         
+        // TODO: put this in a plist
+        
         // category ids
 //        1 - army buildings
 //        2 - army houses
@@ -107,12 +108,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         removeAllAnnotations()
         
-        for(index, item) in settingsArray.enumerate() {
-            if(item == true) {
-                let urlToLoad = urlArray[index]
-                updateMapWithFeed(urlToLoad, categoryId: index)
-            }
-        }
+        let downloadCache = DownloadCache()
+        downloadCache.downloadJson()
+        
+//        for(index, item) in settingsArray.enumerate() {
+//            if(item == true) {
+//                 let urlToLoad = urlArray[index]
+//                 updateMapWithFeed(urlToLoad, categoryId: index)
+//            }
+//        }
 
     }
     
@@ -127,7 +131,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let selectTableViewController = SelectTableViewController()
         self.navigationController?.pushViewController(selectTableViewController, animated: true)
     }
-    
     
 
     func updateMapWithFeed(feedUrlString: String, categoryId: Int) {
