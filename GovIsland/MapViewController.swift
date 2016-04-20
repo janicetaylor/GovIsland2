@@ -21,10 +21,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var imageIconArray :[String] = []
 
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
-        
         mapView.delegate = self
         
         configureMap()
@@ -36,14 +34,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     
-    override func viewWillAppear(animated: Bool)
-    {
+    override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         updateMap()
     }
     
-    func configureMap()
-    {
+    func configureMap() {
         let locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = 10
@@ -96,8 +92,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     
-    func updateMap()
-    {
+    func updateMap() {
         let userdefaults = NSUserDefaults.standardUserDefaults()
         let isFirstTime = userdefaults.boolForKey("isFirstTime")
         
@@ -122,22 +117,20 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     
-    func removeAllAnnotations()
-    {
+    func removeAllAnnotations() {
         mapView.removeAnnotations(mapView.annotations)
         mapView.showsUserLocation = true
     }
     
     
-    func selectFeed()
-    {
+    func selectFeed() {
         let selectTableViewController = SelectTableViewController()
         self.navigationController?.pushViewController(selectTableViewController, animated: true)
     }
     
+    
 
-    func updateMapWithFeed(feedUrlString: String, categoryId: Int)
-    {
+    func updateMapWithFeed(feedUrlString: String, categoryId: Int) {
         
         Alamofire.request(.GET, feedUrlString).responseJSON { response in
             
@@ -175,8 +168,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
 
     
-    func centerMapOnLocation(location: CLLocation)
-    {
+    func centerMapOnLocation(location: CLLocation) {
         let regionRadius: CLLocationDistance = 1000
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
                                                                   regionRadius * 2.0, regionRadius * 2.0)
@@ -237,8 +229,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     
-    func detailButtonSelected(selectedButton :UIButton)
-    {
+    func detailButtonSelected(selectedButton :UIButton) {
         print("detailButtonSelected : \(selectedButton.tag)")
         
         tabBarController?.selectedIndex = 1
