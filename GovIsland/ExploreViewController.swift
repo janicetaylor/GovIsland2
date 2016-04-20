@@ -19,6 +19,8 @@ class ExploreViewController : UITableViewController
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        // put this in plist?
+        
         self.selectArray = [
             "Army Buildings",
             "Army Homes",
@@ -64,6 +66,19 @@ class ExploreViewController : UITableViewController
         
         return exploreCell
        
+    }
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        print("indexPath.row : \(indexPath.row)")
+        
+        let detailExploreViewController = ExploreDetailTableViewController()
+        
+        detailExploreViewController.populateTableWithIndex(indexPath.row)
+        
+        self.navigationController?.pushViewController(detailExploreViewController, animated: true)
+        
     }
 
 

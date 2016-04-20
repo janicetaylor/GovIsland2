@@ -9,9 +9,16 @@
 import UIKit
 
 class ExploreDetailTableViewController: UITableViewController {
+    
+    var urlArray :[String] = []
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        
+        // look up the list based on the index 
+        
+        // ask the cache? 
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -19,12 +26,17 @@ class ExploreDetailTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    
+    func populateTableWithIndex(lookup:Int)
+    {
+        print("populateTableWithIndex : \(lookup)")
+        
+        
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
