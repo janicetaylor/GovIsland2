@@ -108,15 +108,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         removeAllAnnotations()
         
-        let downloadCache = DownloadCache()
-        downloadCache.downloadJson()
-        
-//        for(index, item) in settingsArray.enumerate() {
-//            if(item == true) {
-//                 let urlToLoad = urlArray[index]
-//                 updateMapWithFeed(urlToLoad, categoryId: index)
-//            }
-//        }
+        for(index, item) in settingsArray.enumerate() {
+            if(item == true) {
+                   let urlToLoad = urlArray[index]
+                    let downloadCache = DownloadCache()
+                    downloadCache.downloadJsonWithUrl(urlToLoad)
+                    // updateMapWithFeed(urlToLoad, categoryId: index)
+            }
+        }
 
     }
     
