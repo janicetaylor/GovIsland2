@@ -16,6 +16,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var mapView: MKMapView!
     var locationManager: CLLocationManager?
     var urlArray :[String] = []
+    var filenameArray :[String] = []
     var settingsArray :[Bool] = []
     var imageIconArray :[String] = []
 
@@ -90,6 +91,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                     "http://www.meladori.com/work/govisland/openspaces.json",
                     "http://www.meladori.com/work/govisland/pointsofinterest.json",
                     "http://www.meladori.com/work/govisland/recreation.json"]
+        
+        filenameArray = ["armybuildings",
+                         "armyhouses",
+                         "food",
+                         "restrooms",
+                         "landmarks",
+                         "openspaces",
+                         "pointsofinterest",
+                         "recreation"]
+
     }
     
     
@@ -110,10 +121,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         for(index, item) in settingsArray.enumerate() {
             if(item == true) {
-                   let urlToLoad = urlArray[index]
-                    let downloadCache = DownloadCache()
-                    downloadCache.downloadJsonWithUrl(urlToLoad)
+                    // let urlToLoad = urlArray[index]
+                let filenameToLoad :String = filenameArray[index]
+                
+//                    let downloadCache = DownloadCache()
+//                    downloadCache.downloadJsonWithUrl(filenameToLoad)
                     // updateMapWithFeed(urlToLoad, categoryId: index)
+                    updateMapWithLocalJson(filenameToLoad, categoryId: index)
+                
+                
             }
         }
 
@@ -130,6 +146,42 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let selectTableViewController = SelectTableViewController()
         self.navigationController?.pushViewController(selectTableViewController, animated: true)
     }
+    
+    
+    func updateMapWithLocalJson(fileName: String, categoryId: Int) {
+        
+        let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "json")
+        
+        if let data = NSData(contentsOfFile: path!) {
+            let json = JSON(data: data)
+            
+            //If json is .Dictionary
+            for (_,subJson):(String, JSON) in json {
+                
+                for (_,secondaryJson):(String, JSON) in subJson {
+                   
+                    for(_, tertiaryJson):(String, JSON) in secondaryJson {
+                     
+                        let mylatitude = tertiaryJson["latitude"].doubleValue
+                        let mylongitude = tertiaryJson["longitude"].doubleValue
+                        let title = tertiaryJson["name"].stringValue
+                        
+                        let mycoordinate = CLLocationCoordinate2D(latitude:mylatitude, longitude:mylongitude)
+                        
+                        let location = Location(coordinate: mycoordinate, title: title, subtitle: "", categoryId: categoryId)
+                        
+                        mapView.addAnnotation(location)
+                        
+                    }
+                    
+                }
+            }
+            
+            
+        }
+        
+    }
+
     
 
     func updateMapWithFeed(feedUrlString: String, categoryId: Int) {
