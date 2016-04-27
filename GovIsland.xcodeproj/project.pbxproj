@@ -21,6 +21,14 @@
 		11E27F9C1CC683F500A10847 /* ExploreDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E27F9B1CC683F500A10847 /* ExploreDetailTableViewController.swift */; };
 		11E27FA51CC7D31600A10847 /* DownloadDataOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E27FA41CC7D31600A10847 /* DownloadDataOperations.swift */; };
 		11E27FA71CC7D8C500A10847 /* DownloadCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E27FA61CC7D8C500A10847 /* DownloadCache.swift */; };
+		11E27FC11CC9198400A10847 /* armybuildings.json in Resources */ = {isa = PBXBuildFile; fileRef = 11E27FB91CC9198400A10847 /* armybuildings.json */; };
+		11E27FC21CC9198400A10847 /* armyhomes.json in Resources */ = {isa = PBXBuildFile; fileRef = 11E27FBA1CC9198400A10847 /* armyhomes.json */; };
+		11E27FC31CC9198400A10847 /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = 11E27FBB1CC9198400A10847 /* food.json */; };
+		11E27FC41CC9198400A10847 /* landmarks.json in Resources */ = {isa = PBXBuildFile; fileRef = 11E27FBC1CC9198400A10847 /* landmarks.json */; };
+		11E27FC51CC9198400A10847 /* openspaces.json in Resources */ = {isa = PBXBuildFile; fileRef = 11E27FBD1CC9198400A10847 /* openspaces.json */; };
+		11E27FC61CC9198400A10847 /* pointsofinterest.json in Resources */ = {isa = PBXBuildFile; fileRef = 11E27FBE1CC9198400A10847 /* pointsofinterest.json */; };
+		11E27FC71CC9198400A10847 /* recreation.json in Resources */ = {isa = PBXBuildFile; fileRef = 11E27FBF1CC9198400A10847 /* recreation.json */; };
+		11E27FC81CC9198400A10847 /* restrooms.json in Resources */ = {isa = PBXBuildFile; fileRef = 11E27FC01CC9198400A10847 /* restrooms.json */; };
 		11F37C3A1CAF26CE00CFA9C6 /* SelectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F37C381CAF26CE00CFA9C6 /* SelectTableViewController.swift */; };
 		11F37C3B1CAF26CE00CFA9C6 /* SelectTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F37C391CAF26CE00CFA9C6 /* SelectTableViewController.xib */; };
 		11F37C3E1CAF288A00CFA9C6 /* SelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F37C3C1CAF288A00CFA9C6 /* SelectTableViewCell.swift */; };
@@ -43,6 +51,14 @@
 		11E27F9B1CC683F500A10847 /* ExploreDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreDetailTableViewController.swift; sourceTree = "<group>"; };
 		11E27FA41CC7D31600A10847 /* DownloadDataOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadDataOperations.swift; path = cache/DownloadDataOperations.swift; sourceTree = "<group>"; };
 		11E27FA61CC7D8C500A10847 /* DownloadCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadCache.swift; path = cache/DownloadCache.swift; sourceTree = "<group>"; };
+		11E27FB91CC9198400A10847 /* armybuildings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = armybuildings.json; path = data/armybuildings.json; sourceTree = "<group>"; };
+		11E27FBA1CC9198400A10847 /* armyhomes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = armyhomes.json; path = data/armyhomes.json; sourceTree = "<group>"; };
+		11E27FBB1CC9198400A10847 /* food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = food.json; path = data/food.json; sourceTree = "<group>"; };
+		11E27FBC1CC9198400A10847 /* landmarks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = landmarks.json; path = data/landmarks.json; sourceTree = "<group>"; };
+		11E27FBD1CC9198400A10847 /* openspaces.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = openspaces.json; path = data/openspaces.json; sourceTree = "<group>"; };
+		11E27FBE1CC9198400A10847 /* pointsofinterest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = pointsofinterest.json; path = data/pointsofinterest.json; sourceTree = "<group>"; };
+		11E27FBF1CC9198400A10847 /* recreation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = recreation.json; path = data/recreation.json; sourceTree = "<group>"; };
+		11E27FC01CC9198400A10847 /* restrooms.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = restrooms.json; path = data/restrooms.json; sourceTree = "<group>"; };
 		11F37C381CAF26CE00CFA9C6 /* SelectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTableViewController.swift; sourceTree = "<group>"; };
 		11F37C391CAF26CE00CFA9C6 /* SelectTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectTableViewController.xib; sourceTree = "<group>"; };
 		11F37C3C1CAF288A00CFA9C6 /* SelectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTableViewCell.swift; sourceTree = "<group>"; };
@@ -87,6 +103,7 @@
 		11A0EE0D1C4FE30200D01A05 /* GovIsland */ = {
 			isa = PBXGroup;
 			children = (
+				11E27FA81CC9194800A10847 /* data */,
 				11E27F9F1CC7CE3C00A10847 /* cache */,
 				11A0EE0E1C4FE30200D01A05 /* AppDelegate.swift */,
 				11A0EE101C4FE30200D01A05 /* MapViewController.swift */,
@@ -114,6 +131,21 @@
 				11E27FA61CC7D8C500A10847 /* DownloadCache.swift */,
 			);
 			name = cache;
+			sourceTree = "<group>";
+		};
+		11E27FA81CC9194800A10847 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				11E27FB91CC9198400A10847 /* armybuildings.json */,
+				11E27FBA1CC9198400A10847 /* armyhomes.json */,
+				11E27FBB1CC9198400A10847 /* food.json */,
+				11E27FBC1CC9198400A10847 /* landmarks.json */,
+				11E27FBD1CC9198400A10847 /* openspaces.json */,
+				11E27FBE1CC9198400A10847 /* pointsofinterest.json */,
+				11E27FBF1CC9198400A10847 /* recreation.json */,
+				11E27FC01CC9198400A10847 /* restrooms.json */,
+			);
+			name = data;
 			sourceTree = "<group>";
 		};
 		8753411165CB3218865AC383 /* Pods */ = {
@@ -195,9 +227,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				11F37C3F1CAF288A00CFA9C6 /* SelectTableViewCell.xib in Resources */,
+				11E27FC31CC9198400A10847 /* food.json in Resources */,
+				11E27FC81CC9198400A10847 /* restrooms.json in Resources */,
+				11E27FC61CC9198400A10847 /* pointsofinterest.json in Resources */,
+				11E27FC71CC9198400A10847 /* recreation.json in Resources */,
 				11A0EE1B1C4FE30200D01A05 /* LaunchScreen.storyboard in Resources */,
+				11E27FC11CC9198400A10847 /* armybuildings.json in Resources */,
 				11F37C3B1CAF26CE00CFA9C6 /* SelectTableViewController.xib in Resources */,
 				11A0EE181C4FE30200D01A05 /* Assets.xcassets in Resources */,
+				11E27FC51CC9198400A10847 /* openspaces.json in Resources */,
+				11E27FC21CC9198400A10847 /* armyhomes.json in Resources */,
+				11E27FC41CC9198400A10847 /* landmarks.json in Resources */,
 				11A0EE161C4FE30200D01A05 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
