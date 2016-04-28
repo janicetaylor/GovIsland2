@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ExploreDetailTableViewController: UITableViewController {
     
-    var urlArray :[String] = []
-
+    var titleArray :[String] = []
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ class ExploreDetailTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+       
     }
     
     
@@ -32,7 +34,44 @@ class ExploreDetailTableViewController: UITableViewController {
     {
         print("populateTableWithIndex : \(lookup)")
         
+        var filenameArray :[String] = [ "armybuildings",
+                                        "armyhouses",
+                                        "food",
+                                        "restrooms",
+                                        "landmarks",
+                                        "openspaces",
+                                        "pointsofinterest",
+                                        "recreation"]
         
+        let fileName = filenameArray[lookup]
+        
+        print("fileName : \(fileName)")
+        
+        let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "json")
+        
+        if let data = NSData(contentsOfFile: path!) {
+            let json = JSON(data: data)
+            
+                // If json is .Dictionary
+                for(_,subJson):(String, JSON) in json {
+                    
+                    // print("subJson : \(subJson)")
+                    
+                    let locationJson = subJson["location"]
+                    
+                    // print("locationJson : \(locationJson)")
+                    
+                    for(_,secondaryJson):(String, JSON) in locationJson {
+                        let title = secondaryJson["title"].stringValue
+                        // print("title : \(title)")
+                        
+                        titleArray.append(title)
+                    }
+                    
+                    self.navigationItem.title = subJson["title"].stringValue
+                    
+                }
+        }
 
     }
 
@@ -46,18 +85,23 @@ class ExploreDetailTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        print(titleArray.count)
+        
+        return titleArray.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("exploreDetailCell", forIndexPath: indexPath)
+        
+        cell.textLabel?.text = titleArray[indexPath.row]
+        
+        print(titleArray[indexPath.row])
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

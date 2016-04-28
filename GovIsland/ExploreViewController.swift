@@ -65,11 +65,10 @@ class ExploreViewController : UITableViewController
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("indexPath.row : \(indexPath.row)")
         
         let detailExploreViewController = ExploreDetailTableViewController()
         
-        detailExploreViewController.populateTableWithIndex(indexPath.row)
+        detailExploreViewController.populateTableWithIndex(indexPath.row as Int)
         
         self.navigationController?.pushViewController(detailExploreViewController, animated: true)
         

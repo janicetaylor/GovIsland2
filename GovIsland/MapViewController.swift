@@ -92,6 +92,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                     "http://www.meladori.com/work/govisland/pointsofinterest.json",
                     "http://www.meladori.com/work/govisland/recreation.json"]
         
+        // put in plist
+        
         filenameArray = ["armybuildings",
                          "armyhouses",
                          "food",
