@@ -66,8 +66,9 @@ class ExploreViewController : UITableViewController
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let detailExploreViewController = ExploreDetailTableViewController()
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailExploreViewController = storyboard.instantiateViewControllerWithIdentifier("ExploreDetailTableViewController") as! ExploreDetailTableViewController
+         
         detailExploreViewController.populateTableWithIndex(indexPath.row as Int)
         
         self.navigationController?.pushViewController(detailExploreViewController, animated: true)
