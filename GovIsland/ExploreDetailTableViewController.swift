@@ -17,6 +17,8 @@ class ExploreDetailTableViewController: UITableViewController {
     {
         super.viewDidLoad()
         
+        configureTableView()
+        
         // look up the list based on the index 
         
         // ask the cache? 
@@ -29,6 +31,15 @@ class ExploreDetailTableViewController: UITableViewController {
        
     }
     
+    
+    func configureTableView() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 80.0
+        tableView.allowsSelection = true
+        tableView.separatorStyle = .None
+        tableView.separatorInset = UIEdgeInsetsZero
+    }
+
     
     func populateTableWithIndex(lookup:Int)
     {
@@ -52,24 +63,17 @@ class ExploreDetailTableViewController: UITableViewController {
         if let data = NSData(contentsOfFile: path!) {
             let json = JSON(data: data)
             
-                // If json is .Dictionary
                 for(_,subJson):(String, JSON) in json {
-                    
-                    // print("subJson : \(subJson)")
                     
                     let locationJson = subJson["location"]
                     
-                    // print("locationJson : \(locationJson)")
-                    
                     for(_,secondaryJson):(String, JSON) in locationJson {
                         let title = secondaryJson["title"].stringValue
-                        // print("title : \(title)")
                         
                         titleArray.append(title)
                     }
                     
                     self.navigationItem.title = subJson["title"].stringValue
-                    
                 }
         }
 
@@ -92,10 +96,15 @@ class ExploreDetailTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("exploreDetailTableViewCell", forIndexPath: indexPath)
         
         cell.textLabel?.text = titleArray[indexPath.row]
-        
-        print(titleArray[indexPath.row])
-        
         return cell
+    }
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailViewController = storyboard.instantiateViewControllerWithIdentifier("ExploreDetailWebViewController") as! ExploreDetailViewController
+        
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
     
 

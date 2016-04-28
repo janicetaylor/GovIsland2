@@ -29,6 +29,7 @@
 		11F01D1C1CD15F7C002F08C5 /* recreation.json in Resources */ = {isa = PBXBuildFile; fileRef = 11F01D141CD15F7C002F08C5 /* recreation.json */; };
 		11F01D1D1CD15F7C002F08C5 /* restrooms.json in Resources */ = {isa = PBXBuildFile; fileRef = 11F01D151CD15F7C002F08C5 /* restrooms.json */; };
 		11F01D1E1CD15F7C002F08C5 /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = 11F01D161CD15F7C002F08C5 /* food.json */; };
+		11F01D261CD2A648002F08C5 /* ExploreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F01D251CD2A648002F08C5 /* ExploreDetailViewController.swift */; };
 		11F37C3A1CAF26CE00CFA9C6 /* SelectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F37C381CAF26CE00CFA9C6 /* SelectTableViewController.swift */; };
 		11F37C3B1CAF26CE00CFA9C6 /* SelectTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F37C391CAF26CE00CFA9C6 /* SelectTableViewController.xib */; };
 		11F37C3E1CAF288A00CFA9C6 /* SelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F37C3C1CAF288A00CFA9C6 /* SelectTableViewCell.swift */; };
@@ -59,6 +60,7 @@
 		11F01D141CD15F7C002F08C5 /* recreation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = recreation.json; path = data/recreation.json; sourceTree = "<group>"; };
 		11F01D151CD15F7C002F08C5 /* restrooms.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = restrooms.json; path = data/restrooms.json; sourceTree = "<group>"; };
 		11F01D161CD15F7C002F08C5 /* food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = food.json; path = data/food.json; sourceTree = "<group>"; };
+		11F01D251CD2A648002F08C5 /* ExploreDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreDetailViewController.swift; sourceTree = "<group>"; };
 		11F37C381CAF26CE00CFA9C6 /* SelectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTableViewController.swift; sourceTree = "<group>"; };
 		11F37C391CAF26CE00CFA9C6 /* SelectTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectTableViewController.xib; sourceTree = "<group>"; };
 		11F37C3C1CAF288A00CFA9C6 /* SelectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTableViewCell.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				11A0EE101C4FE30200D01A05 /* MapViewController.swift */,
 				11A0EE121C4FE30200D01A05 /* ExploreViewController.swift */,
 				11E27F9B1CC683F500A10847 /* ExploreDetailTableViewController.swift */,
+				11F01D251CD2A648002F08C5 /* ExploreDetailViewController.swift */,
 				110729C71C4FF48900DBDD47 /* ThirdViewController.swift */,
 				110729C91C4FF49F00DBDD47 /* FourthViewController.swift */,
 				110729D01C52CE5600DBDD47 /* Location.swift */,
@@ -304,6 +307,7 @@
 				11A0EE111C4FE30200D01A05 /* MapViewController.swift in Sources */,
 				110729D11C52CE5600DBDD47 /* Location.swift in Sources */,
 				11F37C3A1CAF26CE00CFA9C6 /* SelectTableViewController.swift in Sources */,
+				11F01D261CD2A648002F08C5 /* ExploreDetailViewController.swift in Sources */,
 				110729CA1C4FF49F00DBDD47 /* FourthViewController.swift in Sources */,
 				11E27FA71CC7D8C500A10847 /* DownloadCache.swift in Sources */,
 				11E27F9C1CC683F500A10847 /* ExploreDetailTableViewController.swift in Sources */,

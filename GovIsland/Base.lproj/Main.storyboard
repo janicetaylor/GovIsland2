@@ -156,6 +156,39 @@
             </objects>
             <point key="canvasLocation" x="2186" y="333"/>
         </scene>
+        <!--Explore Detail View Controller-->
+        <scene sceneID="Oec-mP-8I7">
+            <objects>
+                <viewController storyboardIdentifier="ExploreDetailWebViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vfa-e1-zLH" customClass="ExploreDetailViewController" customModule="GovIsland" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="idp-xC-7aW"/>
+                        <viewControllerLayoutGuide type="bottom" id="eI7-SA-ARu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yrP-zZ-eMu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddL-WW-Wmb">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ddL-WW-Wmb" secondAttribute="trailing" id="5rK-e2-gJk"/>
+                            <constraint firstItem="ddL-WW-Wmb" firstAttribute="top" secondItem="yrP-zZ-eMu" secondAttribute="top" id="ELX-bZ-DmR"/>
+                            <constraint firstItem="ddL-WW-Wmb" firstAttribute="leading" secondItem="yrP-zZ-eMu" secondAttribute="leading" id="HaG-NE-t49"/>
+                            <constraint firstItem="eI7-SA-ARu" firstAttribute="top" secondItem="ddL-WW-Wmb" secondAttribute="bottom" id="JbH-rr-mFb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="ddL-WW-Wmb" id="4j0-KR-Aa4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ht-CF-QpY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2828" y="333"/>
+        </scene>
         <!--Explore-->
         <scene sceneID="Tkv-21-puc">
             <objects>
