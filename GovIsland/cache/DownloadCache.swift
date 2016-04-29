@@ -31,14 +31,9 @@ class DownloadCache
         configuration.URLCache = cache
         
         // Create your own manager instance that uses your custom configuration
-        // let manager = Alamofire.Manager.sharedInstance
+        let manager = Alamofire.Manager.sharedInstance
         
         // let manager = Alamofire.Manager(configuration: configuration)
-        
-        manager = Alamofire.Manager(configuration: configuration)
-        
-        
-        print(manager)
         
         // Make your request with your custom manager that is caching your requests by default
         manager.request(.GET, urlString, parameters: nil, encoding: .URL)
@@ -46,14 +41,43 @@ class DownloadCache
                 
                 print("error: \(error)")
                 
-                print(self.manager)
+                print("request : \(request)")
+                print("response : \(response)")
+                print("data : \(data)")
+
                 
                 let cachedURLResponse = NSCachedURLResponse(response: response!, data: (data! as NSData), userInfo: nil, storagePolicy: .Allowed)
+                
+                print("cachedURLResponse : \(cachedURLResponse)")
+
                 NSURLCache.sharedURLCache().storeCachedResponse(cachedURLResponse, forRequest: request!)
                 
-                let swiftyJsonVar = JSON(response!)
-                
-                
+                    let json = JSON(data: data!)
+                    
+                    //If json is .Dictionary
+                    for (_,subJson):(String, JSON) in json {
+                        
+                        for (_,secondaryJson):(String, JSON) in subJson {
+                            
+                            for(_, tertiaryJson):(String, JSON) in secondaryJson {
+                                
+                                let mylatitude = tertiaryJson["latitude"].doubleValue
+                                let mylongitude = tertiaryJson["longitude"].doubleValue
+                                let title = tertiaryJson["name"].stringValue
+                                
+                                print("mylatitude : \(mylatitude)")
+                                print("mylongitude : \(mylongitude)")
+                                print("title : \(title)")
+                                
+                                
+//                                let mycoordinate = CLLocationCoordinate2D(latitude:mylatitude, longitude:mylongitude)
+//                                
+//                                let location = Location(coordinate: mycoordinate, title: title, subtitle: "", categoryId: categoryId)
+                                
+                            }
+                        }
+                    }
+        
                 
                 // Now parse the data using SwiftyJSON
                 // This will come from your custom cache if it is not expired,

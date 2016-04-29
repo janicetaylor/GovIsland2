@@ -206,6 +206,7 @@
 				TargetAttributes = {
 					11A0EE0A1C4FE30200D01A05 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = U9VFYB8Z4V;
 					};
 				};
 			};
@@ -429,6 +430,7 @@
 			baseConfigurationReference = A90634F92133367D84E46BB2 /* Pods-GovIsland.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = GovIsland/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meladori.GovIsland;
@@ -441,6 +443,7 @@
 			baseConfigurationReference = 6501095C28580E526B0D9A1E /* Pods-GovIsland.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = GovIsland/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meladori.GovIsland;

@@ -123,13 +123,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         for(index, item) in settingsArray.enumerate() {
             if(item == true) {
-                    // let urlToLoad = urlArray[index]
-                    let filenameToLoad :String = filenameArray[index]
+                    let urlToLoad = urlArray[index]
+                    // let filenameToLoad :String = filenameArray[index]
                 
-                    // let downloadCache = DownloadCache()
-                    // downloadCache.downloadJsonWithUrl(filenameToLoad)
+                    let downloadCache = DownloadCache()
+                    downloadCache.downloadJsonWithUrl(urlToLoad)
                     // updateMapWithFeed(urlToLoad, categoryId: index)
-                    updateMapWithLocalJson(filenameToLoad, categoryId: index)
+                
+                    // updateMapWithLocalJson(filenameToLoad, categoryId: index)
                 
             }
         }
