@@ -9,12 +9,14 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import MapKit
 
 class DownloadCache
 {
     var manager :Manager = Manager()
+    var locationArray :[Location] = []
     
-    func downloadJsonWithUrl(urlString:String) {
+    func downloadJsonWithUrl(urlString:String, categoryId:Int) {
         
         print("downloading json : \(urlString)")
         
@@ -41,15 +43,8 @@ class DownloadCache
                 
                 print("error: \(error)")
                 
-                print("request : \(request)")
-                print("response : \(response)")
-                print("data : \(data)")
-
-                
                 let cachedURLResponse = NSCachedURLResponse(response: response!, data: (data! as NSData), userInfo: nil, storagePolicy: .Allowed)
                 
-                print("cachedURLResponse : \(cachedURLResponse)")
-
                 NSURLCache.sharedURLCache().storeCachedResponse(cachedURLResponse, forRequest: request!)
                 
                     let json = JSON(data: data!)
@@ -69,10 +64,11 @@ class DownloadCache
                                 print("mylongitude : \(mylongitude)")
                                 print("title : \(title)")
                                 
+                                let mycoordinate = CLLocationCoordinate2D(latitude:mylatitude, longitude:mylongitude)
                                 
-//                                let mycoordinate = CLLocationCoordinate2D(latitude:mylatitude, longitude:mylongitude)
-//                                
-//                                let location = Location(coordinate: mycoordinate, title: title, subtitle: "", categoryId: categoryId)
+                                let location = Location(coordinate: mycoordinate, title: title, subtitle: "", categoryId: categoryId)
+                                
+                                self.locationArray.append(location)
                                 
                             }
                         }
@@ -82,6 +78,8 @@ class DownloadCache
                 // Now parse the data using SwiftyJSON
                 // This will come from your custom cache if it is not expired,
                 // and from the network if it is expired
+                
+                print("locationArray : \(self.locationArray)")
         }
                 
     }
