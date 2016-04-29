@@ -30,6 +30,7 @@
 		11F01D1D1CD15F7C002F08C5 /* restrooms.json in Resources */ = {isa = PBXBuildFile; fileRef = 11F01D151CD15F7C002F08C5 /* restrooms.json */; };
 		11F01D1E1CD15F7C002F08C5 /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = 11F01D161CD15F7C002F08C5 /* food.json */; };
 		11F01D261CD2A648002F08C5 /* ExploreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F01D251CD2A648002F08C5 /* ExploreDetailViewController.swift */; };
+		11F01D281CD2C324002F08C5 /* webView.html in Resources */ = {isa = PBXBuildFile; fileRef = 11F01D271CD2C324002F08C5 /* webView.html */; };
 		11F37C3A1CAF26CE00CFA9C6 /* SelectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F37C381CAF26CE00CFA9C6 /* SelectTableViewController.swift */; };
 		11F37C3B1CAF26CE00CFA9C6 /* SelectTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F37C391CAF26CE00CFA9C6 /* SelectTableViewController.xib */; };
 		11F37C3E1CAF288A00CFA9C6 /* SelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F37C3C1CAF288A00CFA9C6 /* SelectTableViewCell.swift */; };
@@ -61,6 +62,7 @@
 		11F01D151CD15F7C002F08C5 /* restrooms.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = restrooms.json; path = data/restrooms.json; sourceTree = "<group>"; };
 		11F01D161CD15F7C002F08C5 /* food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = food.json; path = data/food.json; sourceTree = "<group>"; };
 		11F01D251CD2A648002F08C5 /* ExploreDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreDetailViewController.swift; sourceTree = "<group>"; };
+		11F01D271CD2C324002F08C5 /* webView.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = webView.html; path = data/webView.html; sourceTree = "<group>"; };
 		11F37C381CAF26CE00CFA9C6 /* SelectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTableViewController.swift; sourceTree = "<group>"; };
 		11F37C391CAF26CE00CFA9C6 /* SelectTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectTableViewController.xib; sourceTree = "<group>"; };
 		11F37C3C1CAF288A00CFA9C6 /* SelectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTableViewCell.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		11E27FA81CC9194800A10847 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				11F01D271CD2C324002F08C5 /* webView.html */,
 				11F01D0F1CD15F7C002F08C5 /* pointsofinterest.json */,
 				11F01D101CD15F7C002F08C5 /* openspaces.json */,
 				11F01D111CD15F7C002F08C5 /* landmarks.json */,
@@ -235,6 +238,7 @@
 				11F01D1E1CD15F7C002F08C5 /* food.json in Resources */,
 				11F01D191CD15F7C002F08C5 /* landmarks.json in Resources */,
 				11F37C3B1CAF26CE00CFA9C6 /* SelectTableViewController.xib in Resources */,
+				11F01D281CD2C324002F08C5 /* webView.html in Resources */,
 				11A0EE181C4FE30200D01A05 /* Assets.xcassets in Resources */,
 				11A0EE161C4FE30200D01A05 /* Main.storyboard in Resources */,
 				11F01D181CD15F7C002F08C5 /* openspaces.json in Resources */,

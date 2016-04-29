@@ -43,8 +43,6 @@ class ExploreDetailTableViewController: UITableViewController {
     
     func populateTableWithIndex(lookup:Int)
     {
-        print("populateTableWithIndex : \(lookup)")
-        
         var filenameArray :[String] = [ "armybuildings",
                                         "armyhouses",
                                         "food",
@@ -55,8 +53,6 @@ class ExploreDetailTableViewController: UITableViewController {
                                         "recreation"]
         
         let fileName = filenameArray[lookup]
-        
-        print("fileName : \(fileName)")
         
         let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "json")
         
