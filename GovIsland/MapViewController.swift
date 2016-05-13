@@ -128,7 +128,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 
                     let downloadCache = DownloadCache()
                     downloadCache.downloadJsonWithUrl(urlToLoad, categoryId: index)
-                    // updateMapWithFeed(urlToLoad, categoryId: index)
+                    updateMapWithFeed(urlToLoad, categoryId: index)
                 
                     // updateMapWithLocalJson(filenameToLoad, categoryId: index)
                 
