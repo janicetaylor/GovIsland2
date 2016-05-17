@@ -59,6 +59,8 @@ class ExploreDetailTableViewController: UITableViewController {
         
         let fileName = filenameArray[lookup]
         
+        // TODO: loading this locally for now, should cache and load this dynamically? 
+        
         let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "json")
         
         if let data = NSData(contentsOfFile: path!) {
