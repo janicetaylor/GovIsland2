@@ -94,6 +94,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         // put in plist
         
+        let plistpath :String = NSBundle.mainBundle().pathForResource("govisland", ofType: "plist")!
+        let locations :NSArray = NSArray(contentsOfFile: plistpath)!;
+        
+        print("locations : \(locations)")
+        
         filenameArray = ["armybuildings",
                          "armyhouses",
                          "food",
@@ -105,15 +110,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
     }
     
+    // TODO: test this when all the json files are ready!
     
     func updateMap() {
         let userdefaults = NSUserDefaults.standardUserDefaults()
         let isFirstTime = userdefaults.boolForKey("isFirstTime")
         
-        if(isFirstTime == false) {
+         if(isFirstTime == false) {
             settingsArray = [false, false, true, false, false, false, false, false]
             userdefaults.setObject(settingsArray, forKey: "locationsToLoad")
-        }
+         }
             
         else {
             settingsArray = userdefaults.objectForKey("locationsToLoad") as! Array
