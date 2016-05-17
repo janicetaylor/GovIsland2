@@ -11,9 +11,14 @@ import EventKit
 import SwiftyJSON
 
 class EventsTableViewController: UITableViewController {
+    
+    var eventArray :[Event] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let eventNib = UINib(nibName: "EventsTableViewCell", bundle: nil)
+        tableView.registerNib(eventNib, forCellReuseIdentifier:"eventsTableViewCell")
         
         configureTableView()
         populateTable()
@@ -42,6 +47,21 @@ class EventsTableViewController: UITableViewController {
                 for(_,secondaryJson):(String, JSON) in eventsJson {
                     
                     print("secondaryJson : \(secondaryJson)")
+                    
+                    let location = secondaryJson["location"].stringValue
+                    let about = secondaryJson["about"].stringValue
+                    let title = secondaryJson["title"].stringValue
+                    let url = secondaryJson["link"].stringValue
+                    let time = secondaryJson["time"].stringValue
+                    let datestring = secondaryJson["date"].stringValue
+                    
+                    let dateFormatter = NSDateFormatter()
+                    dateFormatter.dateFormat = "MM/dd/yyyy"
+                    let date = dateFormatter.dateFromString(datestring)
+                    
+                    let event:Event = Event(location: location, about: about, title: title, url: url, time: time, date: date!)
+                    
+                    eventArray.append(event)
                     
                 }
                 
@@ -86,11 +106,11 @@ class EventsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return eventArray.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
