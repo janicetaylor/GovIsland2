@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0624805F6E386DED4875C68E /* Pods_GovIsland.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D6AAA9DF2E6E122467718F /* Pods_GovIsland.framework */; };
-		110729C81C4FF48900DBDD47 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110729C71C4FF48900DBDD47 /* ThirdViewController.swift */; };
-		110729CA1C4FF49F00DBDD47 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110729C91C4FF49F00DBDD47 /* FourthViewController.swift */; };
 		110729CC1C4FF5AA00DBDD47 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 110729CB1C4FF5AA00DBDD47 /* MapKit.framework */; };
 		111415291CEB90FD00986FE5 /* govisland.plist in Resources */ = {isa = PBXBuildFile; fileRef = 111415281CEB90FD00986FE5 /* govisland.plist */; };
 		1114152B1CEB942A00986FE5 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1114152A1CEB942A00986FE5 /* EventsTableViewController.swift */; };
@@ -18,6 +16,8 @@
 		111415311CEB9CDB00986FE5 /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = 111415301CEB9CDB00986FE5 /* events.json */; };
 		111415341CEBA06700986FE5 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111415331CEBA06700986FE5 /* Location.swift */; };
 		111415361CEBA3D900986FE5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111415351CEBA3D900986FE5 /* Event.swift */; };
+		111415381CEBB97E00986FE5 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111415371CEBB97E00986FE5 /* AboutViewController.swift */; };
+		1114153A1CEBB9D800986FE5 /* webViewAbout.html in Resources */ = {isa = PBXBuildFile; fileRef = 111415391CEBB9D800986FE5 /* webViewAbout.html */; };
 		11A0EE0F1C4FE30200D01A05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EE0E1C4FE30200D01A05 /* AppDelegate.swift */; };
 		11A0EE111C4FE30200D01A05 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EE101C4FE30200D01A05 /* MapViewController.swift */; };
 		11A0EE131C4FE30200D01A05 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EE121C4FE30200D01A05 /* ExploreViewController.swift */; };
@@ -44,8 +44,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		110729C71C4FF48900DBDD47 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
-		110729C91C4FF49F00DBDD47 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		110729CB1C4FF5AA00DBDD47 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		111415281CEB90FD00986FE5 /* govisland.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = govisland.plist; sourceTree = "<group>"; };
 		1114152A1CEB942A00986FE5 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +52,8 @@
 		111415301CEB9CDB00986FE5 /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = events.json; path = data/events.json; sourceTree = "<group>"; };
 		111415331CEBA06700986FE5 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = model/Location.swift; sourceTree = "<group>"; };
 		111415351CEBA3D900986FE5 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = model/Event.swift; sourceTree = "<group>"; };
+		111415371CEBB97E00986FE5 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		111415391CEBB9D800986FE5 /* webViewAbout.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = webViewAbout.html; path = data/webViewAbout.html; sourceTree = "<group>"; };
 		11A0EE0B1C4FE30200D01A05 /* GovIsland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GovIsland.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11A0EE0E1C4FE30200D01A05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11A0EE101C4FE30200D01A05 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -132,12 +132,11 @@
 				11E27FA81CC9194800A10847 /* data */,
 				11E27F9F1CC7CE3C00A10847 /* cache */,
 				11A0EE0E1C4FE30200D01A05 /* AppDelegate.swift */,
+				111415371CEBB97E00986FE5 /* AboutViewController.swift */,
 				11A0EE101C4FE30200D01A05 /* MapViewController.swift */,
 				11A0EE121C4FE30200D01A05 /* ExploreViewController.swift */,
 				11E27F9B1CC683F500A10847 /* ExploreDetailTableViewController.swift */,
 				11F01D251CD2A648002F08C5 /* ExploreDetailViewController.swift */,
-				110729C71C4FF48900DBDD47 /* ThirdViewController.swift */,
-				110729C91C4FF49F00DBDD47 /* FourthViewController.swift */,
 				11F37C381CAF26CE00CFA9C6 /* SelectTableViewController.swift */,
 				11F37C391CAF26CE00CFA9C6 /* SelectTableViewController.xib */,
 				11F37C3C1CAF288A00CFA9C6 /* SelectTableViewCell.swift */,
@@ -166,6 +165,7 @@
 		11E27FA81CC9194800A10847 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				111415391CEBB9D800986FE5 /* webViewAbout.html */,
 				11F01D271CD2C324002F08C5 /* webView.html */,
 				111415301CEB9CDB00986FE5 /* events.json */,
 				11F01D0F1CD15F7C002F08C5 /* pointsofinterest.json */,
@@ -271,6 +271,7 @@
 				11A0EE181C4FE30200D01A05 /* Assets.xcassets in Resources */,
 				11A0EE161C4FE30200D01A05 /* Main.storyboard in Resources */,
 				11F01D181CD15F7C002F08C5 /* openspaces.json in Resources */,
+				1114153A1CEBB9D800986FE5 /* webViewAbout.html in Resources */,
 				11F01D1D1CD15F7C002F08C5 /* restrooms.json in Resources */,
 				11F01D1B1CD15F7C002F08C5 /* armybuildings.json in Resources */,
 				111415311CEB9CDB00986FE5 /* events.json in Resources */,
@@ -339,15 +340,14 @@
 				11E27FA51CC7D31600A10847 /* DownloadDataOperations.swift in Sources */,
 				11A0EE0F1C4FE30200D01A05 /* AppDelegate.swift in Sources */,
 				111415361CEBA3D900986FE5 /* Event.swift in Sources */,
-				110729C81C4FF48900DBDD47 /* ThirdViewController.swift in Sources */,
 				11A0EE111C4FE30200D01A05 /* MapViewController.swift in Sources */,
 				111415341CEBA06700986FE5 /* Location.swift in Sources */,
 				11F37C3A1CAF26CE00CFA9C6 /* SelectTableViewController.swift in Sources */,
 				1114152E1CEB965B00986FE5 /* EventsTableViewCell.swift in Sources */,
 				11F01D261CD2A648002F08C5 /* ExploreDetailViewController.swift in Sources */,
-				110729CA1C4FF49F00DBDD47 /* FourthViewController.swift in Sources */,
 				11E27FA71CC7D8C500A10847 /* DownloadCache.swift in Sources */,
 				11E27F9C1CC683F500A10847 /* ExploreDetailTableViewController.swift in Sources */,
+				111415381CEBB97E00986FE5 /* AboutViewController.swift in Sources */,
 				11F37C3E1CAF288A00CFA9C6 /* SelectTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

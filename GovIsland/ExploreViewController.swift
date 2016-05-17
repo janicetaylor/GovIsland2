@@ -32,6 +32,8 @@ class ExploreViewController : UITableViewController
         ]
         
         configureTableView()
+        
+        self.navigationItem.title = "Explore"
 
     }
     

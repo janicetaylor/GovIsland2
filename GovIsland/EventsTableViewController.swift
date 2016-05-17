@@ -20,11 +20,10 @@ class EventsTableViewController: UITableViewController {
         let eventNib = UINib(nibName: "EventsTableViewCell", bundle: nil)
         tableView.registerNib(eventNib, forCellReuseIdentifier:"eventsTableViewCell")
         
+        self.navigationItem.title = "Events"
+        
         configureTableView()
         populateTable()
-    
-        // addEventToCalendar(title: "Girlfriend birthday", description: "Remember or die!", startDate: NSDate(), endDate: NSDate())
-
     }
     
     func populateTable() {
@@ -70,6 +69,7 @@ class EventsTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 80.0
         tableView.allowsSelection = false
         tableView.separatorStyle = .SingleLine
+        
     }
     
     
