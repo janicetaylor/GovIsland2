@@ -43,6 +43,9 @@ class ExploreDetailTableViewController: UITableViewController {
     
     func populateTableWithIndex(lookup:Int)
     {
+        
+        // TODO: put this in a plist
+        
         var filenameArray :[String] = [ "armybuildings",
                                         "armyhouses",
                                         "food",
@@ -68,6 +71,8 @@ class ExploreDetailTableViewController: UITableViewController {
                         
                         titleArray.append(title)
                     }
+                    
+                    print("subJson : \(subJson)")
                     
                     self.navigationItem.title = subJson["title"].stringValue
                 }
