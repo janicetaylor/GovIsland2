@@ -38,15 +38,9 @@ class EventsTableViewController: UITableViewController {
             
             for(_,subJson):(String, JSON) in json {
                 
-                print("json : \(json)")
-                
                 let eventsJson = subJson["event"]
                 
-                print("subJson : \(subJson)")
-                
                 for(_,secondaryJson):(String, JSON) in eventsJson {
-                    
-                    print("secondaryJson : \(secondaryJson)")
                     
                     let location = secondaryJson["location"].stringValue
                     let about = secondaryJson["about"].stringValue
@@ -75,7 +69,7 @@ class EventsTableViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 80.0
         tableView.allowsSelection = false
-        tableView.separatorStyle = .None
+        tableView.separatorStyle = .SingleLine
     }
     
     
@@ -116,10 +110,33 @@ class EventsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         let eventsCell: EventsTableViewCell = tableView.dequeueReusableCellWithIdentifier("eventsTableViewCell", forIndexPath: indexPath) as! EventsTableViewCell
-
+        
+        let event:Event = eventArray[indexPath.row]
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        let dateString = dateFormatter.stringFromDate(event.date)
+        
+        eventsCell.titleLabel.text = event.title
+        eventsCell.aboutLabel.text = event.about
+        eventsCell.dateLabel.text = "\(dateString) at \(event.time) in \(event.location)"
+        eventsCell.calendarButton.tag = indexPath.row
+        eventsCell.calendarButton.addTarget(self, action:#selector(EventsTableViewController.didAddToCalendar), forControlEvents:UIControlEvents.TouchUpInside)
+        eventsCell.separatorInset = UIEdgeInsetsZero
+        
         return eventsCell
     }
  
+    func didAddToCalendar(sender:UIButton) {
+        
+        let eventSelected:Event = eventArray[sender.tag]
+        
+        print("adding event to calendar : \(eventSelected.title)")
+        print("date adding to calendar : \(eventSelected.date)")
+        
+        addEventToCalendar(title: eventSelected.title, description: eventSelected.about, startDate: eventSelected.date, endDate: eventSelected.date)
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.

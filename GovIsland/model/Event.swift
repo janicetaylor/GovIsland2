@@ -10,10 +10,10 @@ import UIKit
 
 class Event: NSObject {
     
-    var location: String?
-    var about: String?
-    var title: String?
-    var url: String?
+    var location: String!
+    var about: String!
+    var title: String!
+    var url: String!
     var time: String!
     var date: NSDate!
     

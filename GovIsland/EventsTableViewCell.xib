@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -15,8 +16,8 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYN-VA-tKG">
-                        <rect key="frame" x="8" y="8" width="30" height="21"/>
-                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                        <rect key="frame" x="8" y="8" width="357" height="21"/>
+                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -34,7 +35,7 @@
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06/11/2016 at 12:00 in Colonels Row Green" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlu-k0-jDT">
                         <rect key="frame" x="8" y="26" width="383" height="21"/>
-                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                        <fontDescription key="fontDescription" name="Avenir-BookOblique" family="Avenir" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -47,20 +48,27 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="3xo-zg-uuP" firstAttribute="leading" secondItem="lYN-VA-tKG" secondAttribute="trailing" constant="36" id="2bc-1B-xd3"/>
                     <constraint firstItem="wlu-k0-jDT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="26" id="H2w-oO-Bb7"/>
-                    <constraint firstItem="lYN-VA-tKG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="OES-Yc-XcF"/>
                     <constraint firstItem="3xo-zg-uuP" firstAttribute="leading" secondItem="wlu-k0-jDT" secondAttribute="trailing" constant="10" id="QZb-LD-eUw"/>
                     <constraint firstItem="wlu-k0-jDT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="UaF-nk-U2g"/>
+                    <constraint firstItem="lYN-VA-tKG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Y9o-0B-Za1"/>
                     <constraint firstAttribute="trailing" secondItem="3xo-zg-uuP" secondAttribute="trailing" constant="8" id="Yie-38-5NS"/>
                     <constraint firstItem="934-6n-rLA" firstAttribute="top" secondItem="wlu-k0-jDT" secondAttribute="bottom" constant="6" id="ZDb-UZ-UO3"/>
                     <constraint firstItem="3xo-zg-uuP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="aWr-67-fF0"/>
                     <constraint firstItem="934-6n-rLA" firstAttribute="top" secondItem="3xo-zg-uuP" secondAttribute="bottom" constant="8" id="fnY-Kp-1Ta"/>
-                    <constraint firstItem="lYN-VA-tKG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="foK-Hx-lS8"/>
+                    <constraint firstItem="lYN-VA-tKG" firstAttribute="leading" secondItem="wlu-k0-jDT" secondAttribute="leading" id="hJh-Nj-wT5"/>
                     <constraint firstAttribute="bottom" secondItem="934-6n-rLA" secondAttribute="bottom" constant="8" id="kMi-rQ-9y3"/>
                     <constraint firstAttribute="trailing" secondItem="934-6n-rLA" secondAttribute="trailing" constant="8" id="v49-Ml-F3o"/>
                     <constraint firstItem="934-6n-rLA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="wbm-yX-ShF"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="aboutLabel" destination="934-6n-rLA" id="evt-sc-sYq"/>
+                <outlet property="calendarButton" destination="3xo-zg-uuP" id="jMk-2h-wqf"/>
+                <outlet property="dateLabel" destination="wlu-k0-jDT" id="rO8-ZX-0LA"/>
+                <outlet property="titleLabel" destination="lYN-VA-tKG" id="D64-xg-7Nn"/>
+            </connections>
             <point key="canvasLocation" x="413" y="394.5"/>
         </tableViewCell>
     </objects>
