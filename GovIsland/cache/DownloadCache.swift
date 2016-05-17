@@ -77,7 +77,7 @@ class DownloadCache
                 // This will come from your custom cache if it is not expired,
                 // and from the network if it is expired
                 
-                print("locationArray : \(self.locationArray)")
+                // print("locationArray : \(self.locationArray)")
         }
                 
     }
