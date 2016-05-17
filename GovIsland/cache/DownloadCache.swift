@@ -56,10 +56,12 @@ class DownloadCache
                             
                             for(_, tertiaryJson):(String, JSON) in secondaryJson {
                                 
+                                // TODO: this is duplicate code, move it?
+                                
                                 let mylatitude = tertiaryJson["latitude"].doubleValue
                                 let mylongitude = tertiaryJson["longitude"].doubleValue
                                 let title = tertiaryJson["name"].stringValue
-                                                                
+                                
                                 let mycoordinate = CLLocationCoordinate2D(latitude:mylatitude, longitude:mylongitude)
                                 
                                 let location = Location(coordinate: mycoordinate, title: title, subtitle: "", categoryId: categoryId)

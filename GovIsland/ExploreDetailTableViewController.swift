@@ -8,10 +8,12 @@
 
 import UIKit
 import SwiftyJSON
+import MapKit
 
 class ExploreDetailTableViewController: UITableViewController {
     
     var titleArray :[String] = []
+    var locationArray :[Location] = []
     
     override func viewDidLoad()
     {
@@ -67,15 +69,33 @@ class ExploreDetailTableViewController: UITableViewController {
                     let locationJson = subJson["location"]
                     
                     for(_,secondaryJson):(String, JSON) in locationJson {
+                        
+                        // TODO: this is duplicate code, move it?
+
+                        print("secondaryJson : \(secondaryJson)")
+                        
+                        let mylatitude = secondaryJson["latitude"].doubleValue
+                        let mylongitude = secondaryJson["longitude"].doubleValue
                         let title = secondaryJson["title"].stringValue
                         
+                        let mycoordinate = CLLocationCoordinate2D(latitude:mylatitude, longitude:mylongitude)
+                        
+                        let location = Location(coordinate: mycoordinate, title: title, subtitle: "", categoryId: lookup)
+                        
+                        locationArray.append(location)
                         titleArray.append(title)
+
+                        
+                        print("location : \(location)")
+                        print("location.title : \(location.title)")
+                        
+                        self.navigationItem.title = subJson["title"].stringValue
+                        
                     }
                     
-                    print("subJson : \(subJson)")
                     
-                    self.navigationItem.title = subJson["title"].stringValue
                 }
+            
         }
 
     }
@@ -105,6 +125,9 @@ class ExploreDetailTableViewController: UITableViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detailViewController = storyboard.instantiateViewControllerWithIdentifier("ExploreDetailWebViewController") as! ExploreDetailViewController
         
+        
+        detailViewController.locationDetail = locationArray[indexPath.row]
+    
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }
     

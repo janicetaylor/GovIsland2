@@ -7,11 +7,28 @@
 //
 
 import UIKit
+import MapKit
 
 class ExploreDetailViewController: UIViewController {
     
     @IBOutlet weak var webView: UIWebView!
-
+    var locationDetail :Location = Location(coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0), title: "", subtitle: "", categoryId: 0)
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+//    required init(locationDetailToLoad: Location) {
+//        
+////        let bundle: NSBundle = NSBundle(forClass: self.dynamicType)
+////        super.init(nibName: "ExploreDetailViewController", bundle: bundle)
+//        locationDetail = locationDetailToLoad
+//    }
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,9 +48,10 @@ class ExploreDetailViewController: UIViewController {
     
     func updatePage() {
         
-        let thumbnailUrl :String = "http://www.meladori.com/work/govisland/food/northIslandIceCream.jpg"
         
-        let copy :String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque semper pulvinar sodales. Vestibulum ac ante est. Nam tortor arcu, commodo quis mattis sollicitudin, tristique id elit. Suspendisse ut lectus nisi. Phasellus ullamcorper tempor laoreet. Aenean aliquet nec erat et facilisis. Etiam id lorem leo. Nunc pharetra lacus sed suscipit elementum. Aenean quis pellentesque nisl, sed dictum mi. Sed sem massa, aliquet at lacinia sit amet, ullamcorper vitae metus. Ut porta, lacus non auctor maximus, felis arcu maximus erat, a sagittis felis augue sit amet lacus. Sed et tincidunt neque. Nunc ultricies lobortis scelerisque."
+        let thumbnailUrl :String = "http://www.meladori.com/work/govisland/food/northIslandIceCream.jpg"
+    
+        let copy :String = locationDetail.title!
         
         let path = NSBundle.mainBundle().pathForResource("webView", ofType: "html")
         
