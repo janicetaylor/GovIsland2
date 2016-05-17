@@ -17,6 +17,7 @@
 		1114152F1CEB965B00986FE5 /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1114152D1CEB965B00986FE5 /* EventsTableViewCell.xib */; };
 		111415311CEB9CDB00986FE5 /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = 111415301CEB9CDB00986FE5 /* events.json */; };
 		111415341CEBA06700986FE5 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111415331CEBA06700986FE5 /* Location.swift */; };
+		111415361CEBA3D900986FE5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111415351CEBA3D900986FE5 /* Event.swift */; };
 		11A0EE0F1C4FE30200D01A05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EE0E1C4FE30200D01A05 /* AppDelegate.swift */; };
 		11A0EE111C4FE30200D01A05 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EE101C4FE30200D01A05 /* MapViewController.swift */; };
 		11A0EE131C4FE30200D01A05 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EE121C4FE30200D01A05 /* ExploreViewController.swift */; };
@@ -52,6 +53,7 @@
 		1114152D1CEB965B00986FE5 /* EventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
 		111415301CEB9CDB00986FE5 /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = events.json; path = data/events.json; sourceTree = "<group>"; };
 		111415331CEBA06700986FE5 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = model/Location.swift; sourceTree = "<group>"; };
+		111415351CEBA3D900986FE5 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = model/Event.swift; sourceTree = "<group>"; };
 		11A0EE0B1C4FE30200D01A05 /* GovIsland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GovIsland.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11A0EE0E1C4FE30200D01A05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11A0EE101C4FE30200D01A05 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				111415331CEBA06700986FE5 /* Location.swift */,
+				111415351CEBA3D900986FE5 /* Event.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				1114152B1CEB942A00986FE5 /* EventsTableViewController.swift in Sources */,
 				11E27FA51CC7D31600A10847 /* DownloadDataOperations.swift in Sources */,
 				11A0EE0F1C4FE30200D01A05 /* AppDelegate.swift in Sources */,
+				111415361CEBA3D900986FE5 /* Event.swift in Sources */,
 				110729C81C4FF48900DBDD47 /* ThirdViewController.swift in Sources */,
 				11A0EE111C4FE30200D01A05 /* MapViewController.swift in Sources */,
 				111415341CEBA06700986FE5 /* Location.swift in Sources */,
