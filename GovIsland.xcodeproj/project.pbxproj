@@ -11,8 +11,12 @@
 		110729C81C4FF48900DBDD47 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110729C71C4FF48900DBDD47 /* ThirdViewController.swift */; };
 		110729CA1C4FF49F00DBDD47 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110729C91C4FF49F00DBDD47 /* FourthViewController.swift */; };
 		110729CC1C4FF5AA00DBDD47 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 110729CB1C4FF5AA00DBDD47 /* MapKit.framework */; };
-		110729D11C52CE5600DBDD47 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110729D01C52CE5600DBDD47 /* Location.swift */; };
 		111415291CEB90FD00986FE5 /* govisland.plist in Resources */ = {isa = PBXBuildFile; fileRef = 111415281CEB90FD00986FE5 /* govisland.plist */; };
+		1114152B1CEB942A00986FE5 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1114152A1CEB942A00986FE5 /* EventsTableViewController.swift */; };
+		1114152E1CEB965B00986FE5 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1114152C1CEB965B00986FE5 /* EventsTableViewCell.swift */; };
+		1114152F1CEB965B00986FE5 /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1114152D1CEB965B00986FE5 /* EventsTableViewCell.xib */; };
+		111415311CEB9CDB00986FE5 /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = 111415301CEB9CDB00986FE5 /* events.json */; };
+		111415341CEBA06700986FE5 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111415331CEBA06700986FE5 /* Location.swift */; };
 		11A0EE0F1C4FE30200D01A05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EE0E1C4FE30200D01A05 /* AppDelegate.swift */; };
 		11A0EE111C4FE30200D01A05 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EE101C4FE30200D01A05 /* MapViewController.swift */; };
 		11A0EE131C4FE30200D01A05 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EE121C4FE30200D01A05 /* ExploreViewController.swift */; };
@@ -42,8 +46,12 @@
 		110729C71C4FF48900DBDD47 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		110729C91C4FF49F00DBDD47 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		110729CB1C4FF5AA00DBDD47 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		110729D01C52CE5600DBDD47 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		111415281CEB90FD00986FE5 /* govisland.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = govisland.plist; sourceTree = "<group>"; };
+		1114152A1CEB942A00986FE5 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
+		1114152C1CEB965B00986FE5 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
+		1114152D1CEB965B00986FE5 /* EventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
+		111415301CEB9CDB00986FE5 /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = events.json; path = data/events.json; sourceTree = "<group>"; };
+		111415331CEBA06700986FE5 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = model/Location.swift; sourceTree = "<group>"; };
 		11A0EE0B1C4FE30200D01A05 /* GovIsland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GovIsland.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11A0EE0E1C4FE30200D01A05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11A0EE101C4FE30200D01A05 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		111415321CEBA03A00986FE5 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				111415331CEBA06700986FE5 /* Location.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
 		11A0EE021C4FE30200D01A05 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +125,7 @@
 		11A0EE0D1C4FE30200D01A05 /* GovIsland */ = {
 			isa = PBXGroup;
 			children = (
+				111415321CEBA03A00986FE5 /* model */,
 				11E27FA81CC9194800A10847 /* data */,
 				11E27F9F1CC7CE3C00A10847 /* cache */,
 				11A0EE0E1C4FE30200D01A05 /* AppDelegate.swift */,
@@ -118,11 +135,13 @@
 				11F01D251CD2A648002F08C5 /* ExploreDetailViewController.swift */,
 				110729C71C4FF48900DBDD47 /* ThirdViewController.swift */,
 				110729C91C4FF49F00DBDD47 /* FourthViewController.swift */,
-				110729D01C52CE5600DBDD47 /* Location.swift */,
 				11F37C381CAF26CE00CFA9C6 /* SelectTableViewController.swift */,
 				11F37C391CAF26CE00CFA9C6 /* SelectTableViewController.xib */,
 				11F37C3C1CAF288A00CFA9C6 /* SelectTableViewCell.swift */,
 				11F37C3D1CAF288A00CFA9C6 /* SelectTableViewCell.xib */,
+				1114152A1CEB942A00986FE5 /* EventsTableViewController.swift */,
+				1114152C1CEB965B00986FE5 /* EventsTableViewCell.swift */,
+				1114152D1CEB965B00986FE5 /* EventsTableViewCell.xib */,
 				11A0EE141C4FE30200D01A05 /* Main.storyboard */,
 				11A0EE171C4FE30200D01A05 /* Assets.xcassets */,
 				11A0EE191C4FE30200D01A05 /* LaunchScreen.storyboard */,
@@ -145,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				11F01D271CD2C324002F08C5 /* webView.html */,
+				111415301CEB9CDB00986FE5 /* events.json */,
 				11F01D0F1CD15F7C002F08C5 /* pointsofinterest.json */,
 				11F01D101CD15F7C002F08C5 /* openspaces.json */,
 				11F01D111CD15F7C002F08C5 /* landmarks.json */,
@@ -236,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1114152F1CEB965B00986FE5 /* EventsTableViewCell.xib in Resources */,
 				11F37C3F1CAF288A00CFA9C6 /* SelectTableViewCell.xib in Resources */,
 				11F01D171CD15F7C002F08C5 /* pointsofinterest.json in Resources */,
 				11A0EE1B1C4FE30200D01A05 /* LaunchScreen.storyboard in Resources */,
@@ -249,6 +270,7 @@
 				11F01D181CD15F7C002F08C5 /* openspaces.json in Resources */,
 				11F01D1D1CD15F7C002F08C5 /* restrooms.json in Resources */,
 				11F01D1B1CD15F7C002F08C5 /* armybuildings.json in Resources */,
+				111415311CEB9CDB00986FE5 /* events.json in Resources */,
 				11F01D1A1CD15F7C002F08C5 /* armyhomes.json in Resources */,
 				11F01D1C1CD15F7C002F08C5 /* recreation.json in Resources */,
 			);
@@ -310,12 +332,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				11A0EE131C4FE30200D01A05 /* ExploreViewController.swift in Sources */,
+				1114152B1CEB942A00986FE5 /* EventsTableViewController.swift in Sources */,
 				11E27FA51CC7D31600A10847 /* DownloadDataOperations.swift in Sources */,
 				11A0EE0F1C4FE30200D01A05 /* AppDelegate.swift in Sources */,
 				110729C81C4FF48900DBDD47 /* ThirdViewController.swift in Sources */,
 				11A0EE111C4FE30200D01A05 /* MapViewController.swift in Sources */,
-				110729D11C52CE5600DBDD47 /* Location.swift in Sources */,
+				111415341CEBA06700986FE5 /* Location.swift in Sources */,
 				11F37C3A1CAF26CE00CFA9C6 /* SelectTableViewController.swift in Sources */,
+				1114152E1CEB965B00986FE5 /* EventsTableViewCell.swift in Sources */,
 				11F01D261CD2A648002F08C5 /* ExploreDetailViewController.swift in Sources */,
 				110729CA1C4FF49F00DBDD47 /* FourthViewController.swift in Sources */,
 				11E27FA71CC7D8C500A10847 /* DownloadCache.swift in Sources */,

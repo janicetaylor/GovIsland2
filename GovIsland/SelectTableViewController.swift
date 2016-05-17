@@ -13,8 +13,7 @@ class SelectTableViewController: UITableViewController {
     var selectArray :[String] = []
     var settingsArray :[Bool] = []
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         // TODO: put this in an object to encapsulate?
@@ -46,18 +45,15 @@ class SelectTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int
-    {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return selectArray.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
-    {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         let selectCell: SelectTableViewCell = tableView.dequeueReusableCellWithIdentifier("SelectCell", forIndexPath: indexPath) as! SelectTableViewCell
         
@@ -73,8 +69,7 @@ class SelectTableViewController: UITableViewController {
     }
     
     
-    func switchChanged(selectedswitch :UISwitch)
-    {
+    func switchChanged(selectedswitch :UISwitch) {
         settingsArray[selectedswitch.tag] = selectedswitch.on
         
         let userdefaults = NSUserDefaults.standardUserDefaults()
@@ -82,8 +77,7 @@ class SelectTableViewController: UITableViewController {
     }
     
     
-    func configureTableView()
-    {
+    func configureTableView() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 80.0
         tableView.allowsSelection = false

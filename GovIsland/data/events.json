@@ -1,0 +1,55 @@
+{
+  "events": {
+    "title": "Events",
+    "event": [
+      {
+		"date": "05/28/2016",
+		"time": "10:00", 
+		"location" : "All Island",
+		"title": "Opening Day",
+		"about": "Governors Island Opens for its fourteenth public season.",
+		"link": "www.govisland.com"		
+	  }, 
+      {
+		"date": "05/28/2016",
+		"time": "12:15", 
+		"location" : "Soissons Dock",
+		"title": "Walking Tour",
+		"about": "Take a free walking tours with Kevin Fitzpatrick, author of the Governors Island Explorer’s Guide.",
+		"link": "www.govisland.com"		
+	  }, 
+      {
+		"date": "05/29/2016",
+		"time": "12:15", 
+		"location" : "Soissons Dock",
+		"title": "Walking Tour",
+		"about": "Take a free walking tours with Kevin Fitzpatrick, author of the Governors Island Explorer’s Guide.",
+		"link": "www.govisland.com"		
+	  }, 
+      {
+		"date": "05/29/2016",
+		"time": "10:00", 
+		"location" : "All Island",
+		"title": "Family Day",
+		"about": "Join the fun sponsored by the Friends of Governors Island for a full day of family games and activities!",
+		"link": "www.govisland.com"		
+	  }, 
+      {
+		"date": "06/11/2016",
+		"time": "12:00", 
+		"location" : "Colonels Row Green",
+		"title": "Jazz Age Lawn Party",
+		"about": "Created by Michael Arenella, this is the 11th annual event that draws thousands of well-dressed fans of the Jazz Age to the Island. Bring your camera and seersucker suit!",
+		"link": "www.govisland.com"		
+	  },
+      {
+		"date": "09/17/2016",
+		"time": "12:00", 
+		"location" : "Parade Ground",
+		"title": "Doughboy at Fort Jay",
+		"about": "As the 100th anniversary of American involvement in World War I draws near, find out about the men and women who served in a day of living history with reenactors.",
+		"link": "www.govisland.com"		
+	  }
+    ]
+  }
+}
