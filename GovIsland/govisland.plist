@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>locations</key>
+	<dict>
+		<key>armybuildings</key>
+		<string>Army Buildings</string>
+		<key>armyhouses</key>
+		<string>Army Homes</string>
+		<key>food</key>
+		<string>Food</string>
+		<key>restrooms</key>
+		<string>Restrooms</string>
+		<key>landmarks</key>
+		<string>Landmarks</string>
+		<key>openspaces</key>
+		<string>Open Spaces</string>
+		<key>pointsofinterest</key>
+		<string>Points of Interest</string>
+		<key>recreation</key>
+		<string>Recreation</string>
+	</dict>
+</dict>
+</plist>
