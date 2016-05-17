@@ -72,22 +72,20 @@ class ExploreDetailTableViewController: UITableViewController {
                         
                         // TODO: this is duplicate code, move it?
 
-                        print("secondaryJson : \(secondaryJson)")
-                        
                         let mylatitude = secondaryJson["latitude"].doubleValue
                         let mylongitude = secondaryJson["longitude"].doubleValue
                         let title = secondaryJson["title"].stringValue
+                        let subtitle = secondaryJson["copy"].stringValue
+                        let thumbnailUrl = secondaryJson["image"].stringValue
                         
                         let mycoordinate = CLLocationCoordinate2D(latitude:mylatitude, longitude:mylongitude)
                         
-                        let location = Location(coordinate: mycoordinate, title: title, subtitle: "", categoryId: lookup)
+                        let baseUrl :String = "http://www.meladori.com/work/govisland/\(fileName)/\(thumbnailUrl)"
+                        
+                        let location = Location(coordinate: mycoordinate, title: title, subtitle: subtitle, categoryId: lookup, thumbnailUrl: baseUrl)
                         
                         locationArray.append(location)
                         titleArray.append(title)
-
-                        
-                        print("location : \(location)")
-                        print("location.title : \(location.title)")
                         
                         self.navigationItem.title = subJson["title"].stringValue
                         

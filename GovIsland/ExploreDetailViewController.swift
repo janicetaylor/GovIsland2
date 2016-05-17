@@ -12,7 +12,7 @@ import MapKit
 class ExploreDetailViewController: UIViewController {
     
     @IBOutlet weak var webView: UIWebView!
-    var locationDetail :Location = Location(coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0), title: "", subtitle: "", categoryId: 0)
+    var locationDetail :Location = Location(coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0), title: "", subtitle: "", categoryId: 0, thumbnailUrl: "")
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -21,13 +21,6 @@ class ExploreDetailViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
-//    required init(locationDetailToLoad: Location) {
-//        
-////        let bundle: NSBundle = NSBundle(forClass: self.dynamicType)
-////        super.init(nibName: "ExploreDetailViewController", bundle: bundle)
-//        locationDetail = locationDetailToLoad
-//    }
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,10 +41,9 @@ class ExploreDetailViewController: UIViewController {
     
     func updatePage() {
         
-        
-        let thumbnailUrl :String = "http://www.meladori.com/work/govisland/food/northIslandIceCream.jpg"
+        let thumbnailUrl :String = locationDetail.thumbnailUrl!
     
-        let copy :String = locationDetail.title!
+        let copy :String = locationDetail.subtitle!
         
         let path = NSBundle.mainBundle().pathForResource("webView", ofType: "html")
         

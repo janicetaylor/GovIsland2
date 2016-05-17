@@ -15,12 +15,14 @@ class Location: NSObject, MKAnnotation {
     var title: String?
     var subtitle: String?
     var categoryId: Int?
+    var thumbnailUrl: String?
     
-    init(coordinate: CLLocationCoordinate2D, title: String, subtitle: String, categoryId: Int) {
+    init(coordinate: CLLocationCoordinate2D, title: String, subtitle: String, categoryId: Int, thumbnailUrl: String) {
         self.coordinate = coordinate
         self.title = title
         self.subtitle = subtitle
         self.categoryId = categoryId
+        self.thumbnailUrl = thumbnailUrl
     }
     
 }

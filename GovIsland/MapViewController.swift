@@ -173,7 +173,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                         
                         let mycoordinate = CLLocationCoordinate2D(latitude:mylatitude, longitude:mylongitude)
                         
-                        let location = Location(coordinate: mycoordinate, title: title, subtitle: "", categoryId: categoryId)
+                        let location = Location(coordinate: mycoordinate, title: title, subtitle: "", categoryId: categoryId, thumbnailUrl: "")
                         
                         mapView.addAnnotation(location)
                         
@@ -204,15 +204,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                         let mylatitude = tertiaryJson["latitude"].doubleValue
                         let mylongitude = tertiaryJson["longitude"].doubleValue
                         let title = tertiaryJson["name"].stringValue
-                        
-//                        print("mylat : \(mylatitude)")
-//                        print("mylong : \(mylongitude)")
-//                        print("title : \(title) categoryId : \(categoryId)")
-
-                        
                         let mycoordinate = CLLocationCoordinate2D(latitude:mylatitude, longitude:mylongitude)
-                        let location = Location(coordinate: mycoordinate, title: title, subtitle: "", categoryId: categoryId)
                         
+                        let location = Location(coordinate: mycoordinate, title: title, subtitle: "", categoryId: categoryId, thumbnailUrl: "")
                         
                         self.mapView.addAnnotation(location)
                         

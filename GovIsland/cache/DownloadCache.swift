@@ -64,7 +64,7 @@ class DownloadCache
                                 
                                 let mycoordinate = CLLocationCoordinate2D(latitude:mylatitude, longitude:mylongitude)
                                 
-                                let location = Location(coordinate: mycoordinate, title: title, subtitle: "", categoryId: categoryId)
+                                let location = Location(coordinate: mycoordinate, title: title, subtitle: "", categoryId: categoryId, thumbnailUrl: "")
                                 
                                 self.locationArray.append(location)
                                 
