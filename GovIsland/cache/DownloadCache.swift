@@ -60,9 +60,7 @@ class DownloadCache
                                 let mylongitude = tertiaryJson["longitude"].doubleValue
                                 let title = tertiaryJson["name"].stringValue
                                 
-                                print("mylatitude : \(mylatitude)")
-                                print("mylongitude : \(mylongitude)")
-                                print("title : \(title)")
+                                print("tertiaryJson : \(tertiaryJson)")
                                 
                                 let mycoordinate = CLLocationCoordinate2D(latitude:mylatitude, longitude:mylongitude)
                                 

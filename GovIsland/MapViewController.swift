@@ -130,6 +130,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                     downloadCache.downloadJsonWithUrl(urlToLoad, categoryId: index)
                     updateMapWithFeed(urlToLoad, categoryId: index)
                 
+                    // need to get the serialized Location object here somehow? how?
+                
+                
                     // updateMapWithLocalJson(filenameToLoad, categoryId: index)
                 
             }
