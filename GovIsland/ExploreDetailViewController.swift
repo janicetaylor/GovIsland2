@@ -42,7 +42,7 @@ class ExploreDetailViewController: UIViewController {
     func updatePage() {
         
         let thumbnailUrl :String = locationDetail.thumbnailUrl!
-    
+        let title :String = locationDetail.title!
         let copy :String = locationDetail.subtitle!
         
         let path = NSBundle.mainBundle().pathForResource("webView", ofType: "html")
@@ -55,6 +55,8 @@ class ExploreDetailViewController: UIViewController {
         }
         
         html = html!.stringByReplacingOccurrencesOfString("<!-- image -->", withString: thumbnailUrl)
+        
+         html = html!.stringByReplacingOccurrencesOfString("<!-- title -->", withString: title)
         
         html = html!.stringByReplacingOccurrencesOfString("<!-- body -->", withString: copy)
         
