@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AboutViewController: UIViewController {
+class AboutViewController: UIViewController, UIWebViewDelegate {
     
     @IBOutlet weak var webView: UIWebView!
     
@@ -23,6 +23,7 @@ class AboutViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
+        
         // load local webview html
         let url = NSBundle.mainBundle().URLForResource("webViewAbout", withExtension: "html")
         let requestObj = NSURLRequest(URL: url!)
@@ -36,6 +37,8 @@ class AboutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.webView.delegate = self
+        
         self.navigationItem.title = "Shop"
         
         // load local webview html
@@ -47,6 +50,14 @@ class AboutViewController: UIViewController {
 //         let requestObj = NSURLRequest(URL: url!);
         webView.loadRequest(requestObj)
         
+    }
+
+     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        if navigationType == UIWebViewNavigationType.LinkClicked {
+            UIApplication.sharedApplication().openURL(request.URL!)
+            return false
+        }
+        return true
     }
     
     
