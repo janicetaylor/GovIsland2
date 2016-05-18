@@ -30,9 +30,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         loadArraysFromPlist()
         configureMap()
-        
-        // menuButton.tintColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
-        
+        styleSideBar()
+        styleNavigationBar()
+    }
+    
+    func styleSideBar() {
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -40,30 +42,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
         
         self.revealViewController().rearViewRevealWidth = 140
-        
+    }
+    
+    func styleNavigationBar() {
         self.navigationItem.title = "Map"
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 210.0/255.0, green: 35.0/255.0, blue: 42.0/255.0, alpha: 1.0)
-        self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "marguerite", size: 20.0)!, NSForegroundColorAttributeName:UIColor.whiteColor()]
-        // self.navigationController?.navigationBar.tintColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
-
-
-        
-        
-//        #define kNovellaFont     [UIFont fontWithName:@"novellabold" size:26.0]
-//
-//
-//        self.navigationItem.title = @"Mixing Tips and Tricks";
-//        [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-//            kNovellaFont, NSFontAttributeName,
-//            [UIColor whiteColor],NSForegroundColorAttributeName,
-//            nil]];
-//        
-        
-        
-        
-        
-        
-        
+        self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "marguerite", size: 18.0)!, NSForegroundColorAttributeName:UIColor.whiteColor()]
         
         filterButton.action = #selector(MapViewController.selectFeed)
         filterButton.target = self

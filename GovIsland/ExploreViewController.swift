@@ -33,9 +33,14 @@ class ExploreViewController : UITableViewController
         ]
         
         configureTableView()
+        styleNavigationBar()
         
+    }
+    
+    func styleNavigationBar() {
         self.navigationItem.title = "Explore"
-
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 210.0/255.0, green: 35.0/255.0, blue: 42.0/255.0, alpha: 1.0)
+        self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "marguerite", size: 10.0)!, NSForegroundColorAttributeName:UIColor.whiteColor()] 
     }
     
     func configureTableView() {
