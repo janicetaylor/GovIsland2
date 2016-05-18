@@ -109,7 +109,6 @@
 		11A0EE021C4FE30200D01A05 = {
 			isa = PBXGroup;
 			children = (
-				110729CB1C4FF5AA00DBDD47 /* MapKit.framework */,
 				11A0EE0D1C4FE30200D01A05 /* GovIsland */,
 				11A0EE0C1C4FE30200D01A05 /* Products */,
 				8753411165CB3218865AC383 /* Pods */,
@@ -192,6 +191,7 @@
 		A3B9D9EF439049102337651E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				110729CB1C4FF5AA00DBDD47 /* MapKit.framework */,
 				F6D6AAA9DF2E6E122467718F /* Pods_GovIsland.framework */,
 			);
 			name = Frameworks;
