@@ -29,9 +29,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         configureMap()
         
         self.navigationItem.title = "Map"
-        
-        let selectBarButton = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action:#selector(MapViewController.selectFeed))
-        self.navigationItem.rightBarButtonItem = selectBarButton
+        let barButtonItem = UIBarButtonItem(title: "Filter", style: .Plain, target: self, action:#selector(MapViewController.selectFeed))
+        self.navigationItem.rightBarButtonItem = barButtonItem
     }
     
     func loadArraysFromPlist() {
