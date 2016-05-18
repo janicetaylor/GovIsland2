@@ -8,7 +8,7 @@
         "latitude": "40.692098",
         "longitude": "-74.018938",
         "title": "North Island Ice Cream",
-		"copy": "Hay Road near the Post Hospital<P>There is an ice cream vendor nearby Castle Williams, close to the park in front of Brick Row. Look for Hay Road and the bike rentals.",
+	 "copy": "Hay Road near the Post Hospital<P>There is an ice cream vendor nearby Castle Williams, close to the park in front of Brick Row. Look for Hay Road and the bike rentals.",
         "image": "northIslandIceCream.jpg"
       },
       {
@@ -16,16 +16,15 @@
         "latitude": "40.685343",
         "longitude": "-74.025602",
         "title": "South Island Ice Cream",
-		"copy": "Picnic Point nearby Gresham Road<P>If you make it all the way to Picnic Point, the farthest point on the island, you will be rewarded with ice cream. Look for the vendor near the trees on the open space.",
+	 "copy": "Picnic Point nearby Gresham Road<P>If you make it all the way to Picnic Point, the farthest point on the island, you will be rewarded with ice cream. Look for the vendor near the trees on the open space.",
         "image": "northIslandIceCream.jpg"
       },
       {
         "name": "Wine and Beer Cafe",
         "latitude": "40.693012",
         "longitude": "-74.016502",
-        "url": "wineAndBeerCafe",
         "title": "Wine and Beer Cafe",
-		"copy": "Water Taxi Beach<P>There is only one place every weekend to buy and consume wine and beer, and that's on the beach. Look for the signs (and the sand) as you get off the ferry. Whenever Water Taxi Beach is open, two restaurants, the Beach Grill and the Backstage Cafe, are serving 'respectfully priced' food and drink. On the menu: hamburgers, veggie burgers, hot dogs, kielbasa, knockwurst, vegan potato salad and ice cream.<P>The Backstage Cafe, inside the old ferry waiting room, offers 'Picnic Pouches' starting at $37. All food served at the Backstage Cafe is natural, grown locally, and is antibiotic and preservative free. The Backstage Cafe practices sustainable and environmentally friendly cooking, composting and care.",
+	 "copy": "Water Taxi Beach<P>There is only one place every weekend to buy and consume wine and beer, and that's on the beach. Look for the signs (and the sand) as you get off the ferry. Whenever Water Taxi Beach is open, two restaurants, the Beach Grill and the Backstage Cafe, are serving 'respectfully priced' food and drink. On the menu: hamburgers, veggie burgers, hot dogs, kielbasa, knockwurst, vegan potato salad and ice cream.<P>The Backstage Cafe, inside the old ferry waiting room, offers 'Picnic Pouches' starting at $37. All food served at the Backstage Cafe is natural, grown locally, and is antibiotic and preservative free. The Backstage Cafe practices sustainable and environmentally friendly cooking, composting and care.",
         "image": "wineAndBeerCafe.jpg"
 
       }

@@ -7,22 +7,20 @@
         "name": "North Island Restrooms",
         "latitude": "40.692737",
         "longitude": "-74.016647",
-		"title" : "North Island Restrooms", 
-        "url": "northIslandRestrooms"
+	 "title" : "North Island Restrooms", 
       },
       {
         "name": "South Island Restrooms",
         "latitude": "40.685306",
         "longitude": "-74.025461",
-		"title" : "South Island Restrooms", 
-        "url": "southIslandRestrooms"
+	 ”title" : "South Island Restrooms", 
 		
       },
       {
         "name": "WT Beach Restrooms",
         "latitude": "40.693181",
         "longitude": "-74.017153",
-		"title" : "WT Beach Restrooms", 
+	 "title" : "WT Beach Restrooms", 
         "url": "WTBeachRestrooms"
       }
     ]
