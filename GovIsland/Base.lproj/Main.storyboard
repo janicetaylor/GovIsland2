@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="it1-0r-bQP">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="it1-0r-bQP">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                             </mapView>
                         </subviews>
@@ -27,7 +27,7 @@
                             <constraint firstItem="it1-0r-bQP" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="Cjl-le-Thx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="it1-0r-bQP" secondAttribute="trailing" constant="-20" id="LXy-a2-e9j"/>
                             <constraint firstItem="it1-0r-bQP" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="topMargin" id="kWc-l6-usX"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="it1-0r-bQP" secondAttribute="bottom" id="xbV-nY-1ZT"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="it1-0r-bQP" secondAttribute="bottom" constant="49" id="xbV-nY-1ZT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="2dQ-bZ-Eg0">
@@ -165,7 +165,6 @@
         <scene sceneID="6ux-Ib-RV1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VFB-A3-hkz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="first" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="K0k-qX-5Xu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -335,7 +334,6 @@
         <scene sceneID="Tkv-21-puc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gjW-Pc-6FW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Explore" image="second" id="IIl-oW-3GB"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pal-Sv-YUe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -354,7 +352,6 @@
         <scene sceneID="tG9-1q-1Hs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gjA-Hq-TBO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Events" image="first" selectedImage="second" id="oEI-qe-q3t"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="W15-Qo-VLL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -410,7 +407,6 @@
         <scene sceneID="8Ww-ZH-Pdp">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q53-F6-AYX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Shop" image="first" id="Dm3-K4-c9D"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YZh-nG-22z">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

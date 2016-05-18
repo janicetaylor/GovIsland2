@@ -21,18 +21,6 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3xo-zg-uuP">
-                        <rect key="frame" x="401" y="15" width="113" height="30"/>
-                        <color key="backgroundColor" red="0.92574118589999999" green="0.92574118589999999" blue="0.92574118589999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="113" id="UXW-fN-q0S"/>
-                            <constraint firstAttribute="height" constant="30" id="ygm-Tm-s5S"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
-                        <state key="normal" title="add to calendar">
-                            <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
-                        </state>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06/11/2016 at 12:00 in Colonels Row Green" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlu-k0-jDT">
                         <rect key="frame" x="8" y="26" width="383" height="21"/>
                         <fontDescription key="fontDescription" name="Avenir-BookOblique" family="Avenir" pointSize="12"/>
@@ -46,6 +34,18 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3xo-zg-uuP">
+                        <rect key="frame" x="401" y="5" width="113" height="30"/>
+                        <color key="backgroundColor" red="0.92574118589999999" green="0.92574118589999999" blue="0.92574118589999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="113" id="UXW-fN-q0S"/>
+                            <constraint firstAttribute="height" constant="30" id="ygm-Tm-s5S"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
+                        <state key="normal" title="add to calendar">
+                            <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="3xo-zg-uuP" firstAttribute="leading" secondItem="lYN-VA-tKG" secondAttribute="trailing" constant="36" id="2bc-1B-xd3"/>
@@ -55,8 +55,8 @@
                     <constraint firstItem="lYN-VA-tKG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Y9o-0B-Za1"/>
                     <constraint firstAttribute="trailing" secondItem="3xo-zg-uuP" secondAttribute="trailing" constant="8" id="Yie-38-5NS"/>
                     <constraint firstItem="934-6n-rLA" firstAttribute="top" secondItem="wlu-k0-jDT" secondAttribute="bottom" constant="6" id="ZDb-UZ-UO3"/>
-                    <constraint firstItem="3xo-zg-uuP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="aWr-67-fF0"/>
-                    <constraint firstItem="934-6n-rLA" firstAttribute="top" secondItem="3xo-zg-uuP" secondAttribute="bottom" constant="8" id="fnY-Kp-1Ta"/>
+                    <constraint firstItem="3xo-zg-uuP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="aWr-67-fF0"/>
+                    <constraint firstItem="934-6n-rLA" firstAttribute="top" secondItem="3xo-zg-uuP" secondAttribute="bottom" constant="18" id="fnY-Kp-1Ta"/>
                     <constraint firstItem="lYN-VA-tKG" firstAttribute="leading" secondItem="wlu-k0-jDT" secondAttribute="leading" id="hJh-Nj-wT5"/>
                     <constraint firstAttribute="bottom" secondItem="934-6n-rLA" secondAttribute="bottom" constant="8" id="kMi-rQ-9y3"/>
                     <constraint firstAttribute="trailing" secondItem="934-6n-rLA" secondAttribute="trailing" constant="8" id="v49-Ml-F3o"/>
