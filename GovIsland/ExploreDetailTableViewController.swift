@@ -14,6 +14,7 @@ class ExploreDetailTableViewController: UITableViewController {
     
     var titleArray :[String] = []
     var locationArray :[Location] = []
+    var filenameArray :[String] = []
     
     override func viewDidLoad()
     {
@@ -49,7 +50,7 @@ class ExploreDetailTableViewController: UITableViewController {
         // TODO: put this in a plist
         
         var filenameArray :[String] = [ "armybuildings",
-                                        "armyhouses",
+                                        "armyhomes",
                                         "food",
                                         "restrooms",
                                         "landmarks",

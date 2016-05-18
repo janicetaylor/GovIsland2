@@ -58,6 +58,8 @@ class DownloadCache
                                 
                                 // TODO: this is duplicate code, move it?
                                 
+                                print("\(tertiaryJson)")
+                                
                                 let mylatitude = tertiaryJson["latitude"].doubleValue
                                 let mylongitude = tertiaryJson["longitude"].doubleValue
                                 let title = tertiaryJson["name"].stringValue

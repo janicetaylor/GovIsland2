@@ -14,45 +14,40 @@ import Alamofire
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    
     var locationManager: CLLocationManager?
     var urlArray :[String] = []
     var filenameArray :[String] = []
     var settingsArray :[Bool] = []
     var imageIconArray :[String] = []
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
         
-        if let path = NSBundle.mainBundle().pathForResource("govisland", ofType: "plist") {
-            if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
-        
-                let baseUrl = dict["baseUrl"] as! String
-                let urlArrayList = dict["urlPrefixes"] as! Array<String>
-                
-                print("\(urlArrayList)")
-                
-                for urlString in urlArrayList {
-                    urlArray.append("\(baseUrl)\(urlString).json")
-                }
-                
-                print("\(urlArray)")
-                
-                filenameArray.append("\(urlArrayList)")
-                
-                
-            }
-        }
-        
-        print("\(urlArray)")
-        
+        loadArraysFromPlist()
         configureMap()
         
         self.navigationItem.title = "Map"
         
         let selectBarButton = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action:#selector(MapViewController.selectFeed))
         self.navigationItem.rightBarButtonItem = selectBarButton
+    }
+    
+    func loadArraysFromPlist() {
+        if let path = NSBundle.mainBundle().pathForResource("govisland", ofType: "plist") {
+            if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
+                
+                let baseUrl = dict["baseUrl"] as! String
+                
+                let urlArrayList = dict["urlPrefixes"] as! Array<String>
+                for urlString in urlArrayList {
+                    urlArray.append("\(baseUrl)\(urlString).json")
+                }
+                
+                filenameArray.append("\(urlArrayList)")
+            }
+        }
     }
     
     
@@ -89,61 +84,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         // center on fort jay
         let initialLocation = CLLocation(latitude: 40.6889918, longitude: -74.0190287)
         centerMapOnLocation(initialLocation)
-        
-        // go through saved preferences and load switch settings 
-        // if first time, load in the first one?
-        
-        // TODO: put this in a plist
-        
-        // category ids
-//        1 - army buildings
-//        2 - army houses
-//        3 - food
-//        4 - restroooms
-//        5 - landmarks
-//        6 - open spaces
-//        7 - points of interest
-//        8 - recreation
-        
-//        urlArray = ["http://www.meladori.com/work/govisland/armybuildings.json",
-//                    "http://www.meladori.com/work/govisland/armyhouses.json",
-//                    "http://www.meladori.com/work/govisland/food.json",
-//                    "http://www.meladori.com/work/govisland/restrooms.json",
-//                    "http://www.meladori.com/work/govisland/landmarks.json",
-//                    "http://www.meladori.com/work/govisland/openspaces.json",
-//                    "http://www.meladori.com/work/govisland/pointsofinterest.json",
-//                    "http://www.meladori.com/work/govisland/recreation.json"]
-        
-
-        
-        // put in plist
-        
-//        if let path = NSBundle.mainBundle().pathForResource("govisland", ofType: "plist") {
-//            if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
-//                
-//                let baseUrl = dict["baseUrl"]
-//                let urlArrayList = dict["urlPrefixes"]
-//                urlArray.append("\(baseUrl)\(urlArrayList).json")
-//                
-//                filenameArray.append("\(urlArrayList)")
-//            }
-//        }
-        
-//        let locations :NSArray = NSArray(contentsOfFile: plistpath)!;
-//        
-//        print("locations : \(locations)")
-        
-//        filenameArray = ["armybuildings",
-//                         "armyhouses",
-//                         "food",
-//                         "restrooms",
-//                         "landmarks",
-//                         "openspaces",
-//                         "pointsofinterest",
-//                         "recreation"]
-        
-
-
     }
     
     // TODO: test this when all the json files are ready!
@@ -165,19 +105,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         for(index, item) in settingsArray.enumerate() {
             if(item == true) {
-                
-                 print("index : \(index) item : \(item)")
-                 print("urlArray : \(urlArray)")
 
                     let urlToLoad = urlArray[index]
                     // let filenameToLoad :String = filenameArray[index]
                 
                     let downloadCache = DownloadCache()
                     downloadCache.downloadJsonWithUrl(urlToLoad, categoryId: index)
+                
+                    print("\(urlToLoad)")
+                    print("\(index)")
+
                     updateMapWithFeed(urlToLoad, categoryId: index)
-                
-                    // need to get the serialized Location object here somehow? how?
-                
                 
                     // updateMapWithLocalJson(filenameToLoad, categoryId: index)
                 
@@ -240,12 +178,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         Alamofire.request(.GET, feedUrlString).responseJSON { response in
             
             let swiftyJsonVar = JSON(response.result.value!)
-            
+                        
             for (_,subJson):(String, JSON) in swiftyJsonVar {
                 
                 for (_,secondaryJson):(String, JSON) in subJson {
                     
                     for(_, tertiaryJson):(String, JSON) in secondaryJson {
+                        
+                        print("\(tertiaryJson)")
                         
                         let mylatitude = tertiaryJson["latitude"].doubleValue
                         let mylongitude = tertiaryJson["longitude"].doubleValue
@@ -275,7 +215,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     // MARK: - MKMapViewDelegate methods
-
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
 
@@ -304,8 +243,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 
             } else {
                 
-                // TODO: move this to a plist?
-                
                 pinAnnotationView = MKAnnotationView()
                 pinAnnotationView.annotation = annotation as Location
                 pinAnnotationView.image = UIImage(named: imageIconArray[annotation.categoryId!])
@@ -328,11 +265,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     func detailButtonSelected(selectedButton :UIButton) {
-        print("detailButtonSelected : \(selectedButton.tag)")
-        
         tabBarController?.selectedIndex = 1
-        
-        
     }
 
 }
