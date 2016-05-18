@@ -31,6 +31,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         loadArraysFromPlist()
         configureMap()
         
+        // menuButton.tintColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -40,6 +42,29 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.revealViewController().rearViewRevealWidth = 140
         
         self.navigationItem.title = "Map"
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 210.0/255.0, green: 35.0/255.0, blue: 42.0/255.0, alpha: 1.0)
+        self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "marguerite", size: 20.0)!, NSForegroundColorAttributeName:UIColor.whiteColor()]
+        // self.navigationController?.navigationBar.tintColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+
+
+        
+        
+//        #define kNovellaFont     [UIFont fontWithName:@"novellabold" size:26.0]
+//
+//
+//        self.navigationItem.title = @"Mixing Tips and Tricks";
+//        [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+//            kNovellaFont, NSFontAttributeName,
+//            [UIColor whiteColor],NSForegroundColorAttributeName,
+//            nil]];
+//        
+        
+        
+        
+        
+        
+        
+        
         filterButton.action = #selector(MapViewController.selectFeed)
         filterButton.target = self
     }
@@ -102,13 +127,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let userdefaults = NSUserDefaults.standardUserDefaults()
         let isFirstTime = userdefaults.boolForKey("isFirstTime")
         
-         if(isFirstTime == false) {
+          if(isFirstTime == false) {
             settingsArray = [false, false, true, false, false, false, false, false]
             userdefaults.setObject(settingsArray, forKey: "locationsToLoad")
-         }
+          }
             
-        else {
-            settingsArray = userdefaults.objectForKey("locationsToLoad") as! Array
+         else {
+             settingsArray = userdefaults.objectForKey("locationsToLoad") as! Array
         }
         
         removeAllAnnotations()
@@ -181,6 +206,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func updateMapWithFeed(feedUrlString: String, categoryId: Int) {
         
         Alamofire.request(.GET, feedUrlString).responseJSON { response in
+            
+            // TODO: sometimes this comes back as nil when unwrapping optional value?
             
             let swiftyJsonVar = JSON(response.result.value!)
                         

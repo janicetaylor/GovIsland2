@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="it1-0r-bQP">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -27,12 +27,16 @@
                             <constraint firstItem="it1-0r-bQP" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="Cjl-le-Thx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="it1-0r-bQP" secondAttribute="trailing" constant="-20" id="LXy-a2-e9j"/>
                             <constraint firstItem="it1-0r-bQP" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="topMargin" id="kWc-l6-usX"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="it1-0r-bQP" secondAttribute="bottom" constant="49" id="xbV-nY-1ZT"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="it1-0r-bQP" secondAttribute="bottom" id="xbV-nY-1ZT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="2dQ-bZ-Eg0">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="wKo-hg-Fbu"/>
-                        <barButtonItem key="rightBarButtonItem" title="Filter" id="ZYe-2f-ZfF"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="menu" style="plain" id="wKo-hg-Fbu">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="pinpoint" id="ZYe-2f-ZfF">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="filterButton" destination="ZYe-2f-ZfF" id="Gci-vP-dnH"/>
@@ -67,8 +71,8 @@
                                                     <rect key="frame" x="21" y="10" width="30" height="30"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Map" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TkH-1G-mXP">
-                                                    <rect key="frame" x="61" y="11" width="44" height="31"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="22"/>
+                                                    <rect key="frame" x="61" y="11" width="51" height="31"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -90,8 +94,8 @@
                                                     <rect key="frame" x="18" y="8" width="30" height="30"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Explore" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWy-eI-TvW">
-                                                    <rect key="frame" x="61" y="8" width="60" height="31"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="22"/>
+                                                    <rect key="frame" x="61" y="8" width="79" height="31"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -113,8 +117,8 @@
                                                     <rect key="frame" x="18" y="8" width="30" height="30"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Events" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uj2-TM-qd6">
-                                                    <rect key="frame" x="61" y="6" width="52" height="31"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="22"/>
+                                                    <rect key="frame" x="61" y="6" width="76" height="31"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -133,8 +137,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="err-3c-tg9">
-                                                    <rect key="frame" x="61" y="8" width="41" height="31"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="22"/>
+                                                    <rect key="frame" x="61" y="7" width="67" height="31"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -161,7 +165,7 @@
             </objects>
             <point key="canvasLocation" x="-588" y="655"/>
         </scene>
-        <!--Map-->
+        <!--Navigation Controller-->
         <scene sceneID="6ux-Ib-RV1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VFB-A3-hkz" sceneMemberID="viewController">
@@ -330,7 +334,7 @@
             </objects>
             <point key="canvasLocation" x="2828" y="333"/>
         </scene>
-        <!--Explore-->
+        <!--Navigation Controller-->
         <scene sceneID="Tkv-21-puc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gjW-Pc-6FW" sceneMemberID="viewController">
@@ -348,7 +352,7 @@
             </objects>
             <point key="canvasLocation" x="842" y="3"/>
         </scene>
-        <!--Events-->
+        <!--Navigation Controller-->
         <scene sceneID="tG9-1q-1Hs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gjA-Hq-TBO" sceneMemberID="viewController">
@@ -403,7 +407,7 @@
             </objects>
             <point key="canvasLocation" x="1612" y="1755"/>
         </scene>
-        <!--Shop-->
+        <!--Navigation Controller-->
         <scene sceneID="8Ww-ZH-Pdp">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q53-F6-AYX" sceneMemberID="viewController">
@@ -450,16 +454,15 @@
     <resources>
         <image name="events" width="30" height="30"/>
         <image name="explore" width="30" height="30"/>
-        <image name="first" width="30" height="30"/>
         <image name="map" width="30" height="30"/>
         <image name="menu" width="22" height="22"/>
-        <image name="second" width="30" height="30"/>
+        <image name="pinpoint" width="16" height="21"/>
         <image name="shop" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="853-KA-pt5"/>
-        <segue reference="JNZ-LT-S5S"/>
-        <segue reference="7gt-v2-hYm"/>
-        <segue reference="HnU-Qh-BXp"/>
+        <segue reference="EO9-fw-YKC"/>
+        <segue reference="4Sc-81-SOk"/>
+        <segue reference="FZ6-Kr-Mn8"/>
+        <segue reference="eXh-3i-PS2"/>
     </inferredMetricsTieBreakers>
 </document>

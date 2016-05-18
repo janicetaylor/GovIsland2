@@ -20,6 +20,7 @@
 		1114153A1CEBB9D800986FE5 /* webViewAbout.html in Resources */ = {isa = PBXBuildFile; fileRef = 111415391CEBB9D800986FE5 /* webViewAbout.html */; };
 		111415421CECCDAD00986FE5 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111415411CECCDAD00986FE5 /* SWRevealViewController.m */; };
 		111415441CECDD1300986FE5 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111415431CECDD1300986FE5 /* MenuController.swift */; };
+		111415461CECFE4900986FE5 /* marguerite.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 111415451CECFE4900986FE5 /* marguerite.ttf */; };
 		11A0EE0F1C4FE30200D01A05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EE0E1C4FE30200D01A05 /* AppDelegate.swift */; };
 		11A0EE111C4FE30200D01A05 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EE101C4FE30200D01A05 /* MapViewController.swift */; };
 		11A0EE131C4FE30200D01A05 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EE121C4FE30200D01A05 /* ExploreViewController.swift */; };
@@ -60,6 +61,7 @@
 		111415401CECCDAD00986FE5 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = helpers/SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
 		111415411CECCDAD00986FE5 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = helpers/SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
 		111415431CECDD1300986FE5 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		111415451CECFE4900986FE5 /* marguerite.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = marguerite.ttf; path = helpers/marguerite.ttf; sourceTree = "<group>"; };
 		11A0EE0B1C4FE30200D01A05 /* GovIsland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GovIsland.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11A0EE0E1C4FE30200D01A05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11A0EE101C4FE30200D01A05 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		1114153B1CECCCC200986FE5 /* helpers */ = {
 			isa = PBXGroup;
 			children = (
+				111415451CECFE4900986FE5 /* marguerite.ttf */,
 				1114153E1CECCD7D00986FE5 /* SWRevealViewController */,
 			);
 			name = helpers;
@@ -286,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1114152F1CEB965B00986FE5 /* EventsTableViewCell.xib in Resources */,
+				111415461CECFE4900986FE5 /* marguerite.ttf in Resources */,
 				11F37C3F1CAF288A00CFA9C6 /* SelectTableViewCell.xib in Resources */,
 				11F01D171CD15F7C002F08C5 /* pointsofinterest.json in Resources */,
 				11A0EE1B1C4FE30200D01A05 /* LaunchScreen.storyboard in Resources */,
