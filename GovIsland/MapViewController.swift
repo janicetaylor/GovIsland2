@@ -14,23 +14,33 @@ import Alamofire
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBOutlet weak var filterButton: UIBarButtonItem!
     
     var locationManager: CLLocationManager?
     var urlArray :[String] = []
     var filenameArray :[String] = []
     var settingsArray :[Bool] = []
     var imageIconArray :[String] = []
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView.delegate = self
+        self.mapView.delegate = self
         
         loadArraysFromPlist()
         configureMap()
         
+        if self.revealViewController() != nil {
+            print("reveal")
+            menuButton.target = self.revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+        
         self.navigationItem.title = "Map"
-        let barButtonItem = UIBarButtonItem(title: "Filter", style: .Plain, target: self, action:#selector(MapViewController.selectFeed))
-        self.navigationItem.rightBarButtonItem = barButtonItem
+        filterButton.action = #selector(MapViewController.selectFeed)
+        filterButton.target = self
     }
     
     func loadArraysFromPlist() {
@@ -178,8 +188,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 for (_,secondaryJson):(String, JSON) in subJson {
                     
                     for(_, tertiaryJson):(String, JSON) in secondaryJson {
-                        
-                        print("\(tertiaryJson)")
                         
                         let mylatitude = tertiaryJson["latitude"].doubleValue
                         let mylongitude = tertiaryJson["longitude"].doubleValue

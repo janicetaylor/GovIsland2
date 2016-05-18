@@ -18,6 +18,8 @@
 		111415361CEBA3D900986FE5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111415351CEBA3D900986FE5 /* Event.swift */; };
 		111415381CEBB97E00986FE5 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111415371CEBB97E00986FE5 /* AboutViewController.swift */; };
 		1114153A1CEBB9D800986FE5 /* webViewAbout.html in Resources */ = {isa = PBXBuildFile; fileRef = 111415391CEBB9D800986FE5 /* webViewAbout.html */; };
+		111415421CECCDAD00986FE5 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111415411CECCDAD00986FE5 /* SWRevealViewController.m */; };
+		111415441CECDD1300986FE5 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111415431CECDD1300986FE5 /* MenuController.swift */; };
 		11A0EE0F1C4FE30200D01A05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EE0E1C4FE30200D01A05 /* AppDelegate.swift */; };
 		11A0EE111C4FE30200D01A05 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EE101C4FE30200D01A05 /* MapViewController.swift */; };
 		11A0EE131C4FE30200D01A05 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EE121C4FE30200D01A05 /* ExploreViewController.swift */; };
@@ -54,6 +56,10 @@
 		111415351CEBA3D900986FE5 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = model/Event.swift; sourceTree = "<group>"; };
 		111415371CEBB97E00986FE5 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		111415391CEBB9D800986FE5 /* webViewAbout.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = webViewAbout.html; path = data/webViewAbout.html; sourceTree = "<group>"; };
+		1114153F1CECCDAD00986FE5 /* GovIsland-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GovIsland-Bridging-Header.h"; sourceTree = "<group>"; };
+		111415401CECCDAD00986FE5 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = helpers/SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
+		111415411CECCDAD00986FE5 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = helpers/SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
+		111415431CECDD1300986FE5 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		11A0EE0B1C4FE30200D01A05 /* GovIsland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GovIsland.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11A0EE0E1C4FE30200D01A05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11A0EE101C4FE30200D01A05 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +112,24 @@
 			name = model;
 			sourceTree = "<group>";
 		};
+		1114153B1CECCCC200986FE5 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1114153E1CECCD7D00986FE5 /* SWRevealViewController */,
+			);
+			name = helpers;
+			sourceTree = "<group>";
+		};
+		1114153E1CECCD7D00986FE5 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				111415401CECCDAD00986FE5 /* SWRevealViewController.h */,
+				111415411CECCDAD00986FE5 /* SWRevealViewController.m */,
+				1114153F1CECCDAD00986FE5 /* GovIsland-Bridging-Header.h */,
+			);
+			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
 		11A0EE021C4FE30200D01A05 = {
 			isa = PBXGroup;
 			children = (
@@ -127,12 +151,14 @@
 		11A0EE0D1C4FE30200D01A05 /* GovIsland */ = {
 			isa = PBXGroup;
 			children = (
+				1114153B1CECCCC200986FE5 /* helpers */,
 				111415321CEBA03A00986FE5 /* model */,
 				11E27FA81CC9194800A10847 /* data */,
 				11E27F9F1CC7CE3C00A10847 /* cache */,
 				11A0EE0E1C4FE30200D01A05 /* AppDelegate.swift */,
 				111415371CEBB97E00986FE5 /* AboutViewController.swift */,
 				11A0EE101C4FE30200D01A05 /* MapViewController.swift */,
+				111415431CECDD1300986FE5 /* MenuController.swift */,
 				11A0EE121C4FE30200D01A05 /* ExploreViewController.swift */,
 				11E27F9B1CC683F500A10847 /* ExploreDetailTableViewController.swift */,
 				11F01D251CD2A648002F08C5 /* ExploreDetailViewController.swift */,
@@ -337,11 +363,13 @@
 			files = (
 				11A0EE131C4FE30200D01A05 /* ExploreViewController.swift in Sources */,
 				1114152B1CEB942A00986FE5 /* EventsTableViewController.swift in Sources */,
+				111415421CECCDAD00986FE5 /* SWRevealViewController.m in Sources */,
 				11E27FA51CC7D31600A10847 /* DownloadDataOperations.swift in Sources */,
 				11A0EE0F1C4FE30200D01A05 /* AppDelegate.swift in Sources */,
 				111415361CEBA3D900986FE5 /* Event.swift in Sources */,
 				11A0EE111C4FE30200D01A05 /* MapViewController.swift in Sources */,
 				111415341CEBA06700986FE5 /* Location.swift in Sources */,
+				111415441CECDD1300986FE5 /* MenuController.swift in Sources */,
 				11F37C3A1CAF26CE00CFA9C6 /* SelectTableViewController.swift in Sources */,
 				1114152E1CEB965B00986FE5 /* EventsTableViewCell.swift in Sources */,
 				11F01D261CD2A648002F08C5 /* ExploreDetailViewController.swift in Sources */,
@@ -462,11 +490,14 @@
 			baseConfigurationReference = A90634F92133367D84E46BB2 /* Pods-GovIsland.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = GovIsland/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meladori.GovIsland;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GovIsland/GovIsland-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -475,11 +506,13 @@
 			baseConfigurationReference = 6501095C28580E526B0D9A1E /* Pods-GovIsland.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = GovIsland/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meladori.GovIsland;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GovIsland/GovIsland-Bridging-Header.h";
 			};
 			name = Release;
 		};
