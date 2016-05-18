@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>baseUrl</key>
+	<string>http://www.meladori.com/work/govisland/</string>
 	<key>locations</key>
 	<dict>
 		<key>armybuildings</key>
@@ -21,5 +23,16 @@
 		<key>recreation</key>
 		<string>Recreation</string>
 	</dict>
+	<key>urlPrefixes</key>
+	<array>
+		<string>armybuildings</string>
+		<string>armyhouses</string>
+		<string>food</string>
+		<string>restrooms</string>
+		<string>landmarks</string>
+		<string>openspaces</string>
+		<string>pointsofinterest</string>
+		<string>recreation</string>
+	</array>
 </dict>
 </plist>

@@ -25,6 +25,28 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         super.viewDidLoad()
         mapView.delegate = self
         
+        if let path = NSBundle.mainBundle().pathForResource("govisland", ofType: "plist") {
+            if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
+        
+                let baseUrl = dict["baseUrl"] as! String
+                let urlArrayList = dict["urlPrefixes"] as! Array<String>
+                
+                print("\(urlArrayList)")
+                
+                for urlString in urlArrayList {
+                    urlArray.append("\(baseUrl)\(urlString).json")
+                }
+                
+                print("\(urlArray)")
+                
+                filenameArray.append("\(urlArrayList)")
+                
+                
+            }
+        }
+        
+        print("\(urlArray)")
+        
         configureMap()
         
         self.navigationItem.title = "Map"
@@ -83,30 +105,44 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 //        7 - points of interest
 //        8 - recreation
         
-        urlArray = ["http://www.meladori.com/work/govisland/armybuildings.json",
-                    "http://www.meladori.com/work/govisland/armyhouses.json",
-                    "http://www.meladori.com/work/govisland/food.json",
-                    "http://www.meladori.com/work/govisland/restrooms.json",
-                    "http://www.meladori.com/work/govisland/landmarks.json",
-                    "http://www.meladori.com/work/govisland/openspaces.json",
-                    "http://www.meladori.com/work/govisland/pointsofinterest.json",
-                    "http://www.meladori.com/work/govisland/recreation.json"]
+//        urlArray = ["http://www.meladori.com/work/govisland/armybuildings.json",
+//                    "http://www.meladori.com/work/govisland/armyhouses.json",
+//                    "http://www.meladori.com/work/govisland/food.json",
+//                    "http://www.meladori.com/work/govisland/restrooms.json",
+//                    "http://www.meladori.com/work/govisland/landmarks.json",
+//                    "http://www.meladori.com/work/govisland/openspaces.json",
+//                    "http://www.meladori.com/work/govisland/pointsofinterest.json",
+//                    "http://www.meladori.com/work/govisland/recreation.json"]
+        
+
         
         // put in plist
         
-        let plistpath :String = NSBundle.mainBundle().pathForResource("govisland", ofType: "plist")!
-        let locations :NSArray = NSArray(contentsOfFile: plistpath)!;
+//        if let path = NSBundle.mainBundle().pathForResource("govisland", ofType: "plist") {
+//            if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
+//                
+//                let baseUrl = dict["baseUrl"]
+//                let urlArrayList = dict["urlPrefixes"]
+//                urlArray.append("\(baseUrl)\(urlArrayList).json")
+//                
+//                filenameArray.append("\(urlArrayList)")
+//            }
+//        }
         
-        print("locations : \(locations)")
+//        let locations :NSArray = NSArray(contentsOfFile: plistpath)!;
+//        
+//        print("locations : \(locations)")
         
-        filenameArray = ["armybuildings",
-                         "armyhouses",
-                         "food",
-                         "restrooms",
-                         "landmarks",
-                         "openspaces",
-                         "pointsofinterest",
-                         "recreation"]
+//        filenameArray = ["armybuildings",
+//                         "armyhouses",
+//                         "food",
+//                         "restrooms",
+//                         "landmarks",
+//                         "openspaces",
+//                         "pointsofinterest",
+//                         "recreation"]
+        
+
 
     }
     
@@ -129,6 +165,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         for(index, item) in settingsArray.enumerate() {
             if(item == true) {
+                
+                 print("index : \(index) item : \(item)")
+                 print("urlArray : \(urlArray)")
+
                     let urlToLoad = urlArray[index]
                     // let filenameToLoad :String = filenameArray[index]
                 
@@ -225,7 +265,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
     }
     
-
     
     func centerMapOnLocation(location: CLLocation) {
         let regionRadius: CLLocationDistance = 1000
