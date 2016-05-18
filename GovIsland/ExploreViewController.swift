@@ -11,6 +11,7 @@ import UIKit
 class ExploreViewController : UITableViewController
 {
     var selectArray :[String] = []
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,15 @@ class ExploreViewController : UITableViewController
         tableView.allowsSelection = true
         tableView.separatorStyle = .None
         tableView.separatorInset = UIEdgeInsetsZero
+        
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+        
+        self.revealViewController().rearViewRevealWidth = 140
+
     }
     
     // MARK: - Table view data source

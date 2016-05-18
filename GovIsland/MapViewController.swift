@@ -32,11 +32,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         configureMap()
         
         if self.revealViewController() != nil {
-            print("reveal")
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        
+        self.revealViewController().rearViewRevealWidth = 140
         
         self.navigationItem.title = "Map"
         filterButton.action = #selector(MapViewController.selectFeed)

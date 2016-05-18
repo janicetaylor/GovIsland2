@@ -11,6 +11,7 @@ import UIKit
 class AboutViewController: UIViewController, UIWebViewDelegate {
     
     @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -39,6 +40,14 @@ class AboutViewController: UIViewController, UIWebViewDelegate {
 //         let url = NSURL (string: "http://www.google.com")
 //         let requestObj = NSURLRequest(URL: url!);
         webView.loadRequest(requestObj)
+        
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+        
+        self.revealViewController().rearViewRevealWidth = 140
         
     }
 

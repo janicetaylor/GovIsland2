@@ -13,7 +13,8 @@ import SwiftyJSON
 class EventsTableViewController: UITableViewController {
     
     var eventArray :[Event] = []
-
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,6 +70,14 @@ class EventsTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 80.0
         tableView.allowsSelection = false
         tableView.separatorStyle = .SingleLine
+        
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+        
+        self.revealViewController().rearViewRevealWidth = 140
         
     }
     
