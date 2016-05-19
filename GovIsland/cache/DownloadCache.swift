@@ -15,6 +15,29 @@ class DownloadCache
 {
     var manager :Manager = Manager()
     var locationArray :[Location] = []
+    var urlArray :[String] = []
+    
+    func loadArraysFromPlist() {
+        if let path = NSBundle.mainBundle().pathForResource("govisland", ofType: "plist") {
+            if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
+                let baseUrl = dict["baseUrl"] as! String
+                let urlArrayList = dict["urlPrefixes"] as! Array<String>
+                for urlString in urlArrayList {
+                    urlArray.append("\(baseUrl)\(urlString).json")
+                }
+                
+                print("\(urlArray)")
+                
+            }
+        }
+    }
+
+    
+    func prefetchData() {
+        
+        
+        
+    }
     
     func downloadJsonWithUrl(urlString:String, categoryId:Int) {
         
@@ -31,6 +54,7 @@ class DownloadCache
         configuration.HTTPAdditionalHeaders = defaultHeaders
         configuration.requestCachePolicy = .UseProtocolCachePolicy // this is the default
         configuration.URLCache = cache
+        NSURLCache.setSharedURLCache(cache)
         
         // Create your own manager instance that uses your custom configuration
         // let manager = Alamofire.Manager.sharedInstance
@@ -49,10 +73,12 @@ class DownloadCache
                 
                 NSURLCache.sharedURLCache().storeCachedResponse(cachedURLResponse, forRequest: request!)
                 
-                NSNotificationCenter.defaultCenter().postNotificationName("storingCacheFinished", object: self)
+                let userinfo :Dictionary = ["categoryId" : String(categoryId), "urlString" : urlString]
+                
+                NSNotificationCenter.defaultCenter().postNotificationName("storingCacheFinished", object:self, userInfo:userinfo)
 
 //                    let json = JSON(data: data!)
-                    
+                
 //                    //If json is .Dictionary
 //                    for (_,subJson):(String, JSON) in json {
 //                        

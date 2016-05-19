@@ -38,8 +38,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     
-    func storedCacheFinished() {
-            let url = NSURL(string: "http://www.meladori.com/work/govisland/food.json")
+    func storedCacheFinished(notification :NSNotification) {
+        
+            print(notification.userInfo!["urlString"])
+        
+            let userInfo :[String:String!] = notification.userInfo as! [String:String!]
+            let urlToLoad :String = userInfo["urlString"]!
+            let url = NSURL(string:urlToLoad)
             let request = NSURLRequest(URL: url!)
         
             updateMapWithCache(request)
@@ -119,6 +124,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     // TODO: test this when all the json files are ready!
+    
     
     func updateMap() {
         let userdefaults = NSUserDefaults.standardUserDefaults()
@@ -212,16 +218,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func updateMapWithCache(urlRequest :NSURLRequest) {
         
-        let memoryCapacity = 500 * 1024 * 1024; // 500 MB
-        let diskCapacity = 500 * 1024 * 1024; // 500 MB
-        let cache = NSURLCache(memoryCapacity: memoryCapacity, diskCapacity: diskCapacity, diskPath: "shared_cache")
-        
-        // Create a custom configuration
-        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        let defaultHeaders = Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders
-        configuration.HTTPAdditionalHeaders = defaultHeaders
-        configuration.requestCachePolicy = .UseProtocolCachePolicy // this is the default
-        configuration.URLCache = cache
+        let cache = NSURLCache.sharedURLCache()
         
         // ask the cache if it has it?
         
@@ -250,7 +247,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                                 }
                         }
                 }
-            
             updateMapWithLocations(locationArray)
             
         }
