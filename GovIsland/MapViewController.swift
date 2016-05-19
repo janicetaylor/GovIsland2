@@ -131,7 +131,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 
                     let downloadCache = DownloadCache()
                     downloadCache.downloadJsonWithUrl(urlToLoad, categoryId: index)
-                    updateMapWithFeed(urlToLoad, categoryId: index)
+                    // updateMapWithFeed(urlToLoad, categoryId: index)
                 
                     // updateMapWithLocalJson(filenameToLoad, categoryId: index)
             }
@@ -150,6 +150,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let selectTableViewController = SelectTableViewController()
         self.navigationController?.pushViewController(selectTableViewController, animated: true)
     }
+    
     
     
     func updateMapWithLocalJson(fileName: String, categoryId: Int) {

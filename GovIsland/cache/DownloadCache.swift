@@ -78,8 +78,105 @@ class DownloadCache
                 // and from the network if it is expired
                 
                 // print("locationArray : \(self.locationArray)")
+                
+                let locationDictionary :[String:Array<Location>] = ["locations":self.locationArray]
+                self.addValuesToPlistFile(locationDictionary)
+    
         }
                 
     }
+    
+    //1
+    func getValuesInPlistFile() -> NSDictionary? {
+        
+        let dir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        let destPath = (dir as NSString).stringByAppendingPathComponent("locations.plist") as String
+        
+        let fileManager = NSFileManager.defaultManager()
+        if fileManager.fileExistsAtPath(destPath) {
+            guard let dict = NSDictionary(contentsOfFile: destPath) else { return .None }
+            return dict
+        } else {
+            return .None
+        }
+    }
+    
+    //2
+    func getMutablePlistFile() -> NSMutableDictionary? {
+        
+        let dir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        let destPath = (dir as NSString).stringByAppendingPathComponent("locations.plist") as String
+        
+        let fileManager = NSFileManager.defaultManager()
+        if fileManager.fileExistsAtPath(destPath) {
+            guard let dict = NSMutableDictionary(contentsOfFile: destPath) else { return .None }
+            return dict
+        } else {
+            return .None
+        }
+    }
+    
+    //3
+    func addValuesToPlistFile(dictionary : NSDictionary) {
+        
+        let dir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        var destPath = (dir as NSString).stringByAppendingPathComponent("locations.plist") as String
+        let fileManager = NSFileManager.defaultManager()
+        
+        if !fileManager.fileExistsAtPath(destPath) {
+            let plistPathInBundle = NSBundle.mainBundle().pathForResource("locations", ofType: "plist") as String!
+            destPath = plistPathInBundle
+        }
+        
+        print("destPath : \(destPath)")
+        
+        // TODO: plist isn't working hmmmmmm
+        
+        do {
+            try dictionary.writeToFile(destPath, atomically: false)
+        } catch{
+            print("Error occurred while copying file to document \(error)")
+        }
+        
+        
+}
+    
+    
+    
+//    func loadDataPlist() {
+//        
+//        let paths :NSString = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+//        let writePath = paths.stringByAppendingPathComponent("locations.plist")
+//        
+//        
+//        let fileManager = NSFileManager.defaultManager()
+//        if(!fileManager.fileExistsAtPath(writePath))
+//        {
+//            let bundle = NSBundle.mainBundle().pathForResource("locations", ofType: "plist")
+//            
+//            // copy locations.plist to documents directory so we can edit it
+//            
+//            do {
+//                try NSFileManager.defaultManager().copyItemAtPath(bundle!, toPath:writePath)
+//            } catch {
+//                print("Error occurred while copying file to document \(error)")
+//            }
+//            
+//        }
+//        
+//    
+//        
+//        [array writeToFile:filePath atomically:YES];
+//        NSLog(@"file Stored at %@",filePath);
+//        
+//        let swiftArray = NSArray(contentsOfFile: writePath) as? [String]
+//        if let swiftArray = swiftArray {
+//            
+//            // cast back to NSArray to write
+//            (swiftArray as NSArray).writeToFile(writePath, atomically: true)
+//        }
+//        
+//        print("locationArray : \(self.locationArray)")
+//    }
 
 }

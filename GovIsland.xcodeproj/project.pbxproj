@@ -29,6 +29,7 @@
 		11E27F9C1CC683F500A10847 /* ExploreDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E27F9B1CC683F500A10847 /* ExploreDetailTableViewController.swift */; };
 		11E27FA51CC7D31600A10847 /* DownloadDataOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E27FA41CC7D31600A10847 /* DownloadDataOperations.swift */; };
 		11E27FA71CC7D8C500A10847 /* DownloadCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E27FA61CC7D8C500A10847 /* DownloadCache.swift */; };
+		11E7907F1CEE1DBD00262777 /* locations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11E7907E1CEE1DBD00262777 /* locations.plist */; };
 		11F01D171CD15F7C002F08C5 /* pointsofinterest.json in Resources */ = {isa = PBXBuildFile; fileRef = 11F01D0F1CD15F7C002F08C5 /* pointsofinterest.json */; };
 		11F01D181CD15F7C002F08C5 /* openspaces.json in Resources */ = {isa = PBXBuildFile; fileRef = 11F01D101CD15F7C002F08C5 /* openspaces.json */; };
 		11F01D191CD15F7C002F08C5 /* landmarks.json in Resources */ = {isa = PBXBuildFile; fileRef = 11F01D111CD15F7C002F08C5 /* landmarks.json */; };
@@ -71,6 +72,7 @@
 		11E27F9B1CC683F500A10847 /* ExploreDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreDetailTableViewController.swift; sourceTree = "<group>"; };
 		11E27FA41CC7D31600A10847 /* DownloadDataOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadDataOperations.swift; path = cache/DownloadDataOperations.swift; sourceTree = "<group>"; };
 		11E27FA61CC7D8C500A10847 /* DownloadCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadCache.swift; path = cache/DownloadCache.swift; sourceTree = "<group>"; };
+		11E7907E1CEE1DBD00262777 /* locations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = locations.plist; sourceTree = "<group>"; };
 		11F01D0F1CD15F7C002F08C5 /* pointsofinterest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = pointsofinterest.json; path = data/pointsofinterest.json; sourceTree = "<group>"; };
 		11F01D101CD15F7C002F08C5 /* openspaces.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = openspaces.json; path = data/openspaces.json; sourceTree = "<group>"; };
 		11F01D111CD15F7C002F08C5 /* landmarks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = landmarks.json; path = data/landmarks.json; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				11A0EE191C4FE30200D01A05 /* LaunchScreen.storyboard */,
 				11A0EE1C1C4FE30200D01A05 /* Info.plist */,
 				111415281CEB90FD00986FE5 /* govisland.plist */,
+				11E7907E1CEE1DBD00262777 /* locations.plist */,
 			);
 			path = GovIsland;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				11F01D1B1CD15F7C002F08C5 /* armybuildings.json in Resources */,
 				111415311CEB9CDB00986FE5 /* events.json in Resources */,
 				11F01D1A1CD15F7C002F08C5 /* armyhomes.json in Resources */,
+				11E7907F1CEE1DBD00262777 /* locations.plist in Resources */,
 				11F01D1C1CD15F7C002F08C5 /* recreation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
