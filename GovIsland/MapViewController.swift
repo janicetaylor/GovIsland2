@@ -22,7 +22,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var filenameArray :[String] = []
     var settingsArray :[Bool] = []
     var imageIconArray :[String] = []
-    
+    var locationArray :[Location] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         configureMap()
         styleSideBar()
         styleNavigationBar()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(MapViewController.storedCacheFinished), name: "storingCacheFinished", object: nil)
+
     }
+    
+    
+    func storedCacheFinished() {
+            let url = NSURL(string: "http://www.meladori.com/work/govisland/food.json")
+            let request = NSURLRequest(URL: url!)
+        
+            updateMapWithCache(request)
+    }
+    
     
     func styleSideBar() {
         if self.revealViewController() != nil {
@@ -116,17 +128,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             settingsArray = [false, false, true, false, false, false, false, false]
             userdefaults.setObject(settingsArray, forKey: "locationsToLoad")
           }
-            
-         else {
+
+          else {
              settingsArray = userdefaults.objectForKey("locationsToLoad") as! Array
         }
         
         removeAllAnnotations()
         
+        print("settingsArray : \(settingsArray)")
+        
         for(index, item) in settingsArray.enumerate() {
+            
+            print("index : \(index) item : \(item)")
+            
             if(item == true) {
 
                     let urlToLoad = urlArray[index]
+                
+                    print("urlToLoad : \(urlToLoad)")
                     // let filenameToLoad :String = filenameArray[index]
                 
                     let downloadCache = DownloadCache()
@@ -134,6 +153,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                     // updateMapWithFeed(urlToLoad, categoryId: index)
                 
                     // updateMapWithLocalJson(filenameToLoad, categoryId: index)
+                
+
+                
+
             }
         }
 
@@ -150,7 +173,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let selectTableViewController = SelectTableViewController()
         self.navigationController?.pushViewController(selectTableViewController, animated: true)
     }
-    
     
     
     func updateMapWithLocalJson(fileName: String, categoryId: Int) {
@@ -187,6 +209,62 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
     }
 
+    
+    func updateMapWithCache(urlRequest :NSURLRequest) {
+        
+        let memoryCapacity = 500 * 1024 * 1024; // 500 MB
+        let diskCapacity = 500 * 1024 * 1024; // 500 MB
+        let cache = NSURLCache(memoryCapacity: memoryCapacity, diskCapacity: diskCapacity, diskPath: "shared_cache")
+        
+        // Create a custom configuration
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let defaultHeaders = Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders
+        configuration.HTTPAdditionalHeaders = defaultHeaders
+        configuration.requestCachePolicy = .UseProtocolCachePolicy // this is the default
+        configuration.URLCache = cache
+        
+        // ask the cache if it has it?
+        
+        if let response = cache.cachedResponseForRequest(urlRequest) {
+            
+            let jsonData = JSON(data: response.data)
+            print("jsonData from cache : \(jsonData)")
+            
+                for (_,subJson):(String, JSON) in jsonData {
+            
+                        for (_,secondaryJson):(String, JSON) in subJson {
+            
+                                for(_, tertiaryJson):(String, JSON) in secondaryJson {
+            
+                                    let mylatitude = tertiaryJson["latitude"].doubleValue
+                                    let mylongitude = tertiaryJson["longitude"].doubleValue
+                                    let title = tertiaryJson["name"].stringValue
+                                    let mycoordinate = CLLocationCoordinate2D(latitude:mylatitude, longitude:mylongitude)
+            
+                                    // TODO: how to get the category id?
+                                    
+                                    let location = Location(coordinate: mycoordinate, title: title, subtitle: "", categoryId: 2, thumbnailUrl: "")
+            
+                                    locationArray.append(location)
+                                            
+                                }
+                        }
+                }
+            
+            updateMapWithLocations(locationArray)
+            
+        }
+        
+    }
+    
+    
+    func updateMapWithLocations(locationArray :Array<Location>) {
+        for mapLocation in locationArray {
+            mapView.addAnnotation(mapLocation)
+
+        }
+    }
+    
     
 
     func updateMapWithFeed(feedUrlString: String, categoryId: Int) {
