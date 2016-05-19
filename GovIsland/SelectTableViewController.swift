@@ -12,6 +12,7 @@ class SelectTableViewController: UITableViewController {
     
     var selectArray :[String] = []
     var settingsArray :[Bool] = []
+    var iconArray :[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +50,10 @@ class SelectTableViewController: UITableViewController {
             if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
 
                 let filterList = dict["filterOptions"] as! Array<String>
+                let iconList = dict["iconImageNames"] as! Array<String>
+
                 selectArray = filterList
+                iconArray = iconList
                 
                 }
             }
@@ -77,6 +81,7 @@ class SelectTableViewController: UITableViewController {
         
        selectCell.titleSwitch.tag = indexPath.row
        selectCell.titleSwitch.addTarget(self, action: #selector(SelectTableViewController.switchChanged(_:)), forControlEvents: .TouchUpInside)
+        selectCell.thumbnailView.image = UIImage(named: iconArray[indexPath.row])
         
        return selectCell
     }
@@ -92,7 +97,7 @@ class SelectTableViewController: UITableViewController {
     
     func configureTableView() {
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 80.0
+        tableView.estimatedRowHeight = 40.0
         tableView.allowsSelection = false
         tableView.separatorStyle = .None
     }

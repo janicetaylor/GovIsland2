@@ -46,5 +46,16 @@
         <string>Points of Interest</string>
         <string>Recreation</string>
     </array>
+    <key>iconImageNames</key>
+    <array>
+        <string>icon-armybuildings</string>
+        <string>icon-armyhomes</string>
+        <string>icon-food</string>
+        <string>icon-restrooms</string>
+        <string>icon-landmarks</string>
+        <string>icon-openspaces</string>
+        <string>icon-pointsofinterest</string>
+        <string>icon-recreation</string>
+    </array>
 </dict>
 </plist>
