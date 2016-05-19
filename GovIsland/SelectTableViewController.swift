@@ -74,10 +74,14 @@ class SelectTableViewController: UITableViewController {
 
         let selectCell: SelectTableViewCell = tableView.dequeueReusableCellWithIdentifier("SelectCell", forIndexPath: indexPath) as! SelectTableViewCell
         
-       selectCell.titleLabel.text = selectArray[indexPath.row]
+        selectCell.titleLabel.text = selectArray[indexPath.row]
         
-       let settingsValue = settingsArray[indexPath.row]
+        let settingsValue = settingsArray[indexPath.row]
 //       selectCell.titleSwitch.setOn(settingsValue, animated: false)
+        
+        selectCell.filterButton.tag = indexPath.row
+        selectCell.filterButton.selected = settingsValue
+        
         
 //       selectCell.titleSwitch.tag = indexPath.row
 //       selectCell.titleSwitch.addTarget(self, action: #selector(SelectTableViewController.switchChanged(_:)), forControlEvents: .TouchUpInside)

@@ -37,7 +37,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let downloadCache = DownloadCache()
         downloadCache.prefetchData()
         
-
+        initializeSettings()
 
     }
     
@@ -56,7 +56,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let url = NSURL(string:urlToLoad)
             let request = NSURLRequest(URL: url!)
         
-            updateMapWithCache(request, categoryId: categoryId!)
+            // updateMapWithCache(request, categoryId: categoryId!)
     }
     
     
@@ -165,6 +165,23 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func removeAllAnnotations() {
         mapView.removeAnnotations(mapView.annotations)
         mapView.showsUserLocation = true
+    }
+    
+    
+    func initializeSettings() {
+        let userdefaults = NSUserDefaults.standardUserDefaults()
+        let isFirstTime = userdefaults.boolForKey("isFirstTime")
+        
+        if(isFirstTime == false) {
+            settingsArray = [false, false, true, false, false, false, false, false]
+            userdefaults.setObject(settingsArray, forKey: "locationsToLoad")
+        }
+            
+        else {
+            settingsArray = userdefaults.objectForKey("locationsToLoad") as! Array
+        }
+        
+        removeAllAnnotations()
     }
     
     
