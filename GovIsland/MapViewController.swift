@@ -36,6 +36,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         let downloadCache = DownloadCache()
         downloadCache.prefetchData()
+        
+
 
     }
     
@@ -77,22 +79,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         filterButton.target = self
     }
     
-    
-//    func loadArraysFromPlist() {
-//        if let path = NSBundle.mainBundle().pathForResource("govisland", ofType: "plist") {
-//            if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
-//                
-//                let baseUrl = dict["baseUrl"] as! String
-//                
-//                let urlArrayList = dict["urlPrefixes"] as! Array<String>
-//                for urlString in urlArrayList {
-//                    urlArray.append("\(baseUrl)\(urlString).json")
-//                }
-//                
-//                filenameArray.append("\(urlArrayList)")
-//            }
-//        }
-//    }
     
     
     override func viewWillAppear(animated: Bool) {

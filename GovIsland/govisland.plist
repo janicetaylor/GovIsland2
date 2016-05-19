@@ -35,5 +35,16 @@
 		<string>recreation</string>
 		<string>visitorinfo</string>
 	</array>
+    <key>filterOptions</key>
+    <array>
+        <string>Army Buildings</string>
+        <string>Army Homes</string>
+        <string>Food</string>
+        <string>Restrooms</string>
+        <string>Landmarks</string>
+        <string>Open Spaces</string>
+        <string>Points of Interest</string>
+        <string>Recreation</string>
+    </array>
 </dict>
 </plist>

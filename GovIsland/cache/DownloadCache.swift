@@ -71,50 +71,13 @@ class DownloadCache
                 print("error: \(error)")
                 
                 let cachedURLResponse = NSCachedURLResponse(response: response!, data: (data! as NSData), userInfo: nil, storagePolicy: .Allowed)
-                
                 NSURLCache.sharedURLCache().storeCachedResponse(cachedURLResponse, forRequest: request!)
                 
                 let userinfo :Dictionary = ["categoryId" : String(categoryId), "urlString" : urlString]
                 
                 print("storing response for url \(urlString)")
                 
-                NSNotificationCenter.defaultCenter().postNotificationName("storingCacheFinished", object:self, userInfo:userinfo)
-
-//                    let json = JSON(data: data!)
-                
-//                    //If json is .Dictionary
-//                    for (_,subJson):(String, JSON) in json {
-//                        
-//                        for (_,secondaryJson):(String, JSON) in subJson {
-//                            
-//                            for(_, tertiaryJson):(String, JSON) in secondaryJson {
-//                                
-//                                // TODO: this is duplicate code, move it?
-//                                
-//                                let mylatitude = tertiaryJson["latitude"].doubleValue
-//                                let mylongitude = tertiaryJson["longitude"].doubleValue
-//                                let title = tertiaryJson["name"].stringValue
-//                                
-//                                let mycoordinate = CLLocationCoordinate2D(latitude:mylatitude, longitude:mylongitude)
-//                                
-//                                let location = Location(coordinate: mycoordinate, title: title, subtitle: "", categoryId: categoryId, thumbnailUrl: "")
-//                                
-//                                self.locationArray.append(location)
-//                                
-//                            }
-//                        }
-//                    }
-        
-                
-                // Now parse the data using SwiftyJSON
-                // This will come from your custom cache if it is not expired,
-                // and from the network if it is expired
-                
-                // print("locationArray : \(self.locationArray)")
-                
-                // save the locationArray somehow?
-                
-                // look into NSURLCache ? and cache the JSON?
+            NSNotificationCenter.defaultCenter().postNotificationName("storingCacheFinished", object:self, userInfo:userinfo)
                
         }
         

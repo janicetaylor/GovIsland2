@@ -16,6 +16,8 @@ class SelectTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
         // TODO: put this in an object to encapsulate?
         
         let userdefaults = NSUserDefaults.standardUserDefaults()
@@ -29,19 +31,30 @@ class SelectTableViewController: UITableViewController {
         
         // TODO: put this in a plist?
         
-        self.selectArray = [
-            "Army Buildings",
-            "Army Homes",
-            "Food",
-            "Restrooms",
-            "Landmarks",
-            "Open Spaces",
-            "Points of Interest",
-            "Recreation"
-        ]
-        
+        loadTableTitlesFromPlist()
+        styleNavigationBar()
         configureTableView()
     }
+    
+    
+    func styleNavigationBar() {
+        self.navigationItem.title = "Filter"
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 210.0/255.0, green: 35.0/255.0, blue: 42.0/255.0, alpha: 1.0)
+        self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 18.0)!, NSForegroundColorAttributeName:UIColor.whiteColor()]
+    }
+    
+    
+    func loadTableTitlesFromPlist() {
+        if let path = NSBundle.mainBundle().pathForResource("govisland", ofType: "plist") {
+            if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
+
+                let filterList = dict["filterOptions"] as! Array<String>
+                selectArray = filterList
+                
+                }
+            }
+    }
+    
 
     // MARK: - Table view data source
 
