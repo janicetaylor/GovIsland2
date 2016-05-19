@@ -19,7 +19,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     var locationManager: CLLocationManager?
     var urlArray :[String] = []
-    var filenameArray :[String] = []
+    // var filenameArray :[String] = []
     var settingsArray :[Bool] = []
     var imageIconArray :[String] = []
     var locationArray :[Location] = []
@@ -28,13 +28,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         super.viewDidLoad()
         self.mapView.delegate = self
         
-        loadArraysFromPlist()
+       //  loadArraysFromPlist()
         configureMap()
         styleSideBar()
         styleNavigationBar()
+        addListeners()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(MapViewController.storedCacheFinished), name: "storingCacheFinished", object: nil)
+        let downloadCache = DownloadCache()
+        downloadCache.prefetchData()
 
+    }
+    
+    func addListeners() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(MapViewController.storedCacheFinished), name: "storingCacheFinished", object: nil)
     }
     
     
@@ -43,11 +49,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             print(notification.userInfo!["urlString"])
         
             let userInfo :[String:String!] = notification.userInfo as! [String:String!]
+            let categoryId = Int(userInfo["categoryId"]!)
             let urlToLoad :String = userInfo["urlString"]!
             let url = NSURL(string:urlToLoad)
             let request = NSURLRequest(URL: url!)
         
-            updateMapWithCache(request)
+            updateMapWithCache(request, categoryId: categoryId!)
     }
     
     
@@ -71,26 +78,26 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     
-    func loadArraysFromPlist() {
-        if let path = NSBundle.mainBundle().pathForResource("govisland", ofType: "plist") {
-            if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
-                
-                let baseUrl = dict["baseUrl"] as! String
-                
-                let urlArrayList = dict["urlPrefixes"] as! Array<String>
-                for urlString in urlArrayList {
-                    urlArray.append("\(baseUrl)\(urlString).json")
-                }
-                
-                filenameArray.append("\(urlArrayList)")
-            }
-        }
-    }
+//    func loadArraysFromPlist() {
+//        if let path = NSBundle.mainBundle().pathForResource("govisland", ofType: "plist") {
+//            if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
+//                
+//                let baseUrl = dict["baseUrl"] as! String
+//                
+//                let urlArrayList = dict["urlPrefixes"] as! Array<String>
+//                for urlString in urlArrayList {
+//                    urlArray.append("\(baseUrl)\(urlString).json")
+//                }
+//                
+//                filenameArray.append("\(urlArrayList)")
+//            }
+//        }
+//    }
     
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        updateMap()
+//        updateMap()
     }
     
     func configureMap() {
@@ -216,7 +223,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
 
     
-    func updateMapWithCache(urlRequest :NSURLRequest) {
+    func updateMapWithCache(urlRequest :NSURLRequest, categoryId :Int) {
         
         let cache = NSURLCache.sharedURLCache()
         
@@ -225,7 +232,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         if let response = cache.cachedResponseForRequest(urlRequest) {
             
             let jsonData = JSON(data: response.data)
-            print("jsonData from cache : \(jsonData)")
+            
+            // print("jsonData from cache : \(jsonData)")
             
                 for (_,subJson):(String, JSON) in jsonData {
             
@@ -237,16 +245,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                                     let mylongitude = tertiaryJson["longitude"].doubleValue
                                     let title = tertiaryJson["name"].stringValue
                                     let mycoordinate = CLLocationCoordinate2D(latitude:mylatitude, longitude:mylongitude)
-            
-                                    // TODO: how to get the category id?
-                                    
-                                    let location = Location(coordinate: mycoordinate, title: title, subtitle: "", categoryId: 2, thumbnailUrl: "")
+                                    let location = Location(coordinate: mycoordinate, title: title, subtitle: "", categoryId: categoryId, thumbnailUrl: "")
             
                                     locationArray.append(location)
                                             
                                 }
                         }
                 }
+            
             updateMapWithLocations(locationArray)
             
         }

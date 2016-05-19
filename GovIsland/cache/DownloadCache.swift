@@ -25,23 +25,26 @@ class DownloadCache
                 for urlString in urlArrayList {
                     urlArray.append("\(baseUrl)\(urlString).json")
                 }
-                
-                print("\(urlArray)")
-                
             }
         }
+        
+      
     }
 
     
     func prefetchData() {
         
+        loadArraysFromPlist()
         
+        for url in urlArray {
+            downloadJsonWithUrl(url, categoryId: urlArray.indexOf(url)!)
+        }
         
     }
     
     func downloadJsonWithUrl(urlString:String, categoryId:Int) {
         
-        print("downloading json : \(urlString)")
+        print("prefetching json : \(urlString) with categoryId : \(categoryId)")
         
         // Create a shared URL cache
         let memoryCapacity = 500 * 1024 * 1024; // 500 MB
@@ -57,9 +60,9 @@ class DownloadCache
         NSURLCache.setSharedURLCache(cache)
         
         // Create your own manager instance that uses your custom configuration
-        // let manager = Alamofire.Manager.sharedInstance
+        let manager = Alamofire.Manager.sharedInstance
         
-        manager = Alamofire.Manager(configuration: configuration)
+        // manager = Alamofire.Manager(configuration: configuration)
         
         // Make your request with your custom manager that is caching your requests by default
         manager.request(.GET, urlString, parameters: nil, encoding: .URL)
@@ -69,11 +72,11 @@ class DownloadCache
                 
                 let cachedURLResponse = NSCachedURLResponse(response: response!, data: (data! as NSData), userInfo: nil, storagePolicy: .Allowed)
                 
-                print("storing response for request \(request)")
-                
                 NSURLCache.sharedURLCache().storeCachedResponse(cachedURLResponse, forRequest: request!)
                 
                 let userinfo :Dictionary = ["categoryId" : String(categoryId), "urlString" : urlString]
+                
+                print("storing response for url \(urlString)")
                 
                 NSNotificationCenter.defaultCenter().postNotificationName("storingCacheFinished", object:self, userInfo:userinfo)
 
