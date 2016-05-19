@@ -14,9 +14,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="522" height="48"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JzU-rd-9gm">
-                        <rect key="frame" x="465" y="7" width="51" height="31"/>
-                    </switch>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sic-4p-kyp">
                         <rect key="frame" x="13" y="10" width="30" height="30"/>
                         <constraints>
@@ -25,32 +22,43 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPo-ef-ix0">
-                        <rect key="frame" x="51" y="14" width="406" height="21"/>
+                        <rect key="frame" x="51" y="14" width="338" height="21"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n67-Pf-nf2">
+                        <rect key="frame" x="425" y="6" width="87" height="38"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="38" id="5go-lD-qoz"/>
+                            <constraint firstAttribute="width" constant="87" id="DgK-w6-Qb9"/>
+                        </constraints>
+                        <state key="normal" image="toggle-off"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="IPo-ef-ix0" firstAttribute="leading" secondItem="sic-4p-kyp" secondAttribute="trailing" constant="8" id="2VK-K6-3QZ"/>
                     <constraint firstItem="sic-4p-kyp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="13" id="5B5-2r-BuX"/>
+                    <constraint firstAttribute="trailing" secondItem="n67-Pf-nf2" secondAttribute="trailing" constant="10" id="8bm-n5-yJn"/>
                     <constraint firstItem="IPo-ef-ix0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="II7-Ww-WwJ"/>
-                    <constraint firstAttribute="bottom" secondItem="JzU-rd-9gm" secondAttribute="bottom" constant="10" id="M1W-JO-5fQ"/>
-                    <constraint firstItem="JzU-rd-9gm" firstAttribute="leading" secondItem="IPo-ef-ix0" secondAttribute="trailing" constant="8" id="Mp4-gY-i9u"/>
                     <constraint firstAttribute="bottom" secondItem="IPo-ef-ix0" secondAttribute="bottom" constant="13" id="Ntc-IQ-279"/>
+                    <constraint firstItem="n67-Pf-nf2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="OHO-Bg-kdy"/>
                     <constraint firstItem="sic-4p-kyp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="TKU-R5-w4w"/>
-                    <constraint firstAttribute="trailing" secondItem="JzU-rd-9gm" secondAttribute="trailing" constant="8" id="b3t-IG-cAJ"/>
-                    <constraint firstItem="JzU-rd-9gm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="jxf-Fm-HQw"/>
                     <constraint firstAttribute="bottom" secondItem="sic-4p-kyp" secondAttribute="bottom" constant="8" id="mtp-rN-vUX"/>
+                    <constraint firstAttribute="bottom" secondItem="n67-Pf-nf2" secondAttribute="bottom" constant="4" id="oAn-cx-OQo"/>
+                    <constraint firstItem="n67-Pf-nf2" firstAttribute="leading" secondItem="IPo-ef-ix0" secondAttribute="trailing" constant="36" id="tWT-ty-CQH"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.94085192679999996" green="0.94903725390000004" blue="0.95307987930000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
+                <outlet property="filterButton" destination="n67-Pf-nf2" id="zUu-xd-Kd5"/>
                 <outlet property="thumbnailView" destination="sic-4p-kyp" id="sPY-Nz-GPr"/>
                 <outlet property="titleLabel" destination="IPo-ef-ix0" id="62E-X0-8Rc"/>
-                <outlet property="titleSwitch" destination="JzU-rd-9gm" id="2ma-qc-9Uo"/>
             </connections>
             <point key="canvasLocation" x="429" y="346.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="toggle-off" width="79" height="38"/>
+    </resources>
 </document>

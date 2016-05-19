@@ -77,11 +77,11 @@ class SelectTableViewController: UITableViewController {
        selectCell.titleLabel.text = selectArray[indexPath.row]
         
        let settingsValue = settingsArray[indexPath.row]
-       selectCell.titleSwitch.setOn(settingsValue, animated: false)
+//       selectCell.titleSwitch.setOn(settingsValue, animated: false)
         
-       selectCell.titleSwitch.tag = indexPath.row
-       selectCell.titleSwitch.addTarget(self, action: #selector(SelectTableViewController.switchChanged(_:)), forControlEvents: .TouchUpInside)
-        selectCell.thumbnailView.image = UIImage(named: iconArray[indexPath.row])
+//       selectCell.titleSwitch.tag = indexPath.row
+//       selectCell.titleSwitch.addTarget(self, action: #selector(SelectTableViewController.switchChanged(_:)), forControlEvents: .TouchUpInside)
+       selectCell.thumbnailView.image = UIImage(named: iconArray[indexPath.row])
         
        return selectCell
     }
