@@ -30,8 +30,8 @@ class AboutViewController: UIViewController, UIWebViewDelegate {
         
         self.webView.delegate = self
         
-        self.navigationItem.title = "Shop"
-        
+        styleNavigationBar()
+
         // load local webview html
         let url = NSBundle.mainBundle().URLForResource("webViewAbout", withExtension: "html")
         let requestObj = NSURLRequest(URL: url!)
@@ -49,6 +49,12 @@ class AboutViewController: UIViewController, UIWebViewDelegate {
         
         self.revealViewController().rearViewRevealWidth = 140
         
+    }
+    
+    func styleNavigationBar() {
+        self.navigationItem.title = "Shop"
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 210.0/255.0, green: 35.0/255.0, blue: 42.0/255.0, alpha: 1.0)
+        self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 18.0)!, NSForegroundColorAttributeName:UIColor.whiteColor()]
     }
 
      func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {

@@ -47,11 +47,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func styleNavigationBar() {
         self.navigationItem.title = "Map"
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 210.0/255.0, green: 35.0/255.0, blue: 42.0/255.0, alpha: 1.0)
-        self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "marguerite", size: 18.0)!, NSForegroundColorAttributeName:UIColor.whiteColor()]
+        self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 18.0)!, NSForegroundColorAttributeName:UIColor.whiteColor()]
         
         filterButton.action = #selector(MapViewController.selectFeed)
         filterButton.target = self
     }
+    
     
     func loadArraysFromPlist() {
         if let path = NSBundle.mainBundle().pathForResource("govisland", ofType: "plist") {

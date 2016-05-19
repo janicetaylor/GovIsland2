@@ -21,10 +21,9 @@ class EventsTableViewController: UITableViewController {
         let eventNib = UINib(nibName: "EventsTableViewCell", bundle: nil)
         tableView.registerNib(eventNib, forCellReuseIdentifier:"eventsTableViewCell")
         
-        self.navigationItem.title = "Events"
-        
         configureTableView()
         populateTable()
+        styleNavigationBar()
     }
     
     func populateTable() {
@@ -63,6 +62,12 @@ class EventsTableViewController: UITableViewController {
         
         }
         
+    }
+    
+    func styleNavigationBar() {
+        self.navigationItem.title = "Events"
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 210.0/255.0, green: 35.0/255.0, blue: 42.0/255.0, alpha: 1.0)
+        self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 18.0)!, NSForegroundColorAttributeName:UIColor.whiteColor()]
     }
     
     func configureTableView() {

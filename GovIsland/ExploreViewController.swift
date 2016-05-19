@@ -11,6 +11,8 @@ import UIKit
 class ExploreViewController : UITableViewController
 {
     var selectArray :[String] = []
+    var iconArray :[String] = []
+
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -32,6 +34,17 @@ class ExploreViewController : UITableViewController
             "Recreation"
         ]
         
+        self.iconArray = [
+            "icon-armybuildings",
+            "icon-armyhomes",
+            "icon-food",
+            "icon-restrooms",
+            "icon-landmarks",
+            "icon-openspaces",
+            "icon-pointsofinterest",
+            "icon-recreation"
+        ]
+        
         configureTableView()
         styleNavigationBar()
         
@@ -40,7 +53,7 @@ class ExploreViewController : UITableViewController
     func styleNavigationBar() {
         self.navigationItem.title = "Explore"
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 210.0/255.0, green: 35.0/255.0, blue: 42.0/255.0, alpha: 1.0)
-        self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "marguerite", size: 10.0)!, NSForegroundColorAttributeName:UIColor.whiteColor()] 
+        self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 18.0)!, NSForegroundColorAttributeName:UIColor.whiteColor()]
     }
     
     func configureTableView() {
@@ -75,6 +88,8 @@ class ExploreViewController : UITableViewController
         let exploreCell :UITableViewCell = tableView.dequeueReusableCellWithIdentifier("exploreTableCell")!
         
         exploreCell.textLabel?.text = selectArray[indexPath.row]
+        
+        exploreCell.imageView?.image = UIImage(named:self.iconArray[indexPath.row])
         
         return exploreCell
        

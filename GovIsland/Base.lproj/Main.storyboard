@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Map-->
+        <!--Map View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="MapViewController" customModule="GovIsland" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,7 +30,7 @@
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="it1-0r-bQP" secondAttribute="bottom" id="xbV-nY-1ZT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Map" id="2dQ-bZ-Eg0">
+                    <navigationItem key="navigationItem" id="2dQ-bZ-Eg0">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="menu" style="plain" id="wKo-hg-Fbu">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
@@ -68,12 +68,12 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="RZC-qI-7nU">
-                                                    <rect key="frame" x="21" y="10" width="30" height="30"/>
+                                                    <rect key="frame" x="22" y="17" width="20" height="20"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Map" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TkH-1G-mXP">
-                                                    <rect key="frame" x="61" y="11" width="51" height="31"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="18"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="50" y="11" width="51" height="31"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -91,12 +91,12 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="explore" translatesAutoresizingMaskIntoConstraints="NO" id="6fk-Fp-ou7">
-                                                    <rect key="frame" x="18" y="8" width="30" height="30"/>
+                                                    <rect key="frame" x="20" y="12" width="20" height="20"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Explore" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWy-eI-TvW">
-                                                    <rect key="frame" x="61" y="8" width="79" height="31"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="18"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="50" y="7" width="79" height="31"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -114,12 +114,12 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="events" translatesAutoresizingMaskIntoConstraints="NO" id="qX7-Iw-pQ4">
-                                                    <rect key="frame" x="18" y="8" width="30" height="30"/>
+                                                    <rect key="frame" x="20" y="11" width="20" height="20"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Events" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uj2-TM-qd6">
-                                                    <rect key="frame" x="61" y="6" width="76" height="31"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="18"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="50" y="6" width="76" height="31"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -137,13 +137,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="err-3c-tg9">
-                                                    <rect key="frame" x="61" y="7" width="67" height="31"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="18"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="50" y="4" width="67" height="31"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shop" translatesAutoresizingMaskIntoConstraints="NO" id="wsD-uf-HU9">
-                                                    <rect key="frame" x="19" y="7" width="30" height="30"/>
+                                                    <rect key="frame" x="20" y="9" width="20" height="20"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -203,7 +203,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TdD-YS-ugR">
                                             <rect key="frame" x="15" y="0.0" width="550" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -217,7 +217,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="tuf-Vx-yj4">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="9MR-pY-VwW"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="9MR-pY-VwW">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="9MR-pY-VwW" id="Imm-Pd-A8X"/>
@@ -253,7 +255,9 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Pf8-b8-Sly">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="QQm-1d-MQj"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="menu" id="QQm-1d-MQj">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -396,7 +400,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Yyp-pE-o1e">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="iwG-yA-F5e"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="iwG-yA-F5e">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="iwG-yA-F5e" id="dsk-ot-q4H"/>
