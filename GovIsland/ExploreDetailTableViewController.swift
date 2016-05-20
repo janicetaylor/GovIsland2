@@ -9,13 +9,18 @@
 import UIKit
 import SwiftyJSON
 import MapKit
+import SDWebImage
+
 
 class ExploreDetailTableViewController: UITableViewController {
     
     var titleArray :[String] = []
+    var urlArraylist :[String] = []
     var thumbnailArray :[String] = []
     var locationArray :[Location] = []
     var pathArray :[String] = []
+    var baseUrl :String = ""
+    var prefixUrl :String = ""
     
     override func viewDidLoad()
     {
@@ -30,8 +35,9 @@ class ExploreDetailTableViewController: UITableViewController {
     func loadArraysFromPlist() {
         if let path = NSBundle.mainBundle().pathForResource("govisland", ofType: "plist") {
             if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
-                let baseUrl = dict["baseUrl"] as! String
+                baseUrl = dict["baseUrl"] as! String
                 let urlArrayList = dict["urlPrefixes"] as! Array<String>
+                
                 for urlString in urlArrayList {
                     pathArray.append("\(baseUrl)\(urlString).json")
                 }
@@ -67,8 +73,6 @@ class ExploreDetailTableViewController: UITableViewController {
             // print("jsonData from cache : \(jsonData)")
             
             for (_,subJson):(String, JSON) in jsonData {
-                
-                print(subJson["title"].stringValue)
                 
                 for (_,secondaryJson):(String, JSON) in subJson {
                     
@@ -113,7 +117,16 @@ class ExploreDetailTableViewController: UITableViewController {
         let exploreCell: ExploreDetailTableViewCell = tableView.dequeueReusableCellWithIdentifier("exploreDetailTableViewCell", forIndexPath: indexPath) as! ExploreDetailTableViewCell
         
         exploreCell.titleView.text = titleArray[indexPath.row]
-        exploreCell.thumbnailImageView.image = UIImage(named: thumbnailArray[indexPath.row])
+        // exploreCell.thumbnailImageView.image = UIImage(named: thumbnailArray[indexPath.row])
+        
+        let urlString = "\(prefixUrl)\(thumbnailArray[indexPath.row])"
+        let url = NSURL(string:urlString)
+        exploreCell.thumbnailImageView.sd_setImageWithURL(url)
+
+        
+//        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:@"http://www.domain.com/path/to/image.jpg"]
+//            placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+        
         
         return exploreCell
     }

@@ -127,7 +127,6 @@
 			children = (
 				111415401CECCDAD00986FE5 /* SWRevealViewController.h */,
 				111415411CECCDAD00986FE5 /* SWRevealViewController.m */,
-				1114153F1CECCDAD00986FE5 /* GovIsland-Bridging-Header.h */,
 			);
 			name = SWRevealViewController;
 			sourceTree = "<group>";
@@ -175,6 +174,7 @@
 				1114152D1CEB965B00986FE5 /* EventsTableViewCell.xib */,
 				11A0EE141C4FE30200D01A05 /* Main.storyboard */,
 				11A0EE171C4FE30200D01A05 /* Assets.xcassets */,
+				1114153F1CECCDAD00986FE5 /* GovIsland-Bridging-Header.h */,
 				11A0EE191C4FE30200D01A05 /* LaunchScreen.storyboard */,
 				11A0EE1C1C4FE30200D01A05 /* Info.plist */,
 				111415281CEB90FD00986FE5 /* govisland.plist */,
