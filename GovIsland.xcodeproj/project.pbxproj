@@ -20,6 +20,8 @@
 		1114153A1CEBB9D800986FE5 /* webViewAbout.html in Resources */ = {isa = PBXBuildFile; fileRef = 111415391CEBB9D800986FE5 /* webViewAbout.html */; };
 		111415421CECCDAD00986FE5 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111415411CECCDAD00986FE5 /* SWRevealViewController.m */; };
 		111415441CECDD1300986FE5 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111415431CECDD1300986FE5 /* MenuController.swift */; };
+		114AFC351CEF8D7F0084C38B /* ExploreDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114AFC331CEF8D7F0084C38B /* ExploreDetailTableViewCell.swift */; };
+		114AFC361CEF8D7F0084C38B /* ExploreDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 114AFC341CEF8D7F0084C38B /* ExploreDetailTableViewCell.xib */; };
 		11A0EE0F1C4FE30200D01A05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EE0E1C4FE30200D01A05 /* AppDelegate.swift */; };
 		11A0EE111C4FE30200D01A05 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EE101C4FE30200D01A05 /* MapViewController.swift */; };
 		11A0EE131C4FE30200D01A05 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EE121C4FE30200D01A05 /* ExploreViewController.swift */; };
@@ -59,6 +61,8 @@
 		111415401CECCDAD00986FE5 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = helpers/SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
 		111415411CECCDAD00986FE5 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = helpers/SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
 		111415431CECDD1300986FE5 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		114AFC331CEF8D7F0084C38B /* ExploreDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreDetailTableViewCell.swift; sourceTree = "<group>"; };
+		114AFC341CEF8D7F0084C38B /* ExploreDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExploreDetailTableViewCell.xib; sourceTree = "<group>"; };
 		11A0EE0B1C4FE30200D01A05 /* GovIsland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GovIsland.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11A0EE0E1C4FE30200D01A05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11A0EE101C4FE30200D01A05 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 				11A0EE121C4FE30200D01A05 /* ExploreViewController.swift */,
 				11E27F9B1CC683F500A10847 /* ExploreDetailTableViewController.swift */,
 				11F01D251CD2A648002F08C5 /* ExploreDetailViewController.swift */,
+				114AFC331CEF8D7F0084C38B /* ExploreDetailTableViewCell.swift */,
+				114AFC341CEF8D7F0084C38B /* ExploreDetailTableViewCell.xib */,
 				11F37C381CAF26CE00CFA9C6 /* SelectTableViewController.swift */,
 				11F37C391CAF26CE00CFA9C6 /* SelectTableViewController.xib */,
 				11F37C3C1CAF288A00CFA9C6 /* SelectTableViewCell.swift */,
@@ -291,6 +297,7 @@
 				11F01D191CD15F7C002F08C5 /* landmarks.json in Resources */,
 				11F37C3B1CAF26CE00CFA9C6 /* SelectTableViewController.xib in Resources */,
 				11F01D281CD2C324002F08C5 /* webView.html in Resources */,
+				114AFC361CEF8D7F0084C38B /* ExploreDetailTableViewCell.xib in Resources */,
 				11A0EE181C4FE30200D01A05 /* Assets.xcassets in Resources */,
 				11A0EE161C4FE30200D01A05 /* Main.storyboard in Resources */,
 				11F01D181CD15F7C002F08C5 /* openspaces.json in Resources */,
@@ -358,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				114AFC351CEF8D7F0084C38B /* ExploreDetailTableViewCell.swift in Sources */,
 				11A0EE131C4FE30200D01A05 /* ExploreViewController.swift in Sources */,
 				1114152B1CEB942A00986FE5 /* EventsTableViewController.swift in Sources */,
 				111415421CECCDAD00986FE5 /* SWRevealViewController.m in Sources */,

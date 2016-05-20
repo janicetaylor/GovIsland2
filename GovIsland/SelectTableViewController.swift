@@ -30,8 +30,6 @@ class SelectTableViewController: UITableViewController {
         let selectNib = UINib(nibName: "SelectTableViewCell", bundle: nil)
         tableView.registerNib(selectNib, forCellReuseIdentifier:"SelectCell")
         
-        // TODO: put this in a plist?
-        
         loadTableTitlesFromPlist()
         styleNavigationBar()
         configureTableView()
