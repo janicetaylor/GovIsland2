@@ -28,7 +28,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         super.viewDidLoad()
         self.mapView.delegate = self
         
-       //  loadArraysFromPlist()
+        loadArraysFromPlist()
         configureMap()
         styleSideBar()
         styleNavigationBar()
@@ -59,6 +59,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             // updateMapWithCache(request, categoryId: categoryId!)
     }
     
+    func loadArraysFromPlist() {
+        if let path = NSBundle.mainBundle().pathForResource("govisland", ofType: "plist") {
+            if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
+                let baseUrl = dict["baseUrl"] as! String
+                let urlArrayList = dict["urlPrefixes"] as! Array<String>
+                for urlString in urlArrayList {
+                    urlArray.append("\(baseUrl)\(urlString).json")
+                }
+            }
+        }
+        
+    }
     
     func styleSideBar() {
         if self.revealViewController() != nil {
@@ -83,7 +95,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-//        updateMap()
+        updateMap()
     }
     
     func configureMap() {
@@ -116,8 +128,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         centerMapOnLocation(initialLocation)
     }
     
-    // TODO: test this when all the json files are ready!
-    
     
     func updateMap() {
         let userdefaults = NSUserDefaults.standardUserDefaults()
@@ -132,29 +142,35 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
              settingsArray = userdefaults.objectForKey("locationsToLoad") as! Array
         }
         
+        // TODO: bug with this... why do some annotations not get removed?
+        
         removeAllAnnotations()
         
-        print("settingsArray : \(settingsArray)")
+        print("updateMap : settingsArray : \(settingsArray)")
         
         for(index, item) in settingsArray.enumerate() {
-            
-            print("index : \(index) item : \(item)")
             
             if(item == true) {
 
                     let urlToLoad = urlArray[index]
                 
-                    print("urlToLoad : \(urlToLoad)")
+                    print("index : \(index) item : \(item) urlToLoad : \(urlToLoad)")
+                
                     // let filenameToLoad :String = filenameArray[index]
                 
-                    let downloadCache = DownloadCache()
-                    downloadCache.downloadJsonWithUrl(urlToLoad, categoryId: index)
+                
+                // !! TODO - ask the cache if this needs to be downloaded again
+                
+//                    let downloadCache = DownloadCache()
+//                    downloadCache.downloadJsonWithUrl(urlToLoad, categoryId: index)
                     // updateMapWithFeed(urlToLoad, categoryId: index)
                 
                     // updateMapWithLocalJson(filenameToLoad, categoryId: index)
                 
-
+                    let url = NSURL(string:urlToLoad)
+                    let request = NSURLRequest(URL: url!)
                 
+                     updateMapWithCache(request, categoryId: index)
 
             }
         }
@@ -235,6 +251,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         if let response = cache.cachedResponseForRequest(urlRequest) {
             
             let jsonData = JSON(data: response.data)
+            
+            locationArray = []
             
             // print("jsonData from cache : \(jsonData)")
             
@@ -317,6 +335,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
 
+        // TODO: move to plist 
+        
         imageIconArray = ["annotation-armybuildings",
                           "annotation-armyhouses",
                           "annotation-food",

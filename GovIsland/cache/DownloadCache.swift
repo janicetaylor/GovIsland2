@@ -27,7 +27,6 @@ class DownloadCache
                 }
             }
         }
-        
       
     }
 
@@ -44,7 +43,7 @@ class DownloadCache
     
     func downloadJsonWithUrl(urlString:String, categoryId:Int) {
         
-        print("prefetching json : \(urlString) with categoryId : \(categoryId)")
+        // print("prefetching json : \(urlString) with categoryId : \(categoryId)")
         
         // Create a shared URL cache
         let memoryCapacity = 500 * 1024 * 1024; // 500 MB
@@ -68,7 +67,9 @@ class DownloadCache
         manager.request(.GET, urlString, parameters: nil, encoding: .URL)
             .response { (request, response, data, error) in
                 
-                print("error: \(error)")
+                if((error) != nil) {
+                     print("error: \(error)")
+                }
                 
                 let cachedURLResponse = NSCachedURLResponse(response: response!, data: (data! as NSData), userInfo: nil, storagePolicy: .Allowed)
                 NSURLCache.sharedURLCache().storeCachedResponse(cachedURLResponse, forRequest: request!)

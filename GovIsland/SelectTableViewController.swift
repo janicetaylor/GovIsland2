@@ -82,6 +82,14 @@ class SelectTableViewController: UITableViewController {
         selectCell.filterButton.tag = indexPath.row
         selectCell.filterButton.selected = settingsValue
         
+        if(!selectCell.filterButton.selected) {
+            selectCell.filterButton.setImage(UIImage(named: "toggle-off"), forState: .Normal)
+        }
+            
+        else {
+            selectCell.filterButton.setImage(UIImage(named: "toggle-on"), forState: .Normal)
+        }
+        
         selectCell.filterButton.addTarget(self, action: #selector(SelectTableViewController.filterButtonDidSelect), forControlEvents: .TouchUpInside)
         
 //       selectCell.titleSwitch.tag = indexPath.row
@@ -95,7 +103,7 @@ class SelectTableViewController: UITableViewController {
     func filterButtonDidSelect(sender: UIButton) {
         sender.selected = !sender.selected;
         
-        if(sender.selected) {
+        if(!sender.selected) {
             sender.setImage(UIImage(named: "toggle-off"), forState: .Normal)
         }
         
@@ -107,6 +115,8 @@ class SelectTableViewController: UITableViewController {
         
         let userdefaults = NSUserDefaults.standardUserDefaults()
         userdefaults.setObject(settingsArray, forKey: "locationsToLoad")
+        
+        print("settingsArray : \(settingsArray)")
     }
     
     
