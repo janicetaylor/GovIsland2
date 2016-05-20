@@ -53,7 +53,10 @@ class SelectTableViewController: UITableViewController {
                 let iconList = dict["iconImageNames"] as! Array<String>
 
                 selectArray = filterList
+                selectArray.removeLast()
+                
                 iconArray = iconList
+                iconArray.removeLast()
                 
                 }
             }
@@ -75,12 +78,8 @@ class SelectTableViewController: UITableViewController {
         let selectCell: SelectTableViewCell = tableView.dequeueReusableCellWithIdentifier("SelectCell", forIndexPath: indexPath) as! SelectTableViewCell
         
         selectCell.titleLabel.text = selectArray[indexPath.row]
-        
-        let settingsValue = settingsArray[indexPath.row]
-//       selectCell.titleSwitch.setOn(settingsValue, animated: false)
-        
         selectCell.filterButton.tag = indexPath.row
-        selectCell.filterButton.selected = settingsValue
+        selectCell.filterButton.selected = settingsArray[indexPath.row]
         
         if(!selectCell.filterButton.selected) {
             selectCell.filterButton.setImage(UIImage(named: "toggle-off"), forState: .Normal)
@@ -91,9 +90,7 @@ class SelectTableViewController: UITableViewController {
         }
         
         selectCell.filterButton.addTarget(self, action: #selector(SelectTableViewController.filterButtonDidSelect), forControlEvents: .TouchUpInside)
-        
-//       selectCell.titleSwitch.tag = indexPath.row
-//       selectCell.titleSwitch.addTarget(self, action: #selector(SelectTableViewController.switchChanged(_:)), forControlEvents: .TouchUpInside)
+
        selectCell.thumbnailView.image = UIImage(named: iconArray[indexPath.row])
         
        return selectCell
@@ -116,17 +113,7 @@ class SelectTableViewController: UITableViewController {
         let userdefaults = NSUserDefaults.standardUserDefaults()
         userdefaults.setObject(settingsArray, forKey: "locationsToLoad")
         
-        print("settingsArray : \(settingsArray)")
     }
-    
-    
-//    func switchChanged(selectedswitch :UISwitch) {
-//        settingsArray[selectedswitch.tag] = selectedswitch.on
-//        
-//        let userdefaults = NSUserDefaults.standardUserDefaults()
-//        userdefaults.setObject(settingsArray, forKey: "locationsToLoad")
-//    }
-    
     
     func configureTableView() {
         tableView.rowHeight = UITableViewAutomaticDimension

@@ -21,40 +21,30 @@ class ExploreViewController : UITableViewController
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        // put this in plist?
-        
-        self.selectArray = [
-            "Army Buildings",
-            "Army Homes",
-            "Food",
-            "Restrooms",
-            "Landmarks",
-            "Open Spaces",
-            "Points of Interest",
-            "Recreation"
-        ]
-        
-        self.iconArray = [
-            "icon-armybuildings",
-            "icon-armyhomes",
-            "icon-food",
-            "icon-restrooms",
-            "icon-landmarks",
-            "icon-openspaces",
-            "icon-pointsofinterest",
-            "icon-recreation"
-        ]
-        
+        loadArraysFromPlist()
         configureTableView()
         styleNavigationBar()
         
     }
+    
+    
+    func loadArraysFromPlist() {
+        if let path = NSBundle.mainBundle().pathForResource("govisland", ofType: "plist") {
+            if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
+                selectArray = dict["filterOptions"] as! Array<String>
+                iconArray = dict["iconImageNames"] as! Array<String>
+            }
+        }
+        
+    }
+    
     
     func styleNavigationBar() {
         self.navigationItem.title = "Explore"
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 210.0/255.0, green: 35.0/255.0, blue: 42.0/255.0, alpha: 1.0)
         self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 18.0)!, NSForegroundColorAttributeName:UIColor.whiteColor()]
     }
+    
     
     func configureTableView() {
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -88,7 +78,6 @@ class ExploreViewController : UITableViewController
         let exploreCell :UITableViewCell = tableView.dequeueReusableCellWithIdentifier("exploreTableCell")!
         
         exploreCell.textLabel?.text = selectArray[indexPath.row]
-        
         exploreCell.imageView?.image = UIImage(named:self.iconArray[indexPath.row])
         
         return exploreCell

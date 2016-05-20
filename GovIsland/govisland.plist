@@ -45,6 +45,7 @@
         <string>Open Spaces</string>
         <string>Points of Interest</string>
         <string>Recreation</string>
+        <string>Visitor Info</string>
     </array>
     <key>iconImageNames</key>
     <array>
@@ -56,6 +57,8 @@
         <string>icon-openspaces</string>
         <string>icon-pointsofinterest</string>
         <string>icon-recreation</string>
+        <string>icon-visitorinfo</string>
+
     </array>
     <key>annotationImageNames</key>
     <array>
