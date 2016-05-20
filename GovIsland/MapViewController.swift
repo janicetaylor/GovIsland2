@@ -50,11 +50,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
             print(notification.userInfo!["urlString"])
         
-            let userInfo :[String:String!] = notification.userInfo as! [String:String!]
-            let categoryId = Int(userInfo["categoryId"]!)
-            let urlToLoad :String = userInfo["urlString"]!
-            let url = NSURL(string:urlToLoad)
-            let request = NSURLRequest(URL: url!)
+            // let userInfo :[String:String!] = notification.userInfo as! [String:String!]
+            // let categoryId = Int(userInfo["categoryId"]!)
+            // let urlToLoad :String = userInfo["urlString"]!
+            // let url = NSURL(string:urlToLoad)
+            // let request = NSURLRequest(URL: url!)
         
             // updateMapWithCache(request, categoryId: categoryId!)
     }
@@ -64,6 +64,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
                 let baseUrl = dict["baseUrl"] as! String
                 let urlArrayList = dict["urlPrefixes"] as! Array<String>
+                imageIconArray = dict["annotationImageNames"] as! Array<String>
                 for urlString in urlArrayList {
                     urlArray.append("\(baseUrl)\(urlString).json")
                 }
@@ -85,12 +86,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func styleNavigationBar() {
         self.navigationItem.title = "Map"
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 210.0/255.0, green: 35.0/255.0, blue: 42.0/255.0, alpha: 1.0)
-        self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 18.0)!, NSForegroundColorAttributeName:UIColor.whiteColor()]
+         self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 18.0)!, NSForegroundColorAttributeName:UIColor.whiteColor()]
         
         filterButton.action = #selector(MapViewController.selectFeed)
         filterButton.target = self
     }
-    
     
     
     override func viewWillAppear(animated: Bool) {
@@ -142,8 +142,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
              settingsArray = userdefaults.objectForKey("locationsToLoad") as! Array
         }
         
-        // TODO: bug with this... why do some annotations not get removed?
-        
         removeAllAnnotations()
         
         print("updateMap : settingsArray : \(settingsArray)")
@@ -154,22 +152,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
                     let urlToLoad = urlArray[index]
                 
-                    print("index : \(index) item : \(item) urlToLoad : \(urlToLoad)")
-                
-                    // let filenameToLoad :String = filenameArray[index]
-                
-                
-                // !! TODO - ask the cache if this needs to be downloaded again
-                
-//                    let downloadCache = DownloadCache()
-//                    downloadCache.downloadJsonWithUrl(urlToLoad, categoryId: index)
-                    // updateMapWithFeed(urlToLoad, categoryId: index)
-                
-                    // updateMapWithLocalJson(filenameToLoad, categoryId: index)
+                    print("updating map : index : \(index) item : \(item) urlToLoad : \(urlToLoad)")
                 
                     let url = NSURL(string:urlToLoad)
                     let request = NSURLRequest(URL: url!)
-                
                      updateMapWithCache(request, categoryId: index)
 
             }
@@ -205,42 +191,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let selectTableViewController = SelectTableViewController()
         self.navigationController?.pushViewController(selectTableViewController, animated: true)
     }
-    
-    
-    func updateMapWithLocalJson(fileName: String, categoryId: Int) {
-        
-        let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "json")
-        
-        if let data = NSData(contentsOfFile: path!) {
-            let json = JSON(data: data)
-            
-            //If json is .Dictionary
-            for (_,subJson):(String, JSON) in json {
-                
-                for (_,secondaryJson):(String, JSON) in subJson {
-                   
-                    for(_, tertiaryJson):(String, JSON) in secondaryJson {
-                     
-                        let mylatitude = tertiaryJson["latitude"].doubleValue
-                        let mylongitude = tertiaryJson["longitude"].doubleValue
-                        let title = tertiaryJson["name"].stringValue
-                        
-                        let mycoordinate = CLLocationCoordinate2D(latitude:mylatitude, longitude:mylongitude)
-                        
-                        let location = Location(coordinate: mycoordinate, title: title, subtitle: "", categoryId: categoryId, thumbnailUrl: "")
-                        
-                        mapView.addAnnotation(location)
-                        
-                    }
-                    
-                }
-            }
-            
-            
-        }
-        
-    }
-
     
     func updateMapWithCache(urlRequest :NSURLRequest, categoryId :Int) {
         
@@ -284,42 +234,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func updateMapWithLocations(locationArray :Array<Location>) {
         for mapLocation in locationArray {
             mapView.addAnnotation(mapLocation)
-
         }
-    }
-    
-    
-
-    func updateMapWithFeed(feedUrlString: String, categoryId: Int) {
-        
-        Alamofire.request(.GET, feedUrlString).responseJSON { response in
-            
-            // TODO: sometimes this comes back as nil when unwrapping optional value?
-            
-            let swiftyJsonVar = JSON(response.result.value!)
-                        
-            for (_,subJson):(String, JSON) in swiftyJsonVar {
-                
-                for (_,secondaryJson):(String, JSON) in subJson {
-                    
-                    for(_, tertiaryJson):(String, JSON) in secondaryJson {
-                        
-                        let mylatitude = tertiaryJson["latitude"].doubleValue
-                        let mylongitude = tertiaryJson["longitude"].doubleValue
-                        let title = tertiaryJson["name"].stringValue
-                        let mycoordinate = CLLocationCoordinate2D(latitude:mylatitude, longitude:mylongitude)
-                        
-                        let location = Location(coordinate: mycoordinate, title: title, subtitle: "", categoryId: categoryId, thumbnailUrl: "")
-                        
-                        self.mapView.addAnnotation(location)
-                        
-                    }
-                }
-                
-            }
-            
-        }
-        
     }
     
     
@@ -334,18 +249,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     // MARK: - MKMapViewDelegate methods
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-
-        // TODO: move to plist 
         
-        imageIconArray = ["annotation-armybuildings",
-                          "annotation-armyhouses",
-                          "annotation-food",
-                          "annotation-restrooms",
-                          "annotation-landmarks",
-                          "annotation-openspaces",
-                          "annotation-pointsofinterest",
-                          "annotation-recreation"]
-
         if let annotation = annotation as? Location {
             
             let identifier = "pin"

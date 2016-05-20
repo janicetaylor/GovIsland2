@@ -57,5 +57,16 @@
         <string>icon-pointsofinterest</string>
         <string>icon-recreation</string>
     </array>
+    <key>annotationImageNames</key>
+    <array>
+        <string>annotation-armybuildings</string>
+        <string>annotation-armyhomes</string>
+        <string>annotation-food</string>
+        <string>annotation-restrooms</string>
+        <string>annotation-landmarks</string>
+        <string>annotation-openspaces</string>
+        <string>annotation-pointsofinterest</string>
+        <string>annotation-recreation</string>
+    </array>
 </dict>
 </plist>
