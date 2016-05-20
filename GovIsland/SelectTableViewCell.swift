@@ -11,7 +11,6 @@ import UIKit
 class SelectTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var titleSwitch: UISwitch!
     @IBOutlet weak var thumbnailView: UIImageView!
     @IBOutlet weak var filterButton: UIButton!
     

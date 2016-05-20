@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import EventKit
 import SwiftyJSON
+import EventKit
 
 class EventsTableViewController: UITableViewController {
     

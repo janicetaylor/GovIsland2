@@ -82,6 +82,7 @@ class SelectTableViewController: UITableViewController {
         selectCell.filterButton.tag = indexPath.row
         selectCell.filterButton.selected = settingsValue
         
+        selectCell.filterButton.addTarget(self, action: #selector(SelectTableViewController.filterButtonDidSelect), forControlEvents: .TouchUpInside)
         
 //       selectCell.titleSwitch.tag = indexPath.row
 //       selectCell.titleSwitch.addTarget(self, action: #selector(SelectTableViewController.switchChanged(_:)), forControlEvents: .TouchUpInside)
@@ -91,12 +92,30 @@ class SelectTableViewController: UITableViewController {
     }
     
     
-    func switchChanged(selectedswitch :UISwitch) {
-        settingsArray[selectedswitch.tag] = selectedswitch.on
+    func filterButtonDidSelect(sender: UIButton) {
+        sender.selected = !sender.selected;
+        
+        if(sender.selected) {
+            sender.setImage(UIImage(named: "toggle-off"), forState: .Normal)
+        }
+        
+        else {
+            sender.setImage(UIImage(named: "toggle-on"), forState: .Normal)
+        }
+        
+        settingsArray[sender.tag] = sender.selected
         
         let userdefaults = NSUserDefaults.standardUserDefaults()
         userdefaults.setObject(settingsArray, forKey: "locationsToLoad")
     }
+    
+    
+//    func switchChanged(selectedswitch :UISwitch) {
+//        settingsArray[selectedswitch.tag] = selectedswitch.on
+//        
+//        let userdefaults = NSUserDefaults.standardUserDefaults()
+//        userdefaults.setObject(settingsArray, forKey: "locationsToLoad")
+//    }
     
     
     func configureTableView() {
