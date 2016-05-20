@@ -14,13 +14,15 @@ class ExploreDetailTableViewController: UITableViewController {
     
     var titleArray :[String] = []
     var locationArray :[Location] = []
-    var filenameArray :[String] = []
+    var pathArray :[String] = []
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
+        loadArraysFromPlist()
         configureTableView()
+        
         
         // look up the list based on the index 
         
@@ -34,6 +36,19 @@ class ExploreDetailTableViewController: UITableViewController {
        
     }
     
+    func loadArraysFromPlist() {
+        if let path = NSBundle.mainBundle().pathForResource("govisland", ofType: "plist") {
+            if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
+                let baseUrl = dict["baseUrl"] as! String
+                let urlArrayList = dict["urlPrefixes"] as! Array<String>
+                for urlString in urlArrayList {
+                    pathArray.append("\(baseUrl)\(urlString).json")
+                }
+            }
+        }
+        
+    }
+    
     
     func configureTableView() {
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -42,50 +57,39 @@ class ExploreDetailTableViewController: UITableViewController {
         tableView.separatorStyle = .None
         tableView.separatorInset = UIEdgeInsetsZero
     }
-
     
-    func populateTableWithIndex(lookup:Int)
-    {
+    
+    func updateTableWithCache(lookup :Int) {
         
-        // TODO: put this in a plist
+        let urlToLoad = pathArray[lookup]
+        let cache = NSURLCache.sharedURLCache()
         
-        var filenameArray :[String] = [ "armybuildings",
-                                        "armyhomes",
-                                        "food",
-                                        "restrooms",
-                                        "landmarks",
-                                        "openspaces",
-                                        "pointsofinterest",
-                                        "recreation"]
+        let url = NSURL(string:urlToLoad)
+        let urlRequest = NSURLRequest(URL: url!)
         
-        let fileName = filenameArray[lookup]
-        
-        // TODO: loading this locally for now, should cache and load this dynamically?
-        
-        let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "json")
-        
-        if let data = NSData(contentsOfFile: path!) {
-            let json = JSON(data: data)
+        if let response = cache.cachedResponseForRequest(urlRequest) {
             
-                for(_,subJson):(String, JSON) in json {
+            let jsonData = JSON(data: response.data)
+            
+            locationArray = []
+            
+            // print("jsonData from cache : \(jsonData)")
+            
+            for (_,subJson):(String, JSON) in jsonData {
+                
+                print(subJson["title"].stringValue)
+                
+                for (_,secondaryJson):(String, JSON) in subJson {
                     
-                    let locationJson = subJson["location"]
+                    self.navigationItem.title = subJson["title"].stringValue
                     
-                    for(_,secondaryJson):(String, JSON) in locationJson {
+                    for(_, tertiaryJson):(String, JSON) in secondaryJson {
                         
-                        // TODO: this is duplicate code, move it?
-
-                        let mylatitude = secondaryJson["latitude"].doubleValue
-                        let mylongitude = secondaryJson["longitude"].doubleValue
-                        let title = secondaryJson["title"].stringValue
-                        let subtitle = secondaryJson["copy"].stringValue
-                        let thumbnailUrl = secondaryJson["image"].stringValue
-                        
+                        let mylatitude = tertiaryJson["latitude"].doubleValue
+                        let mylongitude = tertiaryJson["longitude"].doubleValue
+                        let title = tertiaryJson["name"].stringValue
                         let mycoordinate = CLLocationCoordinate2D(latitude:mylatitude, longitude:mylongitude)
-                        
-                        let baseUrl :String = "http://www.meladori.com/work/govisland/\(fileName)/\(thumbnailUrl)"
-                        
-                        let location = Location(coordinate: mycoordinate, title: title, subtitle: subtitle, categoryId: lookup, thumbnailUrl: baseUrl)
+                        let location = Location(coordinate: mycoordinate, title: title, subtitle: "", categoryId: lookup, thumbnailUrl: "")
                         
                         locationArray.append(location)
                         titleArray.append(title)
@@ -93,13 +97,74 @@ class ExploreDetailTableViewController: UITableViewController {
                         self.navigationItem.title = subJson["title"].stringValue
                         
                     }
-                    
-                    
                 }
+            }
+            
+
             
         }
+        
 
+        
     }
+//
+//
+//    func populateTableWithIndex(lookup:Int)
+//    {
+//        
+//        // TODO: put this in a plist
+//        
+//        var filenameArray :[String] = [ "armybuildings",
+//                                        "armyhomes",
+//                                        "food",
+//                                        "restrooms",
+//                                        "landmarks",
+//                                        "openspaces",
+//                                        "pointsofinterest",
+//                                        "recreation"]
+//        
+//        let fileName = filenameArray[lookup]
+//        
+//        // TODO: loading this locally for now, should cache and load this dynamically?
+//        
+//        let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "json")
+//        
+//        if let data = NSData(contentsOfFile: path!) {
+//            let json = JSON(data: data)
+//            
+//                for(_,subJson):(String, JSON) in json {
+//                    
+//                    let locationJson = subJson["location"]
+//                    
+//                    for(_,secondaryJson):(String, JSON) in locationJson {
+//                        
+//                        // TODO: this is duplicate code, move it?
+//
+//                        let mylatitude = secondaryJson["latitude"].doubleValue
+//                        let mylongitude = secondaryJson["longitude"].doubleValue
+//                        let title = secondaryJson["title"].stringValue
+//                        let subtitle = secondaryJson["copy"].stringValue
+//                        let thumbnailUrl = secondaryJson["image"].stringValue
+//                        
+//                        let mycoordinate = CLLocationCoordinate2D(latitude:mylatitude, longitude:mylongitude)
+//                        
+//                        let baseUrl :String = "http://www.meladori.com/work/govisland/\(fileName)/\(thumbnailUrl)"
+//                        
+//                        let location = Location(coordinate: mycoordinate, title: title, subtitle: subtitle, categoryId: lookup, thumbnailUrl: baseUrl)
+//                        
+//                        locationArray.append(location)
+//                        titleArray.append(title)
+//                        
+//                        self.navigationItem.title = subJson["title"].stringValue
+//                        
+//                    }
+//                    
+//                    
+//                }
+//            
+//        }
+//
+//    }
 
     
     // MARK: - Table view data source
@@ -126,8 +191,9 @@ class ExploreDetailTableViewController: UITableViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detailViewController = storyboard.instantiateViewControllerWithIdentifier("ExploreDetailWebViewController") as! ExploreDetailViewController
         
-        
         detailViewController.locationDetail = locationArray[indexPath.row]
+        
+        print("\(locationArray[indexPath.row])")
     
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }

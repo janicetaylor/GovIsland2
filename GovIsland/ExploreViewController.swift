@@ -89,8 +89,9 @@ class ExploreViewController : UITableViewController
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detailExploreViewController = storyboard.instantiateViewControllerWithIdentifier("ExploreDetailTableViewController") as! ExploreDetailTableViewController
-         
-        detailExploreViewController.populateTableWithIndex(indexPath.row as Int)
+        
+        detailExploreViewController.loadArraysFromPlist()
+        detailExploreViewController.updateTableWithCache(indexPath.row as Int)
         
         self.navigationController?.pushViewController(detailExploreViewController, animated: true)
         
