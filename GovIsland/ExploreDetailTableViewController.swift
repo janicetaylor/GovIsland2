@@ -21,6 +21,8 @@ class ExploreDetailTableViewController: UITableViewController {
     var pathArray :[String] = []
     var baseUrl :String = ""
     var prefixUrl :String = ""
+    var categoryPrefix :String = ""
+
     
     override func viewDidLoad()
     {
@@ -37,9 +39,11 @@ class ExploreDetailTableViewController: UITableViewController {
             if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
                 baseUrl = dict["baseUrl"] as! String
                 let urlArrayList = dict["urlPrefixes"] as! Array<String>
+                urlArraylist = urlArrayList
                 
                 for urlString in urlArrayList {
                     pathArray.append("\(baseUrl)\(urlString).json")
+                    prefixUrl = baseUrl
                 }
             }
         }
@@ -90,6 +94,8 @@ class ExploreDetailTableViewController: UITableViewController {
                         locationArray.append(location)
                         titleArray.append(title)
                         thumbnailArray.append(imageUrl)
+                        categoryPrefix = urlArraylist[lookup]
+
                         
                     }
                 }
@@ -121,6 +127,13 @@ class ExploreDetailTableViewController: UITableViewController {
         
         let urlString = "\(prefixUrl)\(thumbnailArray[indexPath.row])"
         let url = NSURL(string:urlString)
+        
+        print("urlString : \(urlString)")
+        print("prefixUrl : \(prefixUrl)")
+        print("categoryPrefix : \(categoryPrefix)")
+
+        print("(thumbnailArray[indexPath.row] : \(thumbnailArray[indexPath.row])")
+        
         exploreCell.thumbnailImageView.sd_setImageWithURL(url)
 
         
