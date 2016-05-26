@@ -23,6 +23,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var settingsArray :[Bool] = []
     var imageIconArray :[String] = []
     var locationArray :[Location] = []
+    var didUpdateFromLocation :Bool = false
+    var locationDetailToUpdate :Location = Location(coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0), title: "", subtitle: "", categoryId: 0, thumbnailUrl: "")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +38,26 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         let downloadCache = DownloadCache()
         downloadCache.prefetchData()
-        
         initializeSettings()
-
     }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // check if it came from the settings view before updating
+        updateMap()
+        updateMapWithLocation()
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     
     func addListeners() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(MapViewController.storedCacheFinished), name: "storingCacheFinished", object: nil)
@@ -93,10 +111,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        updateMap()
+    func updateMapWithLocation() {
+        if(didUpdateFromLocation) {
+            removeAllAnnotations()
+            var mapArray :[Location] = []
+            mapArray.append(locationDetailToUpdate)
+            updateMapWithLocations(mapArray)
+            didUpdateFromLocation = false
+        }
     }
+    
     
     func configureMap() {
         let locationManager = CLLocationManager()
