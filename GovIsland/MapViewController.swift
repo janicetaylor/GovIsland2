@@ -19,7 +19,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     var locationManager: CLLocationManager?
     var urlArray :[String] = []
-    // var filenameArray :[String] = []
     var settingsArray :[Bool] = []
     var imageIconArray :[String] = []
     var locationArray :[Location] = []
@@ -292,6 +291,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 detailButton.tag = annotation.categoryId!
                 
                 pinAnnotationView.rightCalloutAccessoryView = detailButton
+                
+                let imageView = UIImageView(image: UIImage(named: imageIconArray[annotation.categoryId!]))
+                pinAnnotationView.leftCalloutAccessoryView = imageView
                 
                 return pinAnnotationView
                 
