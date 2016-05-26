@@ -30,14 +30,6 @@
 		11A0EE1B1C4FE30200D01A05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A0EE191C4FE30200D01A05 /* LaunchScreen.storyboard */; };
 		11E27F9C1CC683F500A10847 /* ExploreDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E27F9B1CC683F500A10847 /* ExploreDetailTableViewController.swift */; };
 		11E27FA71CC7D8C500A10847 /* DownloadCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E27FA61CC7D8C500A10847 /* DownloadCache.swift */; };
-		11F01D171CD15F7C002F08C5 /* pointsofinterest.json in Resources */ = {isa = PBXBuildFile; fileRef = 11F01D0F1CD15F7C002F08C5 /* pointsofinterest.json */; };
-		11F01D181CD15F7C002F08C5 /* openspaces.json in Resources */ = {isa = PBXBuildFile; fileRef = 11F01D101CD15F7C002F08C5 /* openspaces.json */; };
-		11F01D191CD15F7C002F08C5 /* landmarks.json in Resources */ = {isa = PBXBuildFile; fileRef = 11F01D111CD15F7C002F08C5 /* landmarks.json */; };
-		11F01D1A1CD15F7C002F08C5 /* armyhomes.json in Resources */ = {isa = PBXBuildFile; fileRef = 11F01D121CD15F7C002F08C5 /* armyhomes.json */; };
-		11F01D1B1CD15F7C002F08C5 /* armybuildings.json in Resources */ = {isa = PBXBuildFile; fileRef = 11F01D131CD15F7C002F08C5 /* armybuildings.json */; };
-		11F01D1C1CD15F7C002F08C5 /* recreation.json in Resources */ = {isa = PBXBuildFile; fileRef = 11F01D141CD15F7C002F08C5 /* recreation.json */; };
-		11F01D1D1CD15F7C002F08C5 /* restrooms.json in Resources */ = {isa = PBXBuildFile; fileRef = 11F01D151CD15F7C002F08C5 /* restrooms.json */; };
-		11F01D1E1CD15F7C002F08C5 /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = 11F01D161CD15F7C002F08C5 /* food.json */; };
 		11F01D261CD2A648002F08C5 /* ExploreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F01D251CD2A648002F08C5 /* ExploreDetailViewController.swift */; };
 		11F01D281CD2C324002F08C5 /* webView.html in Resources */ = {isa = PBXBuildFile; fileRef = 11F01D271CD2C324002F08C5 /* webView.html */; };
 		11F37C3A1CAF26CE00CFA9C6 /* SelectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F37C381CAF26CE00CFA9C6 /* SelectTableViewController.swift */; };
@@ -73,14 +65,6 @@
 		11A0EE1C1C4FE30200D01A05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11E27F9B1CC683F500A10847 /* ExploreDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreDetailTableViewController.swift; sourceTree = "<group>"; };
 		11E27FA61CC7D8C500A10847 /* DownloadCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadCache.swift; path = cache/DownloadCache.swift; sourceTree = "<group>"; };
-		11F01D0F1CD15F7C002F08C5 /* pointsofinterest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = pointsofinterest.json; path = data/pointsofinterest.json; sourceTree = "<group>"; };
-		11F01D101CD15F7C002F08C5 /* openspaces.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = openspaces.json; path = data/openspaces.json; sourceTree = "<group>"; };
-		11F01D111CD15F7C002F08C5 /* landmarks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = landmarks.json; path = data/landmarks.json; sourceTree = "<group>"; };
-		11F01D121CD15F7C002F08C5 /* armyhomes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = armyhomes.json; path = data/armyhomes.json; sourceTree = "<group>"; };
-		11F01D131CD15F7C002F08C5 /* armybuildings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = armybuildings.json; path = data/armybuildings.json; sourceTree = "<group>"; };
-		11F01D141CD15F7C002F08C5 /* recreation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = recreation.json; path = data/recreation.json; sourceTree = "<group>"; };
-		11F01D151CD15F7C002F08C5 /* restrooms.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = restrooms.json; path = data/restrooms.json; sourceTree = "<group>"; };
-		11F01D161CD15F7C002F08C5 /* food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = food.json; path = data/food.json; sourceTree = "<group>"; };
 		11F01D251CD2A648002F08C5 /* ExploreDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreDetailViewController.swift; sourceTree = "<group>"; };
 		11F01D271CD2C324002F08C5 /* webView.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = webView.html; path = data/webView.html; sourceTree = "<group>"; };
 		11F37C381CAF26CE00CFA9C6 /* SelectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTableViewController.swift; sourceTree = "<group>"; };
@@ -196,14 +180,6 @@
 				111415391CEBB9D800986FE5 /* webViewAbout.html */,
 				11F01D271CD2C324002F08C5 /* webView.html */,
 				111415301CEB9CDB00986FE5 /* events.json */,
-				11F01D0F1CD15F7C002F08C5 /* pointsofinterest.json */,
-				11F01D101CD15F7C002F08C5 /* openspaces.json */,
-				11F01D111CD15F7C002F08C5 /* landmarks.json */,
-				11F01D121CD15F7C002F08C5 /* armyhomes.json */,
-				11F01D131CD15F7C002F08C5 /* armybuildings.json */,
-				11F01D141CD15F7C002F08C5 /* recreation.json */,
-				11F01D151CD15F7C002F08C5 /* restrooms.json */,
-				11F01D161CD15F7C002F08C5 /* food.json */,
 			);
 			name = data;
 			sourceTree = "<group>";
@@ -290,23 +266,15 @@
 			files = (
 				1114152F1CEB965B00986FE5 /* EventsTableViewCell.xib in Resources */,
 				11F37C3F1CAF288A00CFA9C6 /* SelectTableViewCell.xib in Resources */,
-				11F01D171CD15F7C002F08C5 /* pointsofinterest.json in Resources */,
 				11A0EE1B1C4FE30200D01A05 /* LaunchScreen.storyboard in Resources */,
 				111415291CEB90FD00986FE5 /* govisland.plist in Resources */,
-				11F01D1E1CD15F7C002F08C5 /* food.json in Resources */,
-				11F01D191CD15F7C002F08C5 /* landmarks.json in Resources */,
 				11F37C3B1CAF26CE00CFA9C6 /* SelectTableViewController.xib in Resources */,
 				11F01D281CD2C324002F08C5 /* webView.html in Resources */,
 				114AFC361CEF8D7F0084C38B /* ExploreDetailTableViewCell.xib in Resources */,
 				11A0EE181C4FE30200D01A05 /* Assets.xcassets in Resources */,
 				11A0EE161C4FE30200D01A05 /* Main.storyboard in Resources */,
-				11F01D181CD15F7C002F08C5 /* openspaces.json in Resources */,
 				1114153A1CEBB9D800986FE5 /* webViewAbout.html in Resources */,
-				11F01D1D1CD15F7C002F08C5 /* restrooms.json in Resources */,
-				11F01D1B1CD15F7C002F08C5 /* armybuildings.json in Resources */,
 				111415311CEB9CDB00986FE5 /* events.json in Resources */,
-				11F01D1A1CD15F7C002F08C5 /* armyhomes.json in Resources */,
-				11F01D1C1CD15F7C002F08C5 /* recreation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
