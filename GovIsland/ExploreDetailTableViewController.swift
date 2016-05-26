@@ -98,8 +98,9 @@ class ExploreDetailTableViewController: UITableViewController {
                         let mylongitude = tertiaryJson["longitude"].doubleValue
                         let title = tertiaryJson["name"].stringValue
                         let imageUrl = tertiaryJson["image"].stringValue
+                        let copy = tertiaryJson["copy"].stringValue
                         let mycoordinate = CLLocationCoordinate2D(latitude:mylatitude, longitude:mylongitude)
-                        let location = Location(coordinate: mycoordinate, title: title, subtitle: "", categoryId: lookup, thumbnailUrl: "")
+                        let location = Location(coordinate: mycoordinate, title: title, subtitle: copy, categoryId: lookup, thumbnailUrl: "")
                         
                         locationArray.append(location)
                         titleArray.append(title)
