@@ -27,6 +27,12 @@ class ExploreViewController : UITableViewController
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        styleNavigationBar()
+    }
+    
     
     func loadArraysFromPlist() {
         if let path = NSBundle.mainBundle().pathForResource("govisland", ofType: "plist") {
