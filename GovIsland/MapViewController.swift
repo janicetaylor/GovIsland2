@@ -144,20 +144,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         removeAllAnnotations()
         
-        print("updateMap : settingsArray : \(settingsArray)")
-        
         for(index, item) in settingsArray.enumerate() {
-            
             if(item == true) {
-
                     let urlToLoad = urlArray[index]
-                
-                    print("updating map : index : \(index) item : \(item) urlToLoad : \(urlToLoad)")
-                
                     let url = NSURL(string:urlToLoad)
                     let request = NSURLRequest(URL: url!)
                      updateMapWithCache(request, categoryId: index)
-
             }
         }
 
