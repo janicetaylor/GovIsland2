@@ -41,7 +41,17 @@ class ExploreDetailViewController: UIViewController {
     }
     
     func filterButtonDidSelect() {
-        
+        if let mapViewController = self.storyboard?.instantiateViewControllerWithIdentifier("mapViewIdentifier") as? MapViewController {
+            let navController = UINavigationController(rootViewController: mapViewController)
+            navController.setViewControllers([mapViewController], animated:true)
+            
+            // why is everything nil? 
+            
+            mapViewController.removeAllAnnotations()
+            
+            self.revealViewController().setFrontViewController(navController, animated: true)
+            
+        }
     }
     
     

@@ -9,7 +9,7 @@
         <!--Map View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="MapViewController" customModule="GovIsland" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mapViewIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9pv-A4-QxB" customClass="MapViewController" customModule="GovIsland" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -447,9 +447,9 @@
         <image name="shop" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="853-KA-pt5"/>
-        <segue reference="JNZ-LT-S5S"/>
-        <segue reference="HnU-Qh-BXp"/>
-        <segue reference="7gt-v2-hYm"/>
+        <segue reference="eXh-3i-PS2"/>
+        <segue reference="FZ6-Kr-Mn8"/>
+        <segue reference="4Sc-81-SOk"/>
+        <segue reference="EO9-fw-YKC"/>
     </inferredMetricsTieBreakers>
 </document>
