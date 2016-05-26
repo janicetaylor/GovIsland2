@@ -36,8 +36,12 @@ class ExploreDetailViewController: UIViewController {
         
         updatePage()
         
-        // TODO: add the "show in map" button 
-
+        let barButton = UIBarButtonItem(image: UIImage(named: "pinpoint"), landscapeImagePhone: nil, style: .Done, target: self, action: #selector(ExploreDetailViewController.filterButtonDidSelect))
+        self.navigationItem.setRightBarButtonItem(barButton, animated: true)
+    }
+    
+    func filterButtonDidSelect() {
+        
     }
     
     
