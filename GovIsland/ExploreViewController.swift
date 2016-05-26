@@ -94,7 +94,8 @@ class ExploreViewController : UITableViewController
         detailExploreViewController.updateTableWithCache(indexPath.row as Int)
         
         self.navigationController?.pushViewController(detailExploreViewController, animated: true)
-        
+        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor();
+
     }
 
 

@@ -29,10 +29,20 @@ class ExploreDetailTableViewController: UITableViewController {
         super.viewDidLoad()
         loadArraysFromPlist()
         configureTableView()
+        styleNavigationBar()
         
         let exploreNib = UINib(nibName: "ExploreDetailTableViewCell", bundle: nil)
         tableView.registerNib(exploreNib, forCellReuseIdentifier:"exploreDetailTableViewCell")
     }
+    
+    
+    func styleNavigationBar() {
+        self.navigationController!.navigationBar.topItem!.title = ""
+        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor();
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 210.0/255.0, green: 35.0/255.0, blue: 42.0/255.0, alpha: 1.0)
+        self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 18.0)!, NSForegroundColorAttributeName:UIColor.whiteColor()]
+    }
+    
     
     func loadArraysFromPlist() {
         if let path = NSBundle.mainBundle().pathForResource("govisland", ofType: "plist") {
