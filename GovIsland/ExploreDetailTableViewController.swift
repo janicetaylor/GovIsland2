@@ -123,19 +123,13 @@ class ExploreDetailTableViewController: UITableViewController {
         let exploreCell: ExploreDetailTableViewCell = tableView.dequeueReusableCellWithIdentifier("exploreDetailTableViewCell", forIndexPath: indexPath) as! ExploreDetailTableViewCell
         
         exploreCell.titleView.text = titleArray[indexPath.row]
-        // exploreCell.thumbnailImageView.image = UIImage(named: thumbnailArray[indexPath.row])
         
-        let urlString = "\(prefixUrl)\(thumbnailArray[indexPath.row])"
+        let urlString = "\(prefixUrl)\(categoryPrefix)" + "/" +  "\(thumbnailArray[indexPath.row])"
         let url = NSURL(string:urlString)
         
-        print("urlString : \(urlString)")
-        print("prefixUrl : \(prefixUrl)")
-        print("categoryPrefix : \(categoryPrefix)")
-
-        print("(thumbnailArray[indexPath.row] : \(thumbnailArray[indexPath.row])")
-        
         exploreCell.thumbnailImageView.sd_setImageWithURL(url)
-
+        
+        // TODO : add placeholder image, add activity indicator
         
 //        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:@"http://www.domain.com/path/to/image.jpg"]
 //            placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
