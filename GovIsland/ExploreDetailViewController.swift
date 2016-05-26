@@ -35,6 +35,8 @@ class ExploreDetailViewController: UIViewController {
         webView.loadRequest(requestObj)
         
         updatePage()
+        
+        // TODO: add the "show in map" button 
 
     }
     
