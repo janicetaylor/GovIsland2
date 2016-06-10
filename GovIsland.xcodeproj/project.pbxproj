@@ -473,6 +473,7 @@
 				PROVISIONING_PROFILE = "7bba8e2d-8c3c-4571-9cf9-d34dcaf818ba";
 				SWIFT_OBJC_BRIDGING_HEADER = "GovIsland/GovIsland-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -490,6 +491,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7bba8e2d-8c3c-4571-9cf9-d34dcaf818ba";
 				SWIFT_OBJC_BRIDGING_HEADER = "GovIsland/GovIsland-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
