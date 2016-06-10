@@ -237,7 +237,6 @@
 				TargetAttributes = {
 					11A0EE0A1C4FE30200D01A05 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = U9VFYB8Z4V;
 					};
 				};
 			};
@@ -413,6 +412,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -451,6 +451,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -463,11 +464,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Janice Garingo (U9VFYB8Z4V)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Janice Garingo (U9VFYB8Z4V)";
 				INFOPLIST_FILE = GovIsland/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.meladori.GovIsland;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meladori.GovIsland2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7bba8e2d-8c3c-4571-9cf9-d34dcaf818ba";
 				SWIFT_OBJC_BRIDGING_HEADER = "GovIsland/GovIsland-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -479,11 +482,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Janice Garingo (U9VFYB8Z4V)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Janice Garingo (U9VFYB8Z4V)";
 				INFOPLIST_FILE = GovIsland/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.meladori.GovIsland;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meladori.GovIsland2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7bba8e2d-8c3c-4571-9cf9-d34dcaf818ba";
 				SWIFT_OBJC_BRIDGING_HEADER = "GovIsland/GovIsland-Bridging-Header.h";
 			};
 			name = Release;
