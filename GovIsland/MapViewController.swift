@@ -21,6 +21,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var urlArray :[String] = []
     var settingsArray :[Bool] = []
     var imageIconArray :[String] = []
+    var annotationPointArray :[String] = []
     var locationArray :[Location] = []
     var didUpdateFromLocation :Bool = false
     var locationDetailToUpdate :Location = Location(coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0), title: "", subtitle: "", categoryId: 0, thumbnailUrl: "")
@@ -82,6 +83,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 let baseUrl = dict["baseUrl"] as! String
                 let urlArrayList = dict["urlPrefixes"] as! Array<String>
                 imageIconArray = dict["annotationImageNames"] as! Array<String>
+                annotationPointArray = dict["iconImageNames"] as! Array<String>
                 for urlString in urlArrayList {
                     urlArray.append("\(baseUrl)\(urlString).json")
                 }
@@ -292,7 +294,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 
                 pinAnnotationView.rightCalloutAccessoryView = detailButton
                 
-                let imageView = UIImageView(image: UIImage(named: imageIconArray[annotation.categoryId!]))
+                let imageView = UIImageView(image: UIImage(named: annotationPointArray[annotation.categoryId!]))
                 pinAnnotationView.leftCalloutAccessoryView = imageView
                 
                 return pinAnnotationView
@@ -306,7 +308,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     func detailButtonSelected(selectedButton :UIButton) {
-        tabBarController?.selectedIndex = 1
+        
+        let exploreViewController = ExploreDetailTableViewController() as UIViewController
+        let navController = self.revealViewController().frontViewController as! UINavigationController
+        navController.setViewControllers([exploreViewController], animated: true)
+        // this crashes, why? 
+        // self.revealViewController().setFrontViewPosition(FrontViewPosition, animated: true)
+        
     }
 
 }
