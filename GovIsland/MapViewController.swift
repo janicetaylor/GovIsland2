@@ -309,10 +309,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func detailButtonSelected(selectedButton :UIButton) {
         
-        let exploreViewController = ExploreDetailTableViewController() as UIViewController
-        let navController = self.revealViewController().frontViewController as! UINavigationController
-        navController.setViewControllers([exploreViewController], animated: true)
-        // this crashes, why? 
+//        let exploreViewController = ExploreDetailTableViewController() as UIViewController
+//        let navController = self.revealViewController().frontViewController as! UINavigationController
+//        navController.setViewControllers([exploreViewController], animated: true)
+        
+        // this crashes, why?
         // self.revealViewController().setFrontViewPosition(FrontViewPosition, animated: true)
         
     }
