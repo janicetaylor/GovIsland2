@@ -72,6 +72,8 @@ class ExploreDetailTableViewController: UITableViewController {
     
     func updateTableWithCache(lookup :Int) {
         
+        print("pathArray : \(pathArray)")
+        
         let urlToLoad = pathArray[lookup]
         let cache = NSURLCache.sharedURLCache()
         
