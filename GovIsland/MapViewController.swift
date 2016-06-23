@@ -308,25 +308,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     func detailButtonSelected(selectedButton :UIButton) {
-        
-//        let exploreViewController = ExploreDetailTableViewController()
-//        
+
         let navController = self.navigationController! as UINavigationController
-//        
-//        navController.setViewControllers([exploreViewController], animated: true)
-        
-//        exploreViewController.loadArraysFromPlist()
-//        exploreViewController.updateTableWithCache(1)
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detailViewController = storyboard.instantiateViewControllerWithIdentifier("ExploreDetailWebViewController") as! ExploreDetailViewController
         
         detailViewController.locationDetail = locationArray[0]
         
-        navController.setViewControllers([detailViewController], animated: true)
-
-        // this crashes, why?
-        // self.revealViewController().setFrontViewPosition(FrontViewPosition, animated: true)
+        navController.pushViewController(detailViewController, animated: true)
+        
         
     }
 
