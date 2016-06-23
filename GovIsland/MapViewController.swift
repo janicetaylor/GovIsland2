@@ -23,8 +23,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var imageIconArray :[String] = []
     var annotationPointArray :[String] = []
     var locationArray :[Location] = []
+    
     var didUpdateFromLocation :Bool = false
     var locationDetailToUpdate :Location = Location(coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0), title: "", subtitle: "", categoryId: 0, thumbnailUrl: "")
+    var selectedLocationDetail :Location = Location(coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0), title: "", subtitle: "", categoryId: 0, thumbnailUrl: "")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -278,7 +280,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 
                 dequeuedView.image = UIImage(named: imageIconArray[annotation.categoryId!])
                 let detailButton = UIButton(type: UIButtonType.DetailDisclosure) as UIButton
+                
                 detailButton.addTarget(self, action: #selector(MapViewController.detailButtonSelected), forControlEvents: .TouchUpInside)
+                detailButton.tag = annotation.categoryId!
+                selectedLocationDetail = Location(coordinate: annotation.coordinate, title: annotation.title!, subtitle: annotation.subtitle!, categoryId: annotation.categoryId!, thumbnailUrl: annotation.thumbnailUrl!)
+                
                 dequeuedView.rightCalloutAccessoryView = detailButton
                 
             } else {
@@ -289,8 +295,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 pinAnnotationView.canShowCallout = true
                 
                 let detailButton = UIButton(type: UIButtonType.DetailDisclosure) as UIButton
+                
                 detailButton.addTarget(self, action: #selector(MapViewController.detailButtonSelected(_:)), forControlEvents: .TouchUpInside)
                 detailButton.tag = annotation.categoryId!
+                
+                // still wrong but getting there... 
+                
+                selectedLocationDetail = Location(coordinate: annotation.coordinate, title: annotation.title!, subtitle: annotation.subtitle!, categoryId: annotation.categoryId!, thumbnailUrl: annotation.thumbnailUrl!)
                 
                 pinAnnotationView.rightCalloutAccessoryView = detailButton
                 
@@ -313,7 +324,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detailViewController = storyboard.instantiateViewControllerWithIdentifier("ExploreDetailWebViewController") as! ExploreDetailViewController
         
-        detailViewController.locationDetail = locationArray[0]
+        detailViewController.locationDetail = selectedLocationDetail
         
         navController.pushViewController(detailViewController, animated: true)
         
