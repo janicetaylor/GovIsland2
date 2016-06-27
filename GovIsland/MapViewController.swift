@@ -299,7 +299,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 detailButton.addTarget(self, action: #selector(MapViewController.detailButtonSelected(_:)), forControlEvents: .TouchUpInside)
                 detailButton.tag = annotation.categoryId!
                 
-                // still wrong but getting there... 
+                // still wrong but getting there...
                 
                 selectedLocationDetail = Location(coordinate: annotation.coordinate, title: annotation.title!, subtitle: annotation.subtitle!, categoryId: annotation.categoryId!, thumbnailUrl: annotation.thumbnailUrl!)
                 
