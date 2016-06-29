@@ -301,7 +301,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 
                 // still wrong but getting there...
                 
-                selectedLocationDetail = Location(coordinate: annotation.coordinate, title: annotation.title!, subtitle: annotation.subtitle!, categoryId: annotation.categoryId!, thumbnailUrl: annotation.thumbnailUrl!)
+                // selectedLocationDetail = Location(coordinate: annotation.coordinate, title: annotation.title!, subtitle: annotation.subtitle!, categoryId: annotation.categoryId!, thumbnailUrl: annotation.thumbnailUrl!)
                 
                 pinAnnotationView.rightCalloutAccessoryView = detailButton
                 
@@ -319,7 +319,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView)
     {
-        print("Pin clicked");
+        if let selectedAnnotation = mapView.selectedAnnotations[0] as? Location {
+                selectedLocationDetail  = Location(coordinate: selectedAnnotation.coordinate, title: selectedAnnotation.title!, subtitle: selectedAnnotation.subtitle!, categoryId: selectedAnnotation.categoryId!, thumbnailUrl: selectedAnnotation.thumbnailUrl!)
+        }
+        
     }
     
     
@@ -330,6 +333,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let detailViewController = storyboard.instantiateViewControllerWithIdentifier("ExploreDetailWebViewController") as! ExploreDetailViewController
         
         detailViewController.locationDetail = selectedLocationDetail
+        
+        // need to prefetch the data? this is coming up blank... 
         
         navController.pushViewController(detailViewController, animated: true)
         
