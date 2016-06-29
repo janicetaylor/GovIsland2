@@ -317,6 +317,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
     }
     
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView)
+    {
+        print("Pin clicked");
+    }
+    
     
     func detailButtonSelected(selectedButton :UIButton) {
 
