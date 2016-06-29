@@ -293,6 +293,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 pinAnnotationView.annotation = annotation as Location
                 pinAnnotationView.image = UIImage(named: imageIconArray[annotation.categoryId!])
                 pinAnnotationView.canShowCallout = true
+            
                 
                 let detailButton = UIButton(type: UIButtonType.DetailDisclosure) as UIButton
                 
@@ -300,8 +301,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 detailButton.tag = annotation.categoryId!
                 
                 // still wrong but getting there...
-                
-                // selectedLocationDetail = Location(coordinate: annotation.coordinate, title: annotation.title!, subtitle: annotation.subtitle!, categoryId: annotation.categoryId!, thumbnailUrl: annotation.thumbnailUrl!)
+            
                 
                 pinAnnotationView.rightCalloutAccessoryView = detailButton
                 
@@ -319,6 +319,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView)
     {
+        
+        // thumbnailUrl is blank and copy is blank... why?
+        
         if let selectedAnnotation = mapView.selectedAnnotations[0] as? Location {
                 selectedLocationDetail  = Location(coordinate: selectedAnnotation.coordinate, title: selectedAnnotation.title!, subtitle: selectedAnnotation.subtitle!, categoryId: selectedAnnotation.categoryId!, thumbnailUrl: selectedAnnotation.thumbnailUrl!)
         }
@@ -334,7 +337,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         detailViewController.locationDetail = selectedLocationDetail
         
-        // need to prefetch the data? this is coming up blank... 
+        // need to prefetch the data? this is coming up blank...
+        
         
         navController.pushViewController(detailViewController, animated: true)
         
