@@ -23,6 +23,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var imageIconArray :[String] = []
     var annotationPointArray :[String] = []
     var locationArray :[Location] = []
+    var prefixUrl :String = ""
+    var urlArrayList :[String] = []
     
     var didUpdateFromLocation :Bool = false
     var locationDetailToUpdate :Location = Location(coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0), title: "", subtitle: "", categoryId: 0, thumbnailUrl: "")
@@ -83,11 +85,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         if let path = NSBundle.mainBundle().pathForResource("govisland", ofType: "plist") {
             if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
                 let baseUrl = dict["baseUrl"] as! String
-                let urlArrayList = dict["urlPrefixes"] as! Array<String>
+                urlArrayList = dict["urlPrefixes"] as! Array<String>
                 imageIconArray = dict["annotationImageNames"] as! Array<String>
                 annotationPointArray = dict["iconImageNames"] as! Array<String>
+                
                 for urlString in urlArrayList {
                     urlArray.append("\(baseUrl)\(urlString).json")
+                    prefixUrl = baseUrl
                 }
             }
         }
@@ -235,7 +239,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                                     let mylongitude = tertiaryJson["longitude"].doubleValue
                                     let title = tertiaryJson["name"].stringValue
                                     let mycoordinate = CLLocationCoordinate2D(latitude:mylatitude, longitude:mylongitude)
-                                    let location = Location(coordinate: mycoordinate, title: title, subtitle: "", categoryId: categoryId, thumbnailUrl: "")
+                                    let imageUrl = tertiaryJson["image"].stringValue
+                                    let copy = tertiaryJson["copy"].stringValue
+                                    let urlString = "\(prefixUrl)\(urlArrayList[categoryId])" + "/" + "\(imageUrl)"
+                                    
+                                     let location = Location(coordinate: mycoordinate, title: title, subtitle: copy, categoryId: categoryId, thumbnailUrl: urlString)
             
                                     locationArray.append(location)
                                             
@@ -300,9 +308,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 detailButton.addTarget(self, action: #selector(MapViewController.detailButtonSelected(_:)), forControlEvents: .TouchUpInside)
                 detailButton.tag = annotation.categoryId!
                 
-                // still wrong but getting there...
-            
-                
                 pinAnnotationView.rightCalloutAccessoryView = detailButton
                 
                 let imageView = UIImageView(image: UIImage(named: annotationPointArray[annotation.categoryId!]))
@@ -319,15 +324,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView)
     {
-        // thumbnailUrl is blank and copy is blank... why?
-        
         if let selectedAnnotation = mapView.selectedAnnotations[0] as? Location {
-            
-            print("selectedAnnotation.title : \(selectedAnnotation.title)")
-            print("selectedAnnotation.subtitle : \(selectedAnnotation.subtitle)")
-            print("selectedAnnotation.categoryId : \(selectedAnnotation.categoryId)")
-            print("selectedAnnotation.thumbnailUrl : \(selectedAnnotation.thumbnailUrl)")
-
+        
                 selectedLocationDetail  = Location(coordinate: selectedAnnotation.coordinate, title: selectedAnnotation.title!, subtitle: selectedAnnotation.subtitle!, categoryId: selectedAnnotation.categoryId!, thumbnailUrl: selectedAnnotation.thumbnailUrl!)
         }
         
@@ -341,15 +339,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let detailViewController :ExploreDetailViewController = storyboard.instantiateViewControllerWithIdentifier("ExploreDetailWebViewController") as! ExploreDetailViewController
         
         detailViewController.locationDetail = selectedLocationDetail
-//        detailViewController.loadArraysFromPlist()
-//        detailViewController.updateTableWithCache(indexPath.row as Int)
-
-        
-        // need to prefetch the data? this is coming up blank...
-        
-        
         navController.pushViewController(detailViewController, animated: true)
-        
         
     }
 
