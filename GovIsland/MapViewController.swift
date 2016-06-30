@@ -319,10 +319,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView)
     {
-        
         // thumbnailUrl is blank and copy is blank... why?
         
         if let selectedAnnotation = mapView.selectedAnnotations[0] as? Location {
+            
+            print("selectedAnnotation.title : \(selectedAnnotation.title)")
+            print("selectedAnnotation.subtitle : \(selectedAnnotation.subtitle)")
+            print("selectedAnnotation.categoryId : \(selectedAnnotation.categoryId)")
+            print("selectedAnnotation.thumbnailUrl : \(selectedAnnotation.thumbnailUrl)")
+
                 selectedLocationDetail  = Location(coordinate: selectedAnnotation.coordinate, title: selectedAnnotation.title!, subtitle: selectedAnnotation.subtitle!, categoryId: selectedAnnotation.categoryId!, thumbnailUrl: selectedAnnotation.thumbnailUrl!)
         }
         
@@ -333,9 +338,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
         let navController = self.navigationController! as UINavigationController
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let detailViewController = storyboard.instantiateViewControllerWithIdentifier("ExploreDetailWebViewController") as! ExploreDetailViewController
+        let detailViewController :ExploreDetailViewController = storyboard.instantiateViewControllerWithIdentifier("ExploreDetailWebViewController") as! ExploreDetailViewController
         
         detailViewController.locationDetail = selectedLocationDetail
+//        detailViewController.loadArraysFromPlist()
+//        detailViewController.updateTableWithCache(indexPath.row as Int)
+
         
         // need to prefetch the data? this is coming up blank...
         
