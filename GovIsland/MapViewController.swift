@@ -339,6 +339,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let detailViewController :ExploreDetailViewController = storyboard.instantiateViewControllerWithIdentifier("ExploreDetailWebViewController") as! ExploreDetailViewController
         
         detailViewController.locationDetail = selectedLocationDetail
+
+        navController.navigationBar.tintColor = UIColor.whiteColor()
         navController.pushViewController(detailViewController, animated: true)
         
     }
