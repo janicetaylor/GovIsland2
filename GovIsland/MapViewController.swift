@@ -283,15 +283,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             var pinAnnotationView: MKAnnotationView
             
             if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as? MKPinAnnotationView {
-                dequeuedView.annotation = annotation
+                dequeuedView.annotation = annotation as Location
                 pinAnnotationView = dequeuedView
+                pinAnnotationView.canShowCallout = true
                 
                 dequeuedView.image = UIImage(named: imageIconArray[annotation.categoryId!])
                 let detailButton = UIButton(type: UIButtonType.DetailDisclosure) as UIButton
                 
                 detailButton.addTarget(self, action: #selector(MapViewController.detailButtonSelected), forControlEvents: .TouchUpInside)
                 detailButton.tag = annotation.categoryId!
-                selectedLocationDetail = Location(coordinate: annotation.coordinate, title: annotation.title!, subtitle: annotation.subtitle!, categoryId: annotation.categoryId!, thumbnailUrl: annotation.thumbnailUrl!)
                 
                 dequeuedView.rightCalloutAccessoryView = detailButton
                 
@@ -324,10 +324,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView)
     {
         if let selectedAnnotation = mapView.selectedAnnotations[0] as? Location {
-        
-                selectedLocationDetail = Location(coordinate: selectedAnnotation.coordinate, title: selectedAnnotation.title!, subtitle: selectedAnnotation.subtitle!, categoryId: selectedAnnotation.categoryId!, thumbnailUrl: selectedAnnotation.thumbnailUrl!)
+            
+               selectedLocationDetail = Location(coordinate: selectedAnnotation.coordinate, title: selectedAnnotation.title!, subtitle: selectedAnnotation.subtitle!, categoryId: selectedAnnotation.categoryId!, thumbnailUrl: selectedAnnotation.thumbnailUrl!)
+            
+                selectedAnnotation.subtitle = ""
         }
-        
     }
     
     
