@@ -144,9 +144,8 @@ class ExploreDetailTableViewController: UITableViewController {
         exploreCell.thumbnailImageView.sd_setImageWithURL(url)
         
         // TODO : add placeholder image, add activity indicator
-        
-//        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:@"http://www.domain.com/path/to/image.jpg"]
-//            placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+        // [cell.imageView sd_setImageWithURL:[NSURL URLWithString:@"http://www.domain.com/path/to/image.jpg"]
+        // placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
         
         return exploreCell
     }

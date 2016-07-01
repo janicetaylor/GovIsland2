@@ -59,11 +59,6 @@ class ExploreDetailViewController: UIViewController {
         let title :String = locationDetail.title!
         let copy :String = locationDetail.subtitle!
         
-        print("thumbnailUrl : \(thumbnailUrl)")
-        print("title : \(title)")
-        print("copy : \(copy)")
-
-        
         let path = NSBundle.mainBundle().pathForResource("webView", ofType: "html")
         
         var html: String?

@@ -302,7 +302,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 pinAnnotationView.image = UIImage(named: imageIconArray[annotation.categoryId!])
                 pinAnnotationView.canShowCallout = true
             
-                
                 let detailButton = UIButton(type: UIButtonType.DetailDisclosure) as UIButton
                 
                 detailButton.addTarget(self, action: #selector(MapViewController.detailButtonSelected(_:)), forControlEvents: .TouchUpInside)
@@ -326,7 +325,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     {
         if let selectedAnnotation = mapView.selectedAnnotations[0] as? Location {
         
-                selectedLocationDetail  = Location(coordinate: selectedAnnotation.coordinate, title: selectedAnnotation.title!, subtitle: selectedAnnotation.subtitle!, categoryId: selectedAnnotation.categoryId!, thumbnailUrl: selectedAnnotation.thumbnailUrl!)
+                selectedLocationDetail = Location(coordinate: selectedAnnotation.coordinate, title: selectedAnnotation.title!, subtitle: selectedAnnotation.subtitle!, categoryId: selectedAnnotation.categoryId!, thumbnailUrl: selectedAnnotation.thumbnailUrl!)
         }
         
     }
